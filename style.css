@@ -1,0 +1,29 @@
+/* Parent container that holds multiple buttons — gap works between siblings here */
+.controls {
+  display: flex;
+  gap: 16px; /* spacing between the buttons */
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Generic button styles */
+button {
+  display: inline-flex; /* keep button contents laid out with flex */
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #e6aa7f;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  gap: 8px; /* spacing between icon and label inside a button */
+  font-size: 12px;
+}
+
+/* smaller helper class for icon + text buttons */
+.icon-button .icon {
+  display: inline-block;
+  font-weight: 700;
+}
