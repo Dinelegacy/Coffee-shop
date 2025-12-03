@@ -1,28 +1,7 @@
-.controls {
-  display: flex;
-  gap: 16px;  
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 20px;
-}
-
- 
-button {
-  display: flex;  
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #e6aa7f;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  gap: 8px;  
-  font-size: 12px;
-}
-
- 
-.icon-button .icon {
-  display: inline-block;
-  font-weight: 700;
+.cart-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 0 px;
+    top: 0;
 }
