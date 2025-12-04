@@ -16,12 +16,12 @@
 .cartAmount {
   position: absolute;
   top: 10px;
-  right: 30px;
+  right: 49px;
   background-color: red;
   color: white;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,4 +43,13 @@
 
  .fa-minus {
     color: rgb(241, 19, 49);
+ }
+
+ .item {
+    display: flex;
+    gap: 190px;
+    align-items: center;
+    margin-bottom: 20px;
+    border: solid 1px black;
+    padding: 10px;
  }
