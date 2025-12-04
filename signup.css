@@ -151,8 +151,8 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 12px 24px 12px 24px;
-  gap: 252px;
-  margin-top: 32px;
+  gap: 200px;
+  margin-top: 150px;
   margin-bottom: 85px;
 }
 .input-group {
@@ -181,19 +181,83 @@ input[type="date"] {
 
 label {
   font-size: 14px;
-  margin: 100px 0 5px;
   font-family: Arial, sans-serif;
   font-weight: bold;
   color: #333333;
-  flex-direction: column;
 }
 .next-button {
   width: 354px;
   height: 48px;
-  padding: 12px 24px;
   border-radius: 24px;
   border: none;
   background: #afafaf;
   text-align: center;
+  line-height: 48px;
   color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.next-button:hover {
+  background-color: #c67500;
+  cursor: pointer;
+}
+
+/* signUp next page  */
+
+.progress-2 {
+  display: flex;
+  align-items: center;
+}
+
+.step {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #b3701a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}
+
+.step.active {
+  background: #e9e5e2;
+  color: black;
+}
+
+.line {
+  width: 18px;
+  height: 5px;
+  background: #e9e5e2;
+}
+
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 354px;
+  border: 1px solid #a1a1a1;
+  color: #a1a1a1;
+  padding: 12px 24px;
+  border-radius: 24px;
+  background-color: #e3dedb;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.login {
+  width: 354px;
+  height: 48px;
+  border-radius: 24px;
+  border: none;
+  background: #c67500;
+  text-align: center;
+  line-height: 48px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 145px;
+  cursor: pointer;
 }
