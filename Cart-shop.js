@@ -1,4 +1,4 @@
-inport { cafeMenuData } from "./data.js";
+import { cafeMenuData } from "./";
 
 
 
