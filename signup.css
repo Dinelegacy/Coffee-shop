@@ -82,33 +82,58 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+/* Center the entire app on the page */
 body {
-  margin: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ede8e5;
+  min-height: 100vh;
+  background: #d9d9d9; /* outside background, optional */
+  margin: 0;
+}
+
+/* The app container */
+.app {
+  width: 100%;
   max-width: 402px;
   max-height: 874px;
+  background-color: #ede8e5;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 16px; /* optional: looks like a phone */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* optional */
 }
+
+/* keep your layout styles below */
+
 #logo {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  width: 402px;
+  padding: 0 18px 10px 12px;
+  justify-content: space-between;
 }
 
 #logo img {
   width: auto;
   display: block;
+  margin-top: 62px;
 }
 
 #header {
-  display: flex;
   background-color: black;
-  width: 100%;
   height: 49px;
-  justify-content: left;
+  display: flex;
+  align-items: center;
+  width: 402px;
+  color: #ffffff;
+  justify-content: space-between;
+  padding: 0 12px; /* added: give horizontal padding */
+  box-sizing: border-box; /* added: include padding in width */
+}
+.signup {
+  display: flex;
   align-items: center;
 }
 
@@ -119,30 +144,66 @@ h1 {
   font-style: normal;
   letter-spacing: -0.456px;
   text-transform: uppercase;
+  margin: 0;
 }
+
+.progress {
+  display: flex;
+  align-items: center;
+}
+
+.step {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e9e5e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: black;
+}
+
+.step.active {
+  background: #b3701a;
+  color: white;
+}
+
+.line {
+  width: 18px;
+  height: 5px;
+  background: #e9e5e2;
+}
+
 #form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 20px;
-  gap: 242px;
+  padding: 12px 24px 12px 24px;
+  gap: 252px;
+}
+.input-group {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 90px;
 }
 .form-inputs {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 10px;
+  margin-top: -90px;
 }
 input[type="text"],
 input[type="date"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #000000;
+  width: 354px;
+  border: 1px solid #a1a1a1;
+  color: #a1a1a1;
+  padding: 12px 24px;
   border-radius: 24px;
-  color: #100101;
+  background-color: #e3dedb;
   margin-bottom: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 label {
@@ -153,15 +214,13 @@ label {
   color: #333333;
   flex-direction: column;
 }
-button {
-  height: 40px;
-  background-color: #000000;
-  color: #ffffff;
+.next-button {
+  width: 354px;
+  height: 48px;
+  padding: 12px 24px;
+  border-radius: 24px;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #333333;
+  background: #afafaf;
+  text-align: center;
+  color: #ffffff;
 }
