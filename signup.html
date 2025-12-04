@@ -6,16 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
     <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="navegationBar.css">
 </head>
 
 <body>
-    <div class="app">
 
-    <div id="logo">
-        <img src="assets/logo-horizontal.svg" alt="logo">
-        <img src="assets/functional-icons/hamburger-menu-icon.svg" alt="menu-icon">
 
-</div>
+    <nav id="navBar" class="top-navBar">
+        <div id="navBarContainer">
+            <div class="leftIcons">
+                <div class="chevron_left-icon"><img src="./assets/functional-icons/chevron_black_left-icon.svg"
+                        alt="chevron black left icon"></div>
+                <div><a href="index.html"><img src="./assets/logo-horizontal.svg" alt="logotype"></a></div>
+            </div>
+            <div class="rightIcons">
+                <div><img src="./assets/functional-icons/hamburger-menu-icon.svg" alt="hambureger menu icon"></div>
+            </div>
+        </div>
+    </nav>
     <section id="header">
         <div class="signup">
             <h1>
@@ -35,15 +43,15 @@
     <section id="form">
         <form class="form-inputs">
             <div class="input-group">
-                <label for="firstname-input">First Name</label>
+                <label for="firstname-input">First Name *</label>
                 <input type="text" name="firstname" id="firstname-input" placeholder="First Name" required>
             </div>
             <div class="input-group">
-                <label for="lastname-input">Last Name</label>
+                <label for="lastname-input">Last Name *</label>
                 <input type="text" name="lastname" id="lastname-input" placeholder="Last Name" required>
             </div>
             <div class="input-group">
-                <label for="DateofBirth-input">Date of Birth </label>
+                <label for="DateofBirth-input">Date of Birth*</label>
                 <input type="date" id="DateofBirth-input" placeholder="Date of Birth " required>
             </div>
 
@@ -56,7 +64,7 @@
 
     </section>
 
-    </div>
+
 </body>
 
 </html>
