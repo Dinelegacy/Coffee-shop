@@ -35,6 +35,10 @@ li::scroll-marker {
 li::scroll-marker:target-current {
     background-color: #FECB00;
 }
+li img {
+    width: 100%;
+    height: auto;
+}
 
 #bigButtons {
     width: 100%;
