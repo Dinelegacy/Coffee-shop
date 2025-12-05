@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
+    <title>Submit</title>
     <link rel="stylesheet" href="signup.css">
     <link rel="stylesheet" href="navegationBar.css">
 </head>
@@ -30,36 +30,37 @@
                 Sign-up Details
             </h1>
         </div>
-        <div class="progress">
+        <div class="progress-2">
             <div class="step active">1</div>
             <div class="line"></div>
             <div class="step">2</div>
         </div>
-
-
 
     </section>
 
     <section id="form">
         <form class="form-inputs">
             <div class="input-group">
-                <label for="firstname-input">First Name *</label>
-                <input type="text" name="firstname" id="firstname-input" placeholder="First Name" >
+                <label for="email-input">Email *</label>
+                <input type="email" name="email" id="email-input" placeholder="Email" required>
             </div>
             <div class="input-group">
-                <label for="lastname-input">Last Name *</label>
-                <input type="text" name="lastname" id="lastname-input" placeholder="Last Name" >
+                <label for="Mobil Number-input">Mobil Number *</label>
+                <input type="tel" name="mobileNumber" id="mobileNumber-input" placeholder="Mobil Number" required>
             </div>
             <div class="input-group">
-                <label for="DateofBirth-input">Date of Birth*</label>
-                <input type="date" id="DateofBirth-input" placeholder="Date of Birth " >
+                <label for="NewPassword-input">New Password *</label>
+                <input type="password" id="NewPassword-input" minlength="8" placeholder="New Password  " required>
             </div>
+            <div class="input-group">
+                <label for="RepeatPassword-input">Repeat Password *</label>
+                <input type="password" id="RepeatPassword-input" minlength="8" placeholder="Repeat Password  " required>
+            </div>
+
+
+            <button type="submit" class="login">Login</button>
 
         </form>
-
-
-        <a class="next-button" href="signupNextPage.html">Next</a>
-
 
     </section>
 
