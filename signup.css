@@ -1,0 +1,263 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+/* Center the entire app on the page */
+body {
+  background-color: #ede8e5;
+  margin: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat";
+}
+
+#header {
+  background-color: black;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  color: #ffffff;
+  justify-content: space-between;
+  padding: 12px 12px; /* added: give horizontal padding */
+}
+.signup {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  color: #ede8e5;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  letter-spacing: -0.456px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+}
+
+.step {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e9e5e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: black;
+}
+
+.step.active {
+  background: #b3701a;
+  color: white;
+}
+
+.line {
+  width: 18px;
+  height: 5px;
+  background: #e9e5e2;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 24px 12px 24px;
+  gap: 200px;
+  margin-top: 150px;
+  margin-bottom: 85px;
+}
+.input-group {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+}
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: -90px;
+}
+input[type="text"],
+input[type="date"] {
+  width: 354px;
+  border: 1px solid #a1a1a1;
+  color: #a1a1a1;
+  padding: 12px 24px;
+  border-radius: 24px;
+  background-color: #e3dedb;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #333333;
+}
+.next-button {
+  width: 354px;
+  height: 48px;
+  border-radius: 24px;
+  border: none;
+  background: #afafaf;
+  text-align: center;
+  line-height: 48px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.next-button:hover {
+  background-color: #c67500;
+  cursor: pointer;
+}
+
+/* signUp next page  */
+
+.progress-2 {
+  display: flex;
+  align-items: center;
+}
+
+.step {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #b3701a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}
+
+.step.active {
+  background: #e9e5e2;
+  color: black;
+}
+
+.line {
+  width: 18px;
+  height: 5px;
+  background: #e9e5e2;
+}
+
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 354px;
+  border: 1px solid #a1a1a1;
+  color: #a1a1a1;
+  padding: 12px 24px;
+  border-radius: 24px;
+  background-color: #e3dedb;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.login {
+  width: 354px;
+  height: 48px;
+  border-radius: 24px;
+  border: none;
+  background: #c67500;
+  text-align: center;
+  line-height: 48px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 145px;
+  cursor: pointer;
+}

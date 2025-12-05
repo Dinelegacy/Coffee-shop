@@ -1,0 +1,66 @@
+.carousel ul {
+    background-color: #FECB00;
+    margin: 0%;
+    width: 100vw;
+    display: flex;
+
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-marker-group: after;
+
+}
+.carousel ul::-webkit-scrollbar {
+    display: none;
+}
+.carousel ul::scroll-marker-group {
+    position: absolute;
+    bottom: 16rem;
+    justify-self: anchor-center;
+    
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+li {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+li::scroll-marker {
+    content: '';
+    height: 1em;
+    width: 1em;
+    background-color: #EDE8E5;
+    border-radius: 50%;
+}
+li::scroll-marker:target-current {
+    background-color: #FECB00;
+}
+
+#bigButtons {
+    width: 100%;
+    height: 134px;
+    display: inline-flex;
+    justify-content: space-evenly;
+    padding-top: 3px;
+}
+
+#bigButtons button {
+    width: 131px;
+    padding-top: 1rem;
+    padding-bottom: 0.75rem;
+    border: 1px solid #EDE8E5;
+    background-color: #C67500;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #FECB00;
+}
+
+h6 {
+    margin: auto;
+    color: #EDE8E5;
+    line-height: 1rem;
+}
