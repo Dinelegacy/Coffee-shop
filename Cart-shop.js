@@ -1,18 +1,18 @@
 import { cafeMenuData } from "./productData.js";
 
-// -------------------- Toggle Categories --------------------
+ 
 function toggleCategory(categoryName) {
   const categoryDiv = document.getElementById(categoryName);
   if (!categoryDiv) return;
-
-  // إذا كانت الفئة فارغة، قم بإنشاء المنتجات
+ 
   if (categoryDiv.innerHTML.trim() === "") {
     generateCategory(categoryName);
   }
 
-  // إظهار/إخفاء الفئة
+  
   categoryDiv.classList.toggle("active");
 }
+
 
 // -------------------- Generate Products --------------------
 function generateCategory(categoryName) {
@@ -44,7 +44,7 @@ function generateCategory(categoryName) {
     })
     .join("");
 
-  // بعد إنشاء المنتجات، أضف الأحداث لأزرار + و -
+    
   data.forEach((item) => {
     const incBtn = document.querySelector(
       `#product-id-${item.id} .fa-plus`
@@ -60,20 +60,20 @@ function generateCategory(categoryName) {
 
 // -------------------- Increment / Decrement --------------------
 function increment(id) {
-  const qtyEl = document.getElementById(id);
-  if (!qtyEl) return;
-  let quantity = parseInt(qtyEl.innerText);
+  const order = document.getElementById(id);
+  if (!order) return;
+  let quantity = parseInt(order.innerText);
   quantity++;
-  qtyEl.innerText = quantity;
+  order.innerText = quantity;
   updateCart();
 }
 
 function decrement(id) {
-  const qtyEl = document.getElementById(id);
-  if (!qtyEl) return;
-  let quantity = parseInt(qtyEl.innerText);
+  const order = document.getElementById(id);
+  if (!order) return;
+  let quantity = parseInt(order.innerText);
   if (quantity > 0) quantity--;
-  qtyEl.innerText = quantity;
+  order.innerText = quantity;
   updateCart();
 }
 
@@ -82,8 +82,8 @@ function updateCart() {
   let total = 0;
   Object.values(cafeMenuData).forEach((category) => {
     category.forEach((item) => {
-      const qtyEl = document.getElementById(item.id);
-      if (qtyEl) total += parseInt(qtyEl.innerText) * item.price;
+      const order = document.getElementById(item.id);
+      if (order) total += parseInt(order.innerText) ;
     });
   });
   const cartAmountEl = document.querySelector(".cartAmount");
