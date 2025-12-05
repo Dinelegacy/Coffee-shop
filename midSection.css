@@ -1,3 +1,41 @@
+.carousel ul {
+    background-color: #FECB00;
+    margin: 0%;
+    width: 100vw;
+    display: flex;
+
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-marker-group: after;
+
+}
+.carousel ul::-webkit-scrollbar {
+    display: none;
+}
+.carousel ul::scroll-marker-group {
+    position: absolute;
+    bottom: 16rem;
+    justify-self: anchor-center;
+    
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+li {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+li::scroll-marker {
+    content: '';
+    height: 1em;
+    width: 1em;
+    background-color: #EDE8E5;
+    border-radius: 50%;
+}
+li::scroll-marker:target-current {
+    background-color: #FECB00;
+}
+
 #bigButtons {
     width: 100%;
     height: 134px;
