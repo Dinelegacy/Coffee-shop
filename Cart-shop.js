@@ -99,8 +99,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-
-
- 
-  
