@@ -1,4 +1,4 @@
-import { cafeMenuData } from "./productData.js";
+
 
  
 function toggleCategory(categoryName) {
