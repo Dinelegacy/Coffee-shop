@@ -1,22 +1,25 @@
+section {
+    position: relative;
+    top: 144px;
+}
+
 .carousel ul {
-    background-color: #FECB00;
-    margin: 0%;
+    margin: 0;
+    padding: 0;
     width: 100vw;
     display: flex;
-
+    
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
 
     /* Placing the three circles for the carousel */
     scroll-marker-group: after;
-
 }
 
-li {
+.promo {
     flex: 0 0 100%;
     scroll-snap-align: center;
-
-
+    list-style: none;
 }
 
 /* Removing the carousel bottom bar */
@@ -27,7 +30,7 @@ li {
 /* Three circles for the carousel */
 .carousel ul::scroll-marker-group {
     position: absolute;
-    bottom: 16rem;
+    bottom: 12rem;
     justify-self: anchor-center;
     
     display: flex;
@@ -56,6 +59,7 @@ li::scroll-marker:target-current {
     display: inline-flex;
     justify-content: space-evenly;
     padding-top: 3px;
+    position: relative;
 }
 
 #bigButtons button {

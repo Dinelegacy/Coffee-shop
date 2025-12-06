@@ -4,9 +4,11 @@ footer {
     padding-top: 6rem;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    top:786px;
 }
 
-ul {
+ul.ullinks {
     margin-top: 1rem;
     margin-bottom: 3rem;
     padding: 0%;
@@ -16,6 +18,10 @@ ul {
     font-style: normal;
     font-weight: 700;
     line-height: 3rem;
+}
+
+.linkAddress, .linkContact, .linkAbout, .linkPolicy {
+    justify-content: center;
 }
 
 #socialIcons {

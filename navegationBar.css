@@ -3,6 +3,9 @@
     height: 9rem;
     display: flex;
     align-items: end;
+    position: fixed;
+    background-color: #EDE8E5;
+    z-index: 1;
 }
 #navBarContainer {
     width: 100%;
@@ -13,6 +16,7 @@
     padding-right: 1.125rem;
     justify-content: space-between;
 }
+
 
 
 .leftIcons {
