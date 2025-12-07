@@ -1,41 +1,83 @@
+body {
+  background-color: #ede8e5;
+  margin: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat";
+}
+
 #navBar {
     width: 100%;
     height: 9rem;
     display: flex;
-    align-items: end;
+  flex-direction: row;
+    align-items: flex-end;
+  
 }
+
 #navBarContainer {
     width: 100%;
     height: 5rem;
     display: inline-flex;
+    align-items: center;
     padding-left: 0.75rem;
     padding-right: 1.125rem;
     justify-content: space-between;
 }
 
-
-.leftIcons {
+.rightIcons { 
     display: flex;
-  
+    flex-direction: row;
+    gap: 1.5rem;
 }
 
-.rightIcons {
-    display: flex;
-    gap: 2rem;
+.empty_bag-icon {
+    width: 3rem;
+    height: 3rem;
 }
- 
+
+.intro {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
 
 .intro-cart {
-  color: white;
-  background-color: black;
-  text-align: center;
-  width: 100%;
-  padding: 0.5rem 0;
+    font-family: Montserrat;
+    font-size: 1.5rem;
+    font-weight: 1000;
+    text-align: center;
+    align-items: center;
 }
 
-.cart {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1rem;
+.checkout-btn  {
+    width: 90%;
+    height: 40px;
+    padding: 0 9px;
+    border-radius: 40px;
+    font-weight: 700;
+    color: white;
+    background: #C67500;
+    border-style: none;
+}
+.checkout-btn:hover {
+    background-color: #FECB00;
+    color: white;
+    border: none;
+}
+
+ .cart-footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: auto;
 }
 
