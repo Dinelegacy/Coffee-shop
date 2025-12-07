@@ -81,3 +81,7 @@ body {
     margin-top: auto;
 }
 
+..chevron_left-icon a {
+    display: inline-flex;
+    padding: 0.3rem;   
+}

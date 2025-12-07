@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Bag</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="./cart-page.css">
+  <link rel="stylesheet" href="off-screen-menu.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+
+<body>
+     <div class="off-screen-menu">
+        <div class="offMenu-content">
+            <ul class="menuList">
+                <li id="Sign-up" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Account-icon.svg" alt="user account icon">
+                        Login / Sign-up
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="menu" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Menu-icon.svg" alt="menu icon">
+                        Menu
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="favorites" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Favorite Heart-icon.svg" alt="heart icon">
+                        Favorites
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="yourBag" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/bag-icons/icon-empty_bag-white.svg" alt="empty bag icon">
+                        Your bag
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="wwu" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Work_with_Us-icon.svg" alt="Work with us icon">
+                        Work with us
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="aboutUs" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/About_Us-icon.svg" alt="about us icon">
+                        About us
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <nav id="navBar" class="top-navBar">
+<div id="navBarContainer">
+ <div class="leftIcons">
+    <div class="chevron_left-icon">
+        <a href="menu.html">   <!-- change to your menu page file -->
+            <img src="./assets/functional-icons/chevron_black_left-icon.svg" 
+                 alt="chevron black left icon">
+        </a>
+    </div>
+</div>
+<div class="rightIcons">
+    <div class="empty_bag-icon">
+        <img src="./assets/functional-icons/bag-icons/icon-empty_bag_0.svg" alt="empty bag icon">
+    </div>
+
+<div class="ham-menu">
+        <img src="./assets/functional-icons/hamburger-menu-icon.svg" alt="hamburger menu icon">
+    </div>
+    </div>
+</div>
+</nav>
+<div class="off-screen-menu">
+    <div class="offMenu-content">
+        <ul class="menuList">
+            <!-- your menu items -->
+        </ul>
+    </div>
+</div>
+<div class="intro">
+  <h2 class="intro-cart">READY TO ENJOY?</h2>
+</div>
+
+<div class="cart-container">
+  <div class="cart"></div>
+</div>
+
+<footer class="cart-footer">
+    <button class="checkout-btn">Go to the Checkout</button>
+</footer>
+
+
+    <script type="module" src="./cart-page.js"></script>
+</body>
+</html>
