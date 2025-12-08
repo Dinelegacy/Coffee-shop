@@ -4,6 +4,40 @@ body {
   background: #f3efe9; /* body remains neutral */
 }
 
+/* NavBar */
+
+#navBar {
+    width: 100%;
+    height: 9rem;
+    display: flex;
+    align-items: end;
+}
+#navBarContainer {
+    width: 100%;
+    height: 5rem;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 0.75rem;
+    padding-right: 1.125rem;
+    justify-content: space-between;
+}
+
+
+.leftIcons {
+    display: flex;
+}
+.chevron_left-icon {
+    display: none;
+}
+
+.rightIcons {
+    display: flex;
+    gap: 2rem;
+}
+.empty_bag-icon {
+    display: none;
+}
+
 /* Top Background Image - ONLY here should have background */
 .top-background {
   position: relative;
@@ -91,3 +125,30 @@ body {
 }
 
 
+/* Footer Section */
+
+footer {
+    width: 300px;
+    display: inline-flex;
+    padding-top: 6rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    padding: 0%;
+    list-style: none;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3rem;
+}
+
+#socialIcons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 72px;
+}
