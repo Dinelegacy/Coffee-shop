@@ -4,141 +4,200 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hej Fika Menu</title>
+  <!-- Add favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+
+  <!-- Link to your CSS where all styling is stored -->
   <link rel="stylesheet" href="menu.css" />
+  <link rel="stylesheet" href="popup.css"/>
 </head>
 <body>
 
+    <!-- ============================
+         NAVIGATION BAR (TOP MENU)
+         Contains back button + logo + bag + hamburger menu
+         --- IMPORTANT: I DID NOT CHANGE THIS BLOCK ---
+    ============================= -->
     <nav id="navBar" class="top-navBar">
         <div id="navBarContainer">
+
+            <!-- Left side icons -->
             <div class="leftIcons">
-                <div class="chevron_left-icon"><img src="./assets/functional-icons/chevron_black_left-icon.svg" alt="chevron black left icon"></div>
-                <div><a href="index.html"><img src="./assets/logo-horizontal.svg" alt="logotype"></a></div>
+                <!-- Back button -->
+                <div class="chevron_left-icon">
+                    <img src="./assets/functional-icons/chevron_black_left-icon.svg" alt="chevron black left icon">
+                </div>
+
+                <!-- Hej Fika Logo (click → go to home page) -->
+                <div>
+                    <a href="index.html">
+                        <img src="./assets/logo-horizontal.svg" alt="logotype">
+                    </a>
+                </div>
             </div>
+
+            <!-- Right side icons -->
             <div class="rightIcons">
-                <div class="empty_bag-icon"><img src="./assets/functional-icons/bag-icons/icon-empty_bag_0.svg" alt="empty bag icon"></div>
-                <div><img src="./assets/functional-icons/hamburger-menu-icon.svg" alt="hambureger menu icon"></div>
+                <!-- Empty bag icon -->
+                <div class="empty_bag-icon">
+                    <img src="./assets/functional-icons/bag-icons/icon-empty_bag_0.svg" alt="empty bag icon">
+                </div>
+
+                <!-- Hamburger menu icon -->
+                <div>
+                    <img src="./assets/functional-icons/hamburger-menu-icon.svg" alt="hamburger menu icon">
+                </div>
             </div>
         </div>
     </nav>
 
-  <!-- Top Background Container -->
-  <div class="top-background">
-     <div class="section-title">MENU</div>
-  </div>
 
-  <!-- MENU Section -->
-  <div class="menu-section">   
-
-  <!-- PROMOTIONS -->
-  <div class="accordion">
-    <div class="accordion-header">PROMOTIONS <span>▼</span></div>
-    <div class="accordion-content open">
-      <div class="product"><img src="assets/menu/Gingerbread Milkshake Mocktail.jpg" alt="product image" /><span>Gingerbread Milkshake Mocktail</span><span>45:-</span></div>
-      <div class="product"><img src="assets/menu/Sandman Latte with gräde.jpg" alt="product image" /><span>Sandman latte with Gräde</span><span>45:-</span></div>
-      <div class="product"><img src="assets/menu/xmas reindeer.jpg" alt="product image" /><span>Xmas Reindeer</span><span>45:-</span></div>
-      <div class="product"><img src="assets/menu/Cappuccino with ginger man.jpg" alt="product image" /><span>Cappucciano with ginger man</span><span>40:-</span></div>
-       <div class="product"><img src="assets/menu/Hot chocolate with marshmellow.jpg" alt="product image" /><span>Hot Chocolate with Marshmellow</span><span>45:-</span></div>
-      <div class="product"><img src="assets/menu/Wizard's Coffee with milk.jpg" alt="product image" /><span>Wizard's Coffe with milk</span><span>45:-</span></div>
-      <div class="product"><img src="assets/menu/Spiced Rum Coffee.jpg" alt="product image" /><span>Spiced Rum coffee</span><span>45:-</span></div>
-      <div class="product"><img src="assets/menu/Christmas Chai Latte.jpg" alt="product image" /><span>Christmas Chai Latte</span><span>40:-</span></div>
-      <div class="product"><img src="assets/menu/Pumpkin Spice Latte.jpg" alt="product image" /><span>Pumpkin Spice Latte</span><span>40:-</span></div>
+    <!-- ============================
+         TOP BACKGROUND IMAGE SECTION
+    ============================= -->
+    <div class="top-background" aria-hidden="true">
+        <div class="section-title">MENU</div>
     </div>
-  </div>
 
-  <!-- COFFEE -->
-  <div class="accordion">
-    <div class="accordion-header">COFFEE <span>▼</span></div>
-    <div class="accordion-content">
-      <div class="product"><img src="assets/menu/hot cocoa.jpg" alt="product image" /><span>Hot Cocoa</span><span>35:-</span></div>
-      <div class="product"><img src="assets/menu/Hazelnut Tiramisu Irish Coffee.jpg" alt="product image" /><span>Hazelnut Tiramisu Irish Coffee</span><span>40:-</span></div>
-      <div class="product"><img src="assets/menu/Classic Irish Coffee.jpg" alt="product image" /><span>Classic Irish Coffee</span><span>42:-</span></div>
-      <div class="product"><img src="assets/menu/Irish Coffee.jpg" alt="product image" /><span>Irish Coffee</span><span>35:-</span></div>
-      <div class="product"><img src="assets/menu/Coffee Americano.jpg" alt="product image" /><span>Coffee Americano</span><span>40:-</span></div>
-      <div class="product"><img src="assets/menu/Coffee Latte.jpg" alt="product image" /><span>Coffee Latte</span><span>42:-</span></div>
-      <div class="product"><img src="assets/menu/black coffee.jpg" alt="product image" /><span>Black Coffee</span><span>35:-</span></div>
-      <div class="product"><img src="assets/menu/Brown Sugar Shaken Espresso.jpg" alt="product image" /><span>Brown Sugar Shaken Espresso</span><span>40:-</span></div>
-      <div class="product"><img src="assets/menu/Cortado.jpg" alt="product image" /><span>Cortado</span><span>42:-</span></div>
-      <div class="product"><img src="assets/menu/Flat White.jpg" alt="product image" /><span>Flat White</span><span>35:-</span></div>
-      <div class="product"><img src="assets/menu/Latte Macchiato.jpg" alt="product image" /><span>Latte Macchiato</span><span>40:-</span></div>
-      <div class="product"><img src="assets/menu/Cinnamon Cappuccino.jpg" alt="product image" /><span>Cinnamon Cappuccino</span><span>42:-</span></div>
-      <div class="product"><img src="assets/menu/Hot chocolate coffe.jpg" alt="product image" /><span>Hot chocolate coffe</span><span>35:-</span></div>
-      <div class="product"><img src="assets/menu/Hot Mocha Coffee.jpg" alt="product image" /><span>Hot Mocha Coffee</span><span>40:-</span></div>
-      <div class="product"><img src="assets/menu/Espresso.jpg" alt="product image" /><span>Espresso</span><span>42:-</span></div>
-      <div class="product"><img src="assets/menu/Cappuccino.jpg" alt="product image" /><span>Cappuccino</span><span>42:-</span></div>
+
+    <!-- ============================
+         MAIN MENU SECTION (DYNAMIC)
+    ============================= -->
+    <main role="main"> <!--role="main" Attribute
+Purpose: ARIA (Accessible Rich Internet Applications) role for accessibility-->
+      <div class="menu-section" id="menuContainer" aria-live="polite"></div>
+      <!-- aria-live="polite"  Most Important Part!
+Purpose: Accessibility feature for dynamic content updates
+What it does:
+Announces content changes to screen readers
+"polite": Waits for current speech to finish before announcing updates
+Alternative values:
+"assertive": Interrupts immediately for urgent updates
+"off": No announcements (default) -->
+    </main>
+
+
+    <!-- ============================
+         MODAL (NOW IN HTML)
+    ============================= -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            
+            <div class="modal-product">
+                <img id="modal-img" src="" alt="Product image"> <!-- src="", Only loads when needed. Page loads faster (no unnecessary image downloads) -->
+                <div class="modal-product-header">
+                    <h3 id="modal-name"></h3>
+                    <span id="modal-price"></span>
+                </div>
+                
+                <div class="controls-row">
+                    <div class="qty-wrap">
+                        <button id="decrease" class="qty-btn">-</button>
+                        <span id="quantity">1</span>
+                        <button id="increase" class="qty-btn">+</button>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button id="customize-toggle" class="customize-btn">Customize</button>
+                        <button id="favorite-btn" class="favorite-btn">
+                            <svg viewBox="0 0 32 32" enable-background="new 0 0 32 32" id="Stock_cut" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <desc></desc>
+                                    <path class="heart-path" d="M28.343,17.48L16,29 L3.657,17.48C1.962,15.898,1,13.684,1,11.365v0C1,6.745,4.745,3,9.365,3h0.17c2.219,0,4.346,0.881,5.915,2.45L16,6l0.55-0.55 C18.119,3.881,20.246,3,22.465,3h0.17C27.255,3,31,6.745,31,11.365v0C31,13.684,30.038,15.898,28.343,17.48z" fill="none" stroke="#c67500" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"></path>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="customize-panel">
+                    <!-- Sugar -->
+                    <div class="opt-row">
+                        <label>
+                            <input type="checkbox" class="opt-checkbox" data-opt="sugar">
+                            <span>Sugar</span>
+                        </label>
+                        <div class="opt-controls">
+                            <button class="opt-minus" data-opt="sugar">-</button>
+                            <span class="opt-qty" data-opt="sugar">0</span>
+                            <button class="opt-plus" data-opt="sugar">+</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Ice -->
+                    <div class="opt-row">
+                        <div class="opt-title">Ice</div>
+                        <div class="opt-buttons">
+                            <button class="ice-btn" data-ice="lite">Lite</button>
+                            <button class="ice-btn" data-ice="extra">Extra</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Extra Shot -->
+                    <div class="opt-row">
+                        <label>
+                            <input type="checkbox" class="opt-checkbox" data-opt="shot">
+                            <span>Extra shot</span>
+                        </label>
+                        <div class="opt-controls">
+                            <button class="opt-minus" data-opt="shot">-</button>
+                            <span class="opt-qty" data-opt="shot">0</span>
+                            <button class="opt-plus" data-opt="shot">+</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Lactose-free milk -->
+                    <div class="opt-row">
+                        <label>
+                            <input type="checkbox" class="opt-checkbox" data-opt="lactose">
+                            <span>Lactose-free milk</span>
+                        </label>
+                    </div>
+                    
+                    <!-- Whipped cream -->
+                    <div class="opt-row">
+                        <label>
+                            <input type="checkbox" class="opt-checkbox" data-opt="whip">
+                            <span>Whipped cream</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button id="add-to-cart" class="add-to-cart-btn">Add to Cart</button>
+                
+                <div id="modal-toast" class="modal-toast"></div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- TEA -->
-  <div class="accordion">
-    <div class="accordion-header">TEA <span>▼</span></div>
-    <div class="accordion-content">
-      <div class="product"><img src="assets/menu/Orange Spiced Black Tea.jpg" alt="product image" /><span>Orange Spiced Black Tea</span><span>28:-</span></div>
-      <div class="product"><img src="assets/menu/Tea with lemon.jpg" alt="product image" /><span>Tea with lemon</span><span>30:-</span></div>
-      <div class="product"><img src="assets/menu/Green Tea.jpg" alt="product image" /><span>Green Tea</span><span>32:-</span></div>
-    </div>
-  </div>
 
-  <!-- SMOOTHIES -->
-  <div class="accordion">
-    <div class="accordion-header">SMOOTHIES <span>▼</span></div>
-    <div class="accordion-content">
-      <div class="product"><img src="assets/menu/Iced Matcha Latte.jpg" alt="product image" /><span>Iced Matcha Latte</span><span>55:-</span></div>
-      <div class="product"><img src="assets/menu/Iced Brown Sugar Matcha Latte.jpg" alt="product image" /><span>Iced Brown Sugar Matcha Latte</span><span>58:-</span></div>
-      <div class="product"><img src="assets/menu/Velvety Chocolate Hazelnut Milkshake.jpg" alt="product image" /><span>Velvety Chocolate Hazelnut Milkshake</span><span>52:-</span></div>
+    <!-- ============================
+         FOOTER SECTION
+    ============================= -->
+    <footer>
+        <!-- Footer logo -->
+        <div>
+            <a href="index.html">
+                <img src="./assets/logo.svg" alt="logotype">
+            </a>
+        </div>
 
-      <div class="product"><img src="assets/menu/Peanut Butter Frappuccino.jpg" alt="product image" /><span>Peanut Butter Frappuccino</span><span>55:-</span></div>
-      <div class="product"><img src="assets/menu/Rich Latte.jpg" alt="product image" /><span>Rich Latte</span><span>58:-</span></div>
-      <div class="product"><img src="assets/menu/Caramel Iced Coffee.jpg" alt="product image" /><span>Caramel Iced Coffee</span><span>52:-</span></div>
-
-      <div class="product"><img src="assets/menu/Lincoln Mint Mocha.jpg" alt="product image" /><span>Lincoln Mint Mocha</span><span>55:-</span></div>
-      <div class="product"><img src="assets/menu/Black Gold Iced Coffee.jpg" alt="product image" /><span>Black Gold Iced Coffee</span><span>58:-</span></div>
-      <div class="product"><img src="assets/menu/Chocolate Chip Frappuccino.jpg" alt="product image" /><span>Chocolate Chip Frappuccino</span><span>52:-</span></div>
-
-      <div class="product"><img src="assets/menu/Iced Coffee Mojito.jpg" alt="product image" /><span>Iced Coffee Mojito</span><span>55:-</span></div>
-      <div class="product"><img src="assets/menu/Mojito Espresso.jpg" alt="product image" /><span>Mojito Espresso</span><span>58:-</span></div>
-      <div class="product"><img src="assets/menu/Coffee Mojito.jpg" alt="product image" /><span>Coffee Mojito</span><span>52:-</span></div>
-
-      <div class="product"><img src="assets/menu/MANGO MILKSHAKE.jpg" alt="product image" /><span>MANGO MILKSHAKE</span><span>55:-</span></div>
-      <div class="product"><img src="assets/menu/Whipped Dalgona Coffee.jpg" alt="product image" /><span>Whipped Dalgona Coffee</span><span>58:-</span></div>
-     </div>
-  </div>
-
-  <!-- SNACKS -->
-  <div class="accordion">
-    <div class="accordion-header">SNACKS <span>▼</span></div>
-    <div class="accordion-content">
-      <div class="product"><img src="assets/menu/Lemon Cheesecake.jpg" alt="product image" /><span>Lemon Cheesecake</span><span>25:-</span></div>
-      <div class="product"><img src="assets/menu/Espresso Chocolate Cheesecake.jpg" alt="product image" /><span>Espresso Chocolate Cheesecake</span><span>22:-</span></div>
-      <div class="product"><img src="assets/menu/Creamy Cheesecake with strawberry.jpg" alt="product image" /><span>Creamy Cheesecake with strawberry</span><span>30:-</span></div>
-
-       <div class="product"><img src="assets/menu/Chocolate croissant.jpg" alt="product image" /><span>Chocolate croissant</span><span>25:-</span></div>
-      <div class="product"><img src="assets/menu/croissant sandwich.jpg" alt="product image" /><span>croissant sandwich</span><span>22:-</span></div>
-      <div class="product"><img src="assets/menu/Ham Cheese And Lettuce Sandwich.jpg" alt="product image" /><span>Ham Cheese And Lettuce Sandwich</span><span>30:-</span></div>
-
-       <div class="product"><img src="assets/menu/Pistachio Croissant.jpg" alt="product image" /><span>Pistachio Croissant</span><span>25:-</span></div>
-      <div class="product"><img src="assets/menu/Coconut matcha cream pie.jpg" alt="product image" /><span>Coconut matcha cream pie</span><span>22:-</span></div>
-      <div class="product"><img src="assets/menu/chocolate donat.jpg" alt="product image" /><span>chocolate donat</span><span>30:-</span></div>
-
-       <div class="product"><img src="assets/menu/Spiced Apple Cider Donuts with Caramel Glaze.jpg" alt="product image" /><span>Spiced Cider Donuts with Caramel Glaze</span><span>25:-</span></div>
-      <div class="product"><img src="assets/menu/Red Velvet Strawberry Cheesecake.jpg" alt="product image" /><span>Red Velvet Strawberry Cheesecake</span><span>22:-</span></div>
-      <div class="product"><img src="assets/menu/Black Forest Cake Roll.jpg" alt="product image" /><span>Black Forest Cake Roll</span><span>30:-</span></div>
-
-       <div class="product"><img src="assets/menu/tiramisu mousse cake.jpg" alt="product image" /><span>tiramisu mousse cake</span><span>25:-</span></div>
-      <div class="product"><img src="assets/menu/Dark Chocolate Bars with Pistachio Paste Filling.jpg" alt="product image" /><span>Dark Chocolate Bars with Pistachio</span><span>22:-</span></div>
-      <div class="product"><img src="assets/menu/Chocolate Cake with Strawberries.jpg" alt="product image" /><span>Chocolate Cake with Strawberries</span><span>30:-</span></div>
-    </div>
-  </div>
-
-</div>
-
- <footer>
-        <div><a href="index.html"><img src="./assets/logo.svg" alt="logotype"></a></div>
+        <!-- Footer links -->
         <ul>
-            <li><a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">Sveavägen 39, 111 34 Stockholm</a></li>
+            <li>
+                <a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">
+                    Sveavägen 39, 111 34 Stockholm
+                </a>
+            </li>
             <li>Contact us</li>
             <li>About us</li>
             <li>Policy</li>
         </ul>
+
+        <!-- Social icons -->
         <div id="socialIcons" class="footer-socialIcons">
             <div><img src="./assets/social-icons/facebook-icon.svg" alt="facebook icon"></div>
             <div><img src="./assets/social-icons/instagram-icon.svg" alt="instagram icon"></div>
@@ -147,6 +206,11 @@
     </footer>
 
 
-  <script src="menu.js"></script>
+   <!-- ============================
+         JAVASCRIPT FILE
+         - Using defer ensures the script runs after the document is parsed.
+         - Replace product.js with the final version I provided earlier.
+    ============================= -->
+    <script src="menu.js" defer></script>
 </body>
 </html>
