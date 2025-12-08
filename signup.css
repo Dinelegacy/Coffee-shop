@@ -102,6 +102,7 @@ body {
   color: #ffffff;
   justify-content: space-between;
   padding: 12px 12px; /* added: give horizontal padding */
+  margin-top: 150px;
 }
 .signup {
   display: flex;
