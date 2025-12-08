@@ -1,5 +1,7 @@
-const favorites = [];
+const favorites = [menuData];
 const favButtons = document.querySelectorAll('.favorite-btn');
+const favoriteList = document.querySelector('.favorite-items');
+
 
 favButtons.forEach(button => {
     button.addEventListener('click', (event)=>{
