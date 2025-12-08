@@ -1,0 +1,204 @@
+/* =========================================================
+   POPUP / MODAL ONLY
+========================================================= */
+
+/* Overlay */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Popup Box */
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 90%;
+    max-width: 420px;
+    position: relative;
+    animation: popupFade 0.25s ease;
+}
+
+/* Close Button */
+.modal-content .close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 22px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Product Image */
+.modal-product img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    background: #f5f5f5;
+    border-radius: 6px;
+}
+
+/* Header: Title + Price */
+.modal-product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-product-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#modal-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #c67500;
+}
+
+/* Quantity & Actions */
+.controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+}
+
+/* Quantity Controls */
+.qty-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid #c67500;
+    font-size: 16px;
+    cursor: pointer;
+    background: #fff;
+}
+
+/* Buttons Row */
+.modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Customize Button */
+.customize-btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    background: #f0f0f0;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Favorite Button */
+.favorite-btn {
+    border-radius: 50%;
+    border: 2px solid #c67500;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.favorite-btn.favorited svg {
+    fill: #ff4444;
+}
+
+/* Customization Panel */
+#customize-panel {
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fafafa;
+    border: 1px solid #eee;
+    display: none;
+}
+
+.opt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.opt-title {
+    font-weight: 700;
+}
+
+.opt-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.opt-plus,
+.opt-minus {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+}
+.ice-btn.active {
+  background-color: #d4801f; /* highlight selected button */
+  color: white;
+}
+
+
+/* Add To Cart Button */
+.add-to-cart-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    background: #c67500;
+    color: white;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Toast */
+.modal-toast {
+    display: none;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Animation */
+@keyframes popupFade {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
