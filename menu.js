@@ -9,7 +9,7 @@ const backgrounds = {
 };
 
 // Apply background ONLY to top section
-function setTopBackground(type) {
+ function setTopBackground(type) {
   const topBg = document.querySelector('.top-background');
   const imageUrl = backgrounds[type] || backgrounds.default;
   topBg.style.backgroundImage = `url(${imageUrl})`;
@@ -117,7 +117,7 @@ function addToCartHandler() {
 /* ---------------------------
    MENU DATA (Only images, names, prices)
 ---------------------------- */
-const menuData = {
+ const menuData = {
   promotions: {
     items: [
       { img: "assets/menu/Gingerbread Milkshake Mocktail.jpg", name: "Gingerbread Milkshake Mocktail", price: "45:-" },
@@ -200,7 +200,7 @@ const menuData = {
 /* ---------------------------
    GENERATE MENU (Only loads images/data)
 ---------------------------- */
-function generateMenu() {
+export function generateMenu() {
   const container = document.getElementById("menuContainer");
   if (!container) return;
   
