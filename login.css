@@ -171,6 +171,17 @@ label {
   background-color: #c67500;
   cursor: pointer;
 }
+
+
+
+.goTo-signupPage {
+  margin-top: 16px;
+  font-size: 24px;
+  color: #7d7d7d;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 100px;
+}
 .login {
   width: 354px;
   height: 48px;
@@ -183,4 +194,5 @@ label {
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
+  margin-top: 120px;
 }
