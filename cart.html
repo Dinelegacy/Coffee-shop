@@ -6,8 +6,9 @@
   <title>Your Bag</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="./cart-page.css">
-  <link rel="stylesheet" href="off-screen-menu.css">
+  <link rel="stylesheet" href="./off-screen-menu.css">
   <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="./bag.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,9 +76,9 @@
     </div>
 </div>
 <div class="rightIcons">
-    <span class="bag-item-count">0</span>
     <div class="empty_bag-icon">
         <img src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="empty bag icon">
+        <span class="bag-item-count">0</span>
     </div>
 
 <div class="ham-menu">
@@ -92,20 +93,21 @@
 </div>
 
 
- <div class="cart-items"></div>
+    <main>
+    <div class="cart-items"></div>
 
-<div class="cart-summary">
-    <div class="row1">
+    <div class="cart-summary">
+      <div class="row1">
         <span>Total sum</span>
-        <span id="cartAmount" class="total-sum">00,00 SEK</span>
-    </div>
+        <span id="total-sum" class="total-sum">00.00 SEK</span>
+      </div>
 
-    <div class="row2">
+      <div class="row2">
         <span>VAT included 12%</span>
-        <span class="vat">00,00 SEK</span>
+        <span id="vat-sum" class="vat">00.00 SEK</span>
+      </div>
     </div>
-</div>
-
+  </main>
 
  <div class="cart-footer">
     <button class="checkout-btn">Go to the Checkout</button></div>
@@ -126,6 +128,6 @@
 </footer>
 
 
-    <script src="./cart-page.js"></script>
+    <script type="module" src="./cart.js"></script>
 </body>
 </html>

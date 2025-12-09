@@ -1,0 +1,69 @@
+// menu-cart.js
+import { addItemToCart, updateBagCount } from "./cart-handler.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupModalOverrides();
+  setupAddToCartButton();
+  updateBagCount();
+
+
+  const bag = document.querySelector(".empty_bag-icon");
+  if (bag) {
+    bag.style.cursor = "pointer";
+    bag.addEventListener("click", () => {
+      window.location.href = "./cart.html";
+    });
+  }
+});
+// -------------------- Override showModal from menu.js --------------------
+function setupModalOverrides() {
+  const originalShowModal = window.showModal;
+
+  window.showModal = function(name, price, img) {
+    originalShowModal(name, price, img);
+
+    // Ensure base price saved
+    const inlinePrice = document.getElementById("inline-price");
+    inlinePrice.dataset.base = Number(price);
+    inlinePrice.textContent = price + ":-";
+
+    // Attach + and - controls once
+    setupQuantityButtons();
+  };
+}
+
+// -------------------- Quantity Buttons --------------------
+function setupQuantityButtons() {
+  const quantity = document.getElementById("quantity");
+  const inlinePrice = document.getElementById("inline-price");
+  const base = Number(inlinePrice.dataset.base);
+
+  document.getElementById("increase").onclick = () => {
+    let qty = Number(quantity.textContent) + 1;
+    quantity.textContent = qty;
+    inlinePrice.textContent = qty * base + ":-";
+  };
+
+  document.getElementById("decrease").onclick = () => {
+    let qty = Number(quantity.textContent);
+    if (qty > 1) qty--;
+    quantity.textContent = qty;
+    inlinePrice.textContent = qty * base + ":-";
+  };
+}
+
+// -------------------- Add to Cart Button --------------------
+function setupAddToCartButton() {
+  const btn = document.getElementById("add-to-cart");
+  btn.addEventListener("click", () => {
+    const name = document.getElementById("modal-name").textContent;
+    const img = document.getElementById("modal-img").src;
+    const qty = Number(document.getElementById("quantity").textContent);
+    const basePrice = Number(document.getElementById("inline-price").dataset.base);
+
+    addItemToCart(name, basePrice, img, qty);
+
+    // Close modal
+    document.getElementById("productModal").style.display = "none";
+  });
+}

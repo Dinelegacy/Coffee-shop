@@ -26,17 +26,6 @@ body {
     justify-content: space-between;
 }
 
-.rightIcons { 
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-}
-
-.empty_bag-icon {
-    width: 3rem;
-    height: 3rem;
-}
-
 .intro {
     width: 100%;
     height: 2.7rem;
