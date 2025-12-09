@@ -200,7 +200,7 @@ function addToCartHandler() {
 /* ---------------------------
    GENERATE MENU (Only loads images/data)
 ---------------------------- */
-export function generateMenu() {
+function generateMenu() {
   const container = document.getElementById("menuContainer");
   if (!container) return;
   
