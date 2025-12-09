@@ -96,17 +96,9 @@ body {
   background-color: black;
   height: 49px;
   display: flex;
-  align-items: center;
   max-width: 600px;
   width: 100%;
-  color: #ffffff;
-  justify-content: space-between;
-  padding: 12px 12px; /* added: give horizontal padding */
   margin-top: 150px;
-}
-.signup {
-  display: flex;
-  align-items: center;
 }
 
 h1 {
@@ -114,47 +106,22 @@ h1 {
   font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
-  letter-spacing: -0.456px;
   text-transform: uppercase;
   margin: 0;
-}
-
-.progress {
-  display: flex;
-  align-items: center;
-}
-
-.step {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #e9e5e2;
-  display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
-  font-weight: 700;
-  color: black;
-}
-
-.step.active {
-  background: #b3701a;
-  color: white;
-}
-
-.line {
-  width: 18px;
-  height: 5px;
-  background: #e9e5e2;
+  display: flex;
+  height: 49px;
+  width: 100%;
+  text-transform: uppercase;
 }
 
 #form {
   display: flex;
   flex-direction: column;
   padding: 12px 24px 12px 24px;
-  gap: 200px;
   margin-top: 150px;
-  margin-bottom: 85px;
 }
 .input-group {
   gap: 8px;
@@ -169,7 +136,7 @@ h1 {
   margin-top: -90px;
 }
 input[type="text"],
-input[type="date"] {
+input[type="password"] {
   width: 354px;
   border: 1px solid #a1a1a1;
   color: black;
@@ -205,59 +172,17 @@ label {
   cursor: pointer;
 }
 
-/* signUp next page  */
 
-.progress-2 {
-  display: flex;
-  align-items: center;
+
+.goTo-signupPage {
+  margin-top: 16px;
+  font-size: 24px;
+  color: #7d7d7d;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 100px;
 }
-
-.step-active-2 {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #b3701a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  font-weight: 700;
-  color: white;
-}
-
-.step-2 {
-  background: #e9e5e2;
-  color: black;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.line-2 {
-  width: 18px;
-  height: 5px;
-  background: #e9e5e2;
-}
-
-input[type="email"],
-input[type="tel"],
-input[type="password"] {
-  width: 354px;
-  border: 1px solid #a1a1a1;
-  color: black;
-  padding: 12px 24px;
-  border-radius: 24px;
-  background-color: #e3dedb;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-.Sign-up {
+.login {
   width: 354px;
   height: 48px;
   border-radius: 24px;
@@ -266,8 +191,8 @@ input[type="password"] {
   text-align: center;
   line-height: 48px;
   color: #ffffff;
-  font-size: 16px;  
+  font-size: 16px;
   font-weight: 700;
-  margin-top: 145px;
   cursor: pointer;
+  margin-top: 120px;
 }
