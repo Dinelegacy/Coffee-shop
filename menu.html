@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hej Fika Menu</title>
+
+  <link rel="stylesheet" href="menu.css" />
+  <link rel="stylesheet" href="popup.css"/>
+</head>
+<body>
+
+<nav id="navBar" class="top-navBar">
+    <div id="navBarContainer">
+        <div class="leftIcons">
+            <div class="chevron_left-icon">
+                <img src="./assets/functional-icons/chevron_black_left-icon.svg">
+            </div>
+
+            <div>
+                <a href="index.html">
+                    <img src="./assets/logo-horizontal.svg">
+                </a>
+            </div>
+        </div>
+
+        <div class="rightIcons">
+            <div class="empty_bag-icon">
+                <img src="./assets/functional-icons/bag-icons/icon-empty_bag_0.svg">
+            </div>
+
+            <div>
+                <img src="./assets/functional-icons/hamburger-menu-icon.svg">
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="top-background">
+    <div class="section-title">MENU</div>
+</div>
+
+<main>
+  <div class="menu-section" id="menuContainer"></div>
+</main>
+
+<div id="productModal" class="modal">
+    <div class="modal-content">
+
+        <div class="modal-product">
+
+            <!-- Close -->
+            <span class="close">&times;</span>
+
+            <!-- TOP ROW -->
+            <div class="modal-top-row">
+                <div class="modal-image-wrap">
+                    <img id="modal-img" src="">
+                </div>
+
+                <div class="modal-title-wrap">
+                    <h3 id="modal-name"></h3>
+                </div>
+
+                <div class="favorite-icon-static">
+    <img src="assets/functional-icons/Favorite Heart-icon.svg" alt="favorite">
+</div>
+
+            </div>
+
+            <!-- BOTTOM ROW -->
+            <div class="modal-bottom-row">
+                <div class="qty-wrap">
+                    <button id="decrease" class="qty-btn">-</button>
+                    <span id="quantity">1</span>
+                    <button id="increase" class="qty-btn">+</button>
+                </div>
+
+                <button id="add-to-cart" class="add-to-cart-inline">
+                    <span>Add to Cart</span>
+                    <span id="inline-price"></span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div>
+        <a href="index.html">
+            <img src="./assets/logo.svg">
+        </a>
+    </div>
+
+    <ul>
+        <li>
+            <a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">
+                Sveavägen 39, 111 34 Stockholm
+            </a>
+        </li>
+        <li>Contact us</li>
+        <li>About us</li>
+        <li>Policy</li>
+    </ul>
+
+    <div id="socialIcons" class="footer-socialIcons">
+        <div><img src="./assets/social-icons/facebook-icon.svg"></div>
+        <div><img src="./assets/social-icons/instagram-icon.svg"></div>
+        <div><img src="./assets/social-icons/github-icon.svg"></div>
+    </div>
+</footer>
+
+<script src="menu.js" defer></script>
+</body>
+</html>
