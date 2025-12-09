@@ -1,0 +1,23 @@
+#favorite-btn {
+    font-size: 24px;
+    margin-right: -25px;
+    background: #ffffff;             
+    border-radius: 50%;               
+    width: 40px;                     
+    height: 40px;                     
+    border: 2px solid #c67500;               
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: auto;               
+    transition: all 0.2s ease;
+}
+
+
+#favorite-btn.active {
+    background: #ffebee;            
+    box-shadow: 0 3px 8px rgba(255,0,0,0.15);
+    transform: scale(1.08);
+}
