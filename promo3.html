@@ -8,16 +8,66 @@
     <link rel="stylesheet" href="navegationBar.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="midSection.css">
+    <link rel="stylesheet" href="off-screen-menu.css">
 
     <!-- Promo Style -->
-     <link rel="stylesheet" href="promo.css">
+    <link rel="stylesheet" href="promo.css">
 
+    <!-- Font Family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
+    <div class="off-screen-menu">
+        <div class="offMenu-content">
+            <ul class="menuList">
+                <li id="Sign-up" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Account-icon.svg" alt="user account icon">
+                        Login / Sign-up
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="menu" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Menu-icon.svg" alt="menu icon">
+                        Menu
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="favorites" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Favorite Heart-icon.svg" alt="heart icon">
+                        Favorites
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="yourBag" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/bag-icons/icon-empty_bag-white.svg" alt="empty bag icon">
+                        Your bag
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="wwu" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Work_with_Us-icon.svg" alt="Work with us icon">
+                        Work with us
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="aboutUs" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/About_Us-icon.svg" alt="about us icon">
+                        About us
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+            </ul>
+        </div>
+    </div>
     <nav id="navBar" class="top-navBar">
         <div id="navBarContainer">
             <div class="leftIcons">
@@ -26,7 +76,11 @@
             </div>
             <div class="rightIcons">
                 <div class="empty_bag-icon"><img src="./assets/functional-icons/bag-icons/icon-empty_bag_0.svg" alt="empty bag icon"></div>
-                <div><img src="./assets/functional-icons/hamburger-menu-icon.svg" alt="hambureger menu icon"></div>
+                <div class="ham-menu" >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -50,11 +104,11 @@ They are handled with great care, but due to the fact that products with differe
     </section>
     <footer>
         <div><a href="index.html"><img src="./assets/logo.svg" alt="logotype"></a></div>
-        <ul>
-            <li><a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">Sveavägen 39, 111 34 Stockholm</a></li>
-            <li>Contact us</li>
-            <li>About us</li>
-            <li>Policy</li>
+        <ul class="ullinks">
+            <li class="linkAddress"><a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">Sveavägen 39, 111 34 Stockholm</a></li>
+            <li class="linkContact">Contact us</li>
+            <li class="linkAbout">About us</li>
+            <li class="linkPolicy">Policy</li>
         </ul>
         <div id="socialIcons" class="footer-socialIcons">
             <div><img src="./assets/social-icons/facebook-icon.svg" alt="facebook icon"></div>
@@ -64,6 +118,7 @@ They are handled with great care, but due to the fact that products with differe
     </footer>
 
     <script src="script.js"></script>
-    <script src="menu.js"></script>
+    <script src="index.js"></script>
+    <script src="promos.js"></script>
 </body>
 </html>
