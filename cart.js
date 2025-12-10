@@ -12,11 +12,6 @@ hamMenu.addEventListener('click', () => {
 }); 
 
 
-
-
-
-
-
 let cart = [];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -40,7 +35,7 @@ function renderCart() {
   container.innerHTML = "";
 
   if (cart.length === 0) {
-    container.innerHTML = `<p class="empty-cart">Your cart is empty.</p>`;
+    container.innerHTML = `<div class="empty-cart-message">Your cart is empty.</div>`;
     totalEl.textContent = "00.00 SEK";
     vatEl.textContent = "00.00 SEK";
     return;
