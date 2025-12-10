@@ -95,7 +95,7 @@ ul {
 /* Active (open) accordion header */
 .accordion-header.active {
     background-color: #c67500 !important; /* Gold/orange color when open */
-    border-bottom: 1px solid #000;    
+    border-bottom: 1px solid #000000 !important;
 }
 
 .accordion-content {
