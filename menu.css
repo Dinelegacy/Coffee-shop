@@ -31,22 +31,12 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
 }
 
-.leftIcons, .rightIcons {
-    display: flex;
-    align-items: center;
-}
-
-.rightIcons {
-    gap: 2rem;
-}
-
-.chevron_left-icon,
-.empty_bag-icon {
+.chevron_left-icon {
     display: none;
 }
+
 
 /* =========================================================
    TOP BACKGROUND
