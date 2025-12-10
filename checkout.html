@@ -11,228 +11,144 @@
 <body>
 
 
-    <!-- ============================
-         CHECKOUT (SLIDING CARDS)
-         Placed BEFORE footer so it shows under menu
-    ============================= -->
-    <section class="checkout-wrapper">
-      <header id="header">
-        <h1>Checkout</h1>
-        <nav class="progress" aria-hidden="true">
-          <div class="step step-1 active" data-step="0">1</div>
+    <!-- CHECKOUT SECTION -->
+<div class="checkout-wrapper">
+
+  <!-- Header + Progress Steps -->
+  <div id="header">
+      <h1>Checkout</h1>
+
+      <div class="progress">
+          <div class="step active" data-step="1">1</div>
           <div class="line"></div>
-          <div class="step step-2" data-step="1">2</div>
+          <div class="step" data-step="2">2</div>
           <div class="line"></div>
-          <div class="step step-3" data-step="2">3</div>
+          <div class="step" data-step="3">3</div>
           <div class="line"></div>
-          <div class="step step-4" data-step="3">4</div>
+          <div class="step" data-step="4">4</div>
           <div class="line"></div>
-          <div class="step step-5" data-step="4">5</div>
-        </nav>
-      </header>
+          <div class="step" data-step="5">5</div>
+      </div>
+  </div>
 
-      <div class="slider-viewport">
-        <div class="slider-track" id="sliderTrack">
+  <!-- Slider -->
+  <div class="slider-viewport">
+      <div class="slider-track">
 
-          <!-- Card 1: Order Type -->
-          <section class="card" data-card="order-type">
-            <h2>Order Type</h2>
-            <div class="input-group">
-              <label>How would you like to receive your order?</label>
-              <div class="radio-row">
-                <label class="pill"><input type="radio" name="orderType" value="pickup" checked> Pickup</label>
-                <label class="pill"><input type="radio" name="orderType" value="delivery"> Delivery</label>
-              </div>
-
-              <label>When?</label>
-              <div class="radio-row">
-                <label class="pill"><input type="radio" name="when" value="asap" checked> ASAP</label>
-                <label class="pill"><input type="radio" name="when" value="schedule"> Schedule</label>
-              </div>
-
-              <div class="schedule-row hidden" id="scheduleRow">
-                <label for="scheduledDate">Choose date & time</label>
-                <input type="datetime-local" id="scheduledDate" name="scheduledDate">
-              </div>
-            </div>
-
-            <div class="card-actions">
-              <button class="next-button" data-action="next">Next</button>
-            </div>
-          </section>
-
-          <!-- Card 2: Customer Info -->
-          <section class="card" data-card="customer-info">
-            <h2>Your Info</h2>
-            <form id="customerForm" class="form-inputs" onsubmit="return false;">
-              <div class="input-group">
-                <label for="custName">Full Name</label>
-                <input id="custName" name="custName" type="text" required placeholder="e.g. Anna Svensson">
-              </div>
-
-              <div class="input-group">
-                <label for="custEmail">Email</label>
-                <input id="custEmail" name="custEmail" type="email" required placeholder="you@example.com">
-              </div>
-
-              <div class="input-group">
-                <label for="custPhone">Phone</label>
-                <input id="custPhone" name="custPhone" type="tel" required placeholder="+46 70 123 45 67">
-              </div>
-            </form>
-
-            <div class="card-actions">
-              <button class="back-button" data-action="back">Back</button>
-              <button class="next-button" data-action="next">Next</button>
-            </div>
-          </section>
-
-          <!-- Card 3: Pickup / Delivery Details -->
-          <section class="card" data-card="delivery">
-            <h2>Pickup / Delivery</h2>
-
-            <!-- Pickup block -->
-            <div id="pickupBlock">
-              <label for="pickupLocation">Pickup Location</label>
-              <select id="pickupLocation" name="pickupLocation">
-                <option value="Sveavagen 39">Sveavägen 39</option>
-                <option value="Kungsgatan 12">Kungsgatan 12</option>
-                <option value="Odenplan">Odenplan</option>
-              </select>
-
-              <label for="pickupNote">Note to barista</label>
-              <input id="pickupNote" name="pickupNote" type="text" placeholder="Leave a note (e.g. extra hot)">
-            </div>
-
-            <!-- Delivery block -->
-            <div id="deliveryBlock" class="hidden">
-              <label for="street">Street address</label>
-              <input id="street" name="street" type="text" placeholder="Street name & number">
-
-              <label for="apt">Apt / Unit (optional)</label>
-              <input id="apt" name="apt" type="text" placeholder="Apartment, floor, buzzer">
-
-              <label for="city">City</label>
-              <input id="city" name="city" type="text" placeholder="Stockholm">
-
-              <label for="postal">Postal code</label>
-              <input id="postal" name="postal" type="text" placeholder="111 34">
-
-              <label for="deliveryInstr">Delivery instructions</label>
-              <input id="deliveryInstr" name="deliveryInstr" type="text" placeholder="Leave at door">
-            </div>
-
-            <div class="card-actions">
-              <button class="back-button" data-action="back">Back</button>
-              <button class="next-button" data-action="next">Next</button>
-            </div>
-          </section>
-
-          <!-- Card 4: Payment -->
-          <section class="card" data-card="payment">
-            <h2>Payment</h2>
-
-            <label>Method</label>
-            <div class="radio-row">
-              <label class="pill"><input type="radio" name="paymentMethod" value="card" checked> Card</label>
-              <label class="pill"><input type="radio" name="paymentMethod" value="cash"> Cash</label>
-              <label class="pill"><input type="radio" name="paymentMethod" value="apple"> Apple Pay</label>
-              <label class="pill"><input type="radio" name="paymentMethod" value="google"> Google Pay</label>
-            </div>
-
-            <div id="cardFields">
-              <label for="cardNumber">Card number</label>
-              <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456" maxlength="19">
-
-              <div class="row">
-                <div style="flex:1">
-                  <label for="cardName">Cardholder name</label>
-                  <input id="cardName" name="cardName" type="text" placeholder="Name on card">
-                </div>
-
-                <div style="width:120px; margin-left:12px">
-                  <label for="cardExp">Exp</label>
-                  <input id="cardExp" name="cardExp" type="month" placeholder="">
-                </div>
-
-                <div style="width:100px; margin-left:12px">
-                  <label for="cardCvv">CVV</label>
-                  <input id="cardCvv" name="cardCvv" type="password" inputmode="numeric" maxlength="4" placeholder="123">
-                </div>
-              </div>
-
-              <label class="save-card"><input id="saveCard" name="saveCard" type="checkbox"> Save card for next time</label>
-            </div>
-
-            <div class="card-actions">
-              <button class="back-button" data-action="back">Back</button>
-              <button class="next-button" data-action="next">Next</button>
-            </div>
-          </section>
-
-          <!-- Card 5: Review & Confirm -->
-          <section class="card" data-card="review">
-            <h2>Review & Confirm</h2>
-
-            <div class="order-summary" id="orderSummary">
-              <!-- Example order items (in a real app this would be dynamic) -->
-              <div class="summary-items">
-                <div class="summary-row"><div>1 × Coffee Latte</div><div>42:-</div></div>
-                <div class="summary-row"><div>2 × Chocolate Croissant</div><div>50:-</div></div>
-              </div>
-
-              <div class="summary-charges">
-                <div class="summary-row"><div>Subtotal</div><div id="subtotal">142:-</div></div>
-                <div class="summary-row"><div>Tax</div><div id="tax">14:-</div></div>
-                <div class="summary-row"><div>Delivery</div><div id="deliveryFee">0:-</div></div>
-                <div class="summary-row tip-row">
-                  <div>Tip</div>
-                  <div class="tip-buttons">
-                    <button class="pill tip" data-tip="10">10%</button>
-                    <button class="pill tip" data-tip="15">15%</button>
-                    <button class="pill tip" data-tip="20">20%</button>
-                    <input id="customTip" type="number" min="0" placeholder="Custom">
+          <!-- CARD 1 — Customer Info -->
+          <div class="card">
+              <h2>Customer Information</h2>
+              <div class="form-inputs">
+                  <div class="input-group">
+                      <label>Full Name</label>
+                      <input type="text" id="name" placeholder="John Doe">
                   </div>
-                </div>
-                <div class="summary-row total-row"><div>Total</div><div id="total">156:-</div></div>
+                  <div class="input-group">
+                      <label>Email</label>
+                      <input type="email" id="email" placeholder="name@email.com">
+                  </div>
+                  <div class="input-group">
+                      <label>Phone Number</label>
+                      <input type="tel" id="phone" placeholder="123-456-7890">
+                  </div>
               </div>
-            </div>
 
-            <div class="card-actions">
-              <button class="back-button" data-action="back">Back</button>
-              <button class="confirm-button" data-action="confirm">Confirm order</button>
-            </div>
+              <div class="card-actions">
+                  <button class="next-button" onclick="nextStep()">Next</button>
+              </div>
+          </div>
 
-            <div id="confirmationMessage" class="order-message" aria-live="polite"></div>
-          </section>
+          <!-- CARD 2 — Delivery Method -->
+          <div class="card">
+              <h2>Delivery Method</h2>
 
-        </div> <!-- slider-track -->
-      </div> <!-- slider-viewport -->
-    </section>
+              <div class="radio-row">
+                  <label class="pill">
+                      <input type="radio" name="delivery" value="Pickup" checked>
+                      Pickup
+                  </label>
 
-    <!-- FOOTER -->
-    <footer>
-        <div>
-            <a href="index.html">
-                <img src="./assets/logo.svg" alt="logotype">
-            </a>
-        </div>
-        <ul>
-            <li>
-                <a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">
-                    Sveavägen 39, 111 34 Stockholm
-                </a>
-            </li>
-            <li>Contact us</li>
-            <li>About us</li>
-            <li>Policy</li>
-        </ul>
-        <div id="socialIcons" class="footer-socialIcons">
-            <div><img src="./assets/social-icons/facebook-icon.svg" alt="facebook icon"></div>
-            <div><img src="./assets/social-icons/instagram-icon.svg" alt="instagram icon"></div>
-            <div><img src="./assets/social-icons/github-icon.svg" alt="github icon"></div>
-        </div>
-    </footer>
+                  <label class="pill">
+                      <input type="radio" name="delivery" value="Delivery">
+                      Delivery
+                  </label>
+              </div>
+
+              <div class="input-group">
+                  <label>Address (if delivery)</label>
+                  <input type="text" id="address" placeholder="Street, City" />
+              </div>
+
+              <div class="card-actions">
+                  <button class="back-button" onclick="prevStep()">Back</button>
+                  <button class="next-button" onclick="nextStep()">Next</button>
+              </div>
+          </div>
+
+          <!-- CARD 3 — Payment -->
+          <div class="card">
+              <h2>Payment Details</h2>
+
+              <div class="form-inputs">
+                  <div class="input-group">
+                      <label>Card Number</label>
+                      <input type="text" placeholder="xxxx xxxx xxxx xxxx">
+                  </div>
+
+                  <div class="row">
+                      <div class="input-group" style="flex:1;">
+                          <label>Expiry</label>
+                          <input type="month">
+                      </div>
+                      <div class="input-group" style="flex:1;">
+                          <label>CVC</label>
+                          <input type="password">
+                      </div>
+                  </div>
+              </div>
+
+              <div class="card-actions">
+                  <button class="back-button" onclick="prevStep()">Back</button>
+                  <button class="next-button" onclick="nextStep()">Next</button>
+              </div>
+          </div>
+
+          <!-- CARD 4 — Review Order -->
+          <div class="card">
+              <h2>Review Your Order</h2>
+
+              <div class="order-summary">
+                  <div class="summary-row"><span>Items</span> <span id="summary-items">$14.00</span></div>
+                  <div class="summary-row"><span>Tax</span> <span>$1.40</span></div>
+                  <div class="summary-row"><span>Tip</span> <span id="summary-tip">$0.00</span></div>
+                  <div class="summary-row total-row"><span>Total</span> <span id="summary-total">$15.40</span></div>
+              </div>
+
+              <h3>Add a Tip?</h3>
+              <div class="tip-buttons">
+                  <div class="tip" onclick="selectTip(0)">No Tip</div>
+                  <div class="tip" onclick="selectTip(2)">$2</div>
+                  <div class="tip" onclick="selectTip(5)">$5</div>
+              </div>
+
+              <div class="card-actions">
+                  <button class="back-button" onclick="prevStep()">Back</button>
+                  <button class="confirm-button" onclick="confirmOrder()">Confirm</button>
+              </div>
+          </div>
+
+          <!-- CARD 5 — Success -->
+          <div class="card">
+              <h2>Order Successful 🎉</h2>
+              <p>Your coffee is being prepared!</p>
+
+              <div class="order-message" id="orderMessage">Enjoy your drink!</div>
+          </div>
+
+      </div>
+  </div>
+</div>
+
   
   <script src="checkout.js" defer></script>
 </body>
