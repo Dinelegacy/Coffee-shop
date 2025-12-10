@@ -1,6 +1,5 @@
-// Background images for each section - for the top background
 const backgrounds = {
-  default: "assets/menu/menu1.png", // Default when no tab is open
+  default: "assets/menu/menu1.png",
   promotions: "assets/menu/promotions.jpg",
   coffee: "assets/menu/coffee1.jpg",
   tea: "assets/menu/tea.jpg",
@@ -8,110 +7,17 @@ const backgrounds = {
   snacks: "assets/menu/factory.jpg"
 };
 
-// Apply background ONLY to top section
-function setTopBackground(type) {
-  const topBg = document.querySelector('.top-background');
-  const imageUrl = backgrounds[type] || backgrounds.default;
-  topBg.style.backgroundImage = `url(${imageUrl})`;
-}
-
-// Track currently open tab
-let currentlyOpenTab = null;
-
-/* ---------------------------
-   INITIALIZE
----------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM loaded, initializing...");
-  
-  // Test elements exist
-  if (!document.querySelector('.top-background')) {
-    console.error('ERROR: .top-background element not found!');
-  }
-  
-  if (!document.getElementById("menuContainer")) {
-    console.error('ERROR: menuContainer not found!');
-  }
-  
-  if (!document.getElementById("productModal")) {
-    console.error('ERROR: productModal not found!');
-  }
-  
-  // Initialize functions
-  generateMenu();           // Load images and data only
-  setupAccordion();         // Setup accordion functionality
-  setupProductClicks();     // Setup product click handlers
-  setupModalFunctionality(); // Setup modal interactions
-  setupFavoriteToggle();    // Setup favorite toggle functionality
-  
-  // Set default background
+  generateMenu();
+  setupAccordion();
+  setupProductClicks();
+  setupModalFunctionality();
   setTopBackground("default");
-  
-  // Setup Add to Cart button - MOVED INSIDE DOMContentLoaded
-  const addToCartBtn = document.getElementById("add-to-cart");
-  if (addToCartBtn) {
-    addToCartBtn.addEventListener("click", addToCartHandler);
-  } else {
-    console.error("Add to Cart button not found!");
-  }
-  
-  console.log("Initialization complete!");
 });
 
-/* ---------------------------
-   ADD TO CART HANDLER (separate function)
----------------------------- */
-function addToCartHandler() {
-  const name = document.getElementById("modal-name")?.textContent || "Product";
-  const quantity = document.getElementById("quantity")?.textContent || "1";
-
-  const customizePanel = document.getElementById("customize-panel");
-  let customizations = [];
-
-  if (customizePanel) {
-    // Sugar
-    const sugarQty = parseInt(customizePanel.querySelector(".opt-qty[data-opt='sugar']")?.textContent || "0");
-    if (sugarQty > 0) customizations.push(`${sugarQty}× Sugar`);
-
-    // Extra shot
-    const shotQty = parseInt(customizePanel.querySelector(".opt-qty[data-opt='shot']")?.textContent || "0");
-    if (shotQty > 0) customizations.push(`${shotQty}× Extra Shot`);
-
-    // Ice
-    const iceBtn = customizePanel.querySelector(".ice-btn.active");
-    if (iceBtn) customizations.push(`Ice: ${iceBtn.dataset.ice}`);
-
-    // Lactose-free milk
-    const lactose = customizePanel.querySelector(".opt-checkbox[data-opt='lactose']")?.checked;
-    if (lactose) customizations.push("Lactose-free milk");
-
-    // Whipped cream
-    const whip = customizePanel.querySelector(".opt-checkbox[data-opt='whip']")?.checked;
-    if (whip) customizations.push("Whipped cream");
-  }
-
-  const customizationText = customizations.length > 0 ? ` (${customizations.join(", ")})` : "";
-
-  // Show toast message
-  const toast = document.getElementById("modal-toast");
-  if (toast) {
-    toast.textContent = `${quantity} × ${name}${customizationText} added to cart`;
-    toast.style.display = "block";
-
-    setTimeout(() => {
-      toast.style.opacity = "0";
-      setTimeout(() => {
-        toast.style.display = "none";
-        toast.style.opacity = "1";
-      }, 400);
-    }, 1400);
-  }
-
-  // Close modal after a delay
-  const modal = document.getElementById("productModal");
-  setTimeout(() => {
-    if (modal) modal.style.display = "none";
-  }, 1500);
+function setTopBackground(type) {
+  const topBg = document.querySelector('.top-background');
+  if(topBg) topBg.style.backgroundImage = `url(${backgrounds[type] || backgrounds.default})`;
 }
 
 /* ---------------------------
@@ -197,324 +103,120 @@ const menuData = {
   }
 };
 
-/* ---------------------------
-   GENERATE MENU (Only loads images/data)
----------------------------- */
+// -------- Generate Menu --------
 function generateMenu() {
   const container = document.getElementById("menuContainer");
   if (!container) return;
-  
+
   container.innerHTML = "";
-  
+
   for (const category in menuData) {
     const accordion = document.createElement("div");
     accordion.className = "accordion";
     accordion.dataset.category = category;
-    
+
     const header = document.createElement("div");
     header.className = "accordion-header";
     header.innerHTML = `<span>${category.toUpperCase()}</span><span>▼</span>`;
-    
+
     const content = document.createElement("div");
     content.className = "accordion-content";
-    
+
     menuData[category].items.forEach(item => {
       const product = document.createElement("div");
       product.className = "product";
       product.dataset.name = item.name;
       product.dataset.price = item.price;
       product.dataset.img = item.img;
-      
+
       product.innerHTML = `
-        <img src="${item.img}" alt="${item.name}">
+        <img src="${item.img}">
         <span>${item.name}</span>
         <span>${item.price}</span>
       `;
       content.appendChild(product);
     });
-    
+
     accordion.appendChild(header);
     accordion.appendChild(content);
     container.appendChild(accordion);
   }
 }
 
-/* ---------------------------
-   SETUP ACCORDION
----------------------------- */
+// -------- Accordion --------
 function setupAccordion() {
   const container = document.getElementById("menuContainer");
   if (!container) return;
-  
-  // Get headers AFTER generateMenu() created them
-  const accordionHeaders = container.querySelectorAll('.accordion-header');
-  
-  // Accordion click functionality
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', () => {
+
+  container.querySelectorAll(".accordion-header").forEach(header => {
+    header.addEventListener("click", () => {
       const content = header.nextElementSibling;
-      const arrow = header.querySelector('span:last-child');
-      const categoryName = header.parentElement.dataset.category;
-      
-      const isCurrentlyOpen = content.classList.contains('active');
-      
-      if (isCurrentlyOpen) {
-        // Close this tab
-        content.style.display = 'none';
-        content.classList.remove('active');
-        arrow.textContent = '▼';
-        header.classList.remove('active');
-        currentlyOpenTab = null;
-        
-        // Check if any tab is still open
-        let anyTabOpen = false;
-        container.querySelectorAll('.accordion-content').forEach(sec => {
-          if (sec.classList.contains('active')) anyTabOpen = true;
-        });
-        
-        if (!anyTabOpen) {
-          setTopBackground("default");
-        }
+      const arrow = header.querySelector("span:last-child");
+      const category = header.parentElement.dataset.category;
+
+      const open = content.classList.contains("active");
+
+      container.querySelectorAll(".accordion-content").forEach(c => {
+        c.style.display = "none";
+        c.classList.remove("active");
+      });
+
+      container.querySelectorAll(".accordion-header span:last-child").forEach(a => {
+        a.textContent = "▼";
+      });
+
+      if (!open) {
+        content.style.display = "block";
+        content.classList.add("active");
+        arrow.textContent = "▲";
+        setTopBackground(category);
       } else {
-        // Close all other accordions
-        container.querySelectorAll('.accordion-content').forEach(sec => {
-          sec.style.display = 'none';
-          sec.classList.remove('active');
-        });
-        
-        // Reset all headers and arrows
-        container.querySelectorAll('.accordion-header').forEach(h => {
-          h.classList.remove('active');
-        });
-        
-        container.querySelectorAll('.accordion-header span:last-child').forEach(a => {
-          a.textContent = '▼';
-        });
-        
-        // Open clicked accordion
-        content.style.display = 'block';
-        content.classList.add('active');
-        arrow.textContent = '▲';
-        header.classList.add('active');
-        currentlyOpenTab = categoryName;
-        setTopBackground(categoryName);
+        setTopBackground("default");
       }
     });
   });
 }
 
-/* ---------------------------
-   SETUP PRODUCT CLICKS
----------------------------- */
+// -------- Product Clicks --------
 function setupProductClicks() {
-  const container = document.getElementById("menuContainer");
-  if (!container) return;
-  
-  container.addEventListener("click", (e) => {
+  document.getElementById("menuContainer").addEventListener("click", (e) => {
     const product = e.target.closest(".product");
     if (!product) return;
-    
-    const name = product.dataset.name;
-    const price = product.dataset.price;
-    const img = product.dataset.img;
-    
-    showModal(name, price, img);
+    showModal(product.dataset.name, product.dataset.price, product.dataset.img);
   });
 }
 
-/* ---------------------------
-   SHOW MODAL
----------------------------- */
+// -------- Modal --------
 function showModal(name, price, img) {
   const modal = document.getElementById("productModal");
-  if (!modal) return;
-  
-  // Update modal content
-  const modalImg = document.getElementById("modal-img");
-  const modalName = document.getElementById("modal-name");
-  const modalPrice = document.getElementById("modal-price");
-  
-  if (modalImg) modalImg.src = img;
-  if (modalName) modalName.textContent = name;
-  if (modalPrice) modalPrice.textContent = price;
-  
-  // Reset quantity
-  const quantity = document.getElementById("quantity");
-  if (quantity) quantity.textContent = "1";
-  
-  // Reset favorite button for this product
-  const favoriteBtn = document.getElementById("favorite-btn");
-  const heartPath = document.querySelector(".heart-path");
-  if (favoriteBtn && heartPath) {
-    favoriteBtn.classList.remove("favorited");
-    heartPath.setAttribute("stroke", "#c67500");
-    heartPath.setAttribute("fill", "none");
-  }
-  
-  // Reset customization panel
-  const panel = document.getElementById("customize-panel");
-  if (panel) {
-    panel.style.display = "none";
-    panel.querySelectorAll(".opt-qty").forEach(el => el.textContent = "0");
-    panel.querySelectorAll(".opt-checkbox").forEach(cb => cb.checked = false);
-    panel.querySelectorAll(".ice-btn").forEach(btn => btn.classList.remove("active"));
-  }
-  
-  // Show modal
   modal.style.display = "flex";
+
+  document.getElementById("modal-img").src = img;
+  document.getElementById("modal-name").textContent = name;
+  document.getElementById("inline-price").textContent = price;
+
+  document.getElementById("quantity").textContent = "1";
 }
 
-/* ---------------------------
-   SETUP FAVORITE TOGGLE FUNCTIONALITY
----------------------------- */
-function setupFavoriteToggle() {
-  const favoriteBtn = document.getElementById("favorite-btn");
-  if (!favoriteBtn) return;
-  
-  favoriteBtn.addEventListener("click", function() {
-    const heartPath = document.querySelector(".heart-path");
-    if (!heartPath) return;
-    
-    // Check if currently favorited
-    const isFavorited = favoriteBtn.classList.contains("favorited");
-    
-    if (isFavorited) {
-      // Even click - remove from favorites
-      favoriteBtn.classList.remove("favorited");
-      heartPath.setAttribute("stroke", "#c67500");
-      heartPath.setAttribute("fill", "none");
-      console.log("Product removed from favorites");
-    } else {
-      // Odd click - add to favorites
-      favoriteBtn.classList.add("favorited");
-      heartPath.setAttribute("stroke", "#ff4444");
-      heartPath.setAttribute("fill", "#ff4444");
-      console.log("Product added to favorites");
-    }
-    
-    // Optional: Add animation effect
-    favoriteBtn.style.transform = "scale(1.2)";
-    setTimeout(() => {
-      favoriteBtn.style.transform = "scale(1)";
-    }, 200);
-  });
-}
-
-/* ---------------------------
-   SETUP MODAL FUNCTIONALITY
----------------------------- */
 function setupModalFunctionality() {
   const modal = document.getElementById("productModal");
-  if (!modal) {
-    console.error("Modal not found!");
-    return;
-  }
-  
-  // Close modal
-  const closeBtn = modal.querySelector(".close");
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-  } else {
-    console.error("Close button not found!");
-  }
-  
-  // Close modal when clicking outside
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
+
+  modal.querySelector(".close").addEventListener("click", () => {
+    modal.style.display = "none";
   });
-  
-  // Quantity controls
-  const increaseBtn = document.getElementById("increase");
-  const decreaseBtn = document.getElementById("decrease");
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+
   const quantity = document.getElementById("quantity");
-  
-  if (increaseBtn && quantity) {
-    increaseBtn.addEventListener("click", () => {
-      quantity.textContent = parseInt(quantity.textContent) + 1;
-    });
-  } else {
-    console.error("Increase button or quantity element not found!");
-  }
-  
-  if (decreaseBtn && quantity) {
-    decreaseBtn.addEventListener("click", () => {
-      const val = parseInt(quantity.textContent) - 1;
-      quantity.textContent = val < 1 ? 1 : val;
-    });
-  } else {
-    console.error("Decrease button or quantity element not found!");
-  }
-  
-  // Toggle customize panel
-  const customizeToggle = document.getElementById("customize-toggle");
-  const customizePanel = document.getElementById("customize-panel");
-  
-  if (customizeToggle && customizePanel) {
-    customizeToggle.addEventListener("click", () => {
-      if (customizePanel.style.display === "none" || customizePanel.style.display === "") {
-        customizePanel.style.display = "block";
-      } else {
-        customizePanel.style.display = "none";
-      }
-    });
-  }
-  
-  // Customization controls
-  if (customizePanel) {
-    customizePanel.addEventListener("click", (e) => {
-      // Sugar controls
-      if (e.target.classList.contains("opt-plus") && e.target.dataset.opt === "sugar") {
-        const qty = customizePanel.querySelector(".opt-qty[data-opt='sugar']");
-        const checkbox = customizePanel.querySelector(".opt-checkbox[data-opt='sugar']");
 
-        if (qty) qty.textContent = parseInt(qty.textContent) + 1;
-        if (checkbox) checkbox.checked = true;
-      }
-      
-      if (e.target.classList.contains("opt-minus") && e.target.dataset.opt === "sugar") {
-        const qty = customizePanel.querySelector(".opt-qty[data-opt='sugar']");
-        const checkbox = customizePanel.querySelector(".opt-checkbox[data-opt='sugar']");
+  document.getElementById("increase").addEventListener("click", () => {
+    quantity.textContent = parseInt(quantity.textContent) + 1;
+  });
 
-        if (qty) {
-          const val = parseInt(qty.textContent) - 1;
-          qty.textContent = val < 0 ? 0 : val;
-
-          if (val <= 0 && checkbox) checkbox.checked = false;
-        }
-      }
-      
-      // Shot controls
-      if (e.target.classList.contains("opt-plus") && e.target.dataset.opt === "shot") {
-        const qty = customizePanel.querySelector(".opt-qty[data-opt='shot']");
-        const checkbox = customizePanel.querySelector(".opt-checkbox[data-opt='shot']");
-
-        if (qty) qty.textContent = parseInt(qty.textContent) + 1;
-        if (checkbox) checkbox.checked = true;
-      }
-      
-      if (e.target.classList.contains("opt-minus") && e.target.dataset.opt === "shot") {
-        const qty = customizePanel.querySelector(".opt-qty[data-opt='shot']");
-        const checkbox = customizePanel.querySelector(".opt-checkbox[data-opt='shot']");
-
-        if (qty) {
-          const val = parseInt(qty.textContent) - 1;
-          qty.textContent = val < 0 ? 0 : val;
-
-          if (val <= 0 && checkbox) checkbox.checked = false;
-        }
-      }
-      
-      // Ice buttons
-      if (e.target.closest(".ice-btn")) {
-        const btn = e.target.closest(".ice-btn");
-        customizePanel.querySelectorAll(".ice-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-      }
-    });
-  }
+  document.getElementById("decrease").addEventListener("click", () => {
+    const val = parseInt(quantity.textContent) - 1;
+    quantity.textContent = val < 1 ? 1 : val;
+  });
 }
-
