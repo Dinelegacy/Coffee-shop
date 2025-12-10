@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="menu.css" />
   <link rel="stylesheet" href="popup.css"/>
   <link rel="stylesheet" href="favorite.css">
+<link rel="stylesheet" href="./bag.css">
 </head>
 <body>
 
@@ -24,11 +25,12 @@
                 </a>
             </div>
         </div>
-
+ 
         <div class="rightIcons">
-            <div class="empty_bag-icon">
-                <img src="./assets/functional-icons/bag-icons/icon-empty_bag_0.svg">
-            </div>
+    <div class="empty_bag-icon">
+        <img src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="empty bag icon">
+        <span class="bag-item-count">0</span>
+    </div>  </div>
 
             <div>
                 <img src="./assets/functional-icons/hamburger-menu-icon.svg">
@@ -38,7 +40,7 @@
 </nav>
 
 <div class="top-background">
-    <div class="section-title">MENU</div>
+    <div  class="section-title">MENU</div>
 </div>
 
 <main>
@@ -113,6 +115,10 @@
 </footer>
 
 <script src="menu.js" defer></script>
-<script src="favorite.js"></script>
+<script src="favorite.js" defer></script>
+ <script src="index.js" defer></script>
+  <script type="module" src="cart-handler.js"></script>
+ <script type="module" src="menu-cart.js"></script>
+ 
 </body>
 </html>
