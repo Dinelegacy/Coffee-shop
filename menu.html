@@ -4,221 +4,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hej Fika Menu</title>
-  <!-- Add favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
 
-  <!-- Link to your CSS where all styling is stored -->
   <link rel="stylesheet" href="menu.css" />
   <link rel="stylesheet" href="popup.css"/>
 </head>
 <body>
 
-    <!-- ============================
-         NAVIGATION BAR (TOP MENU)
-         Contains back button + logo + bag + hamburger menu
-         --- IMPORTANT: I DID NOT CHANGE THIS BLOCK ---
-    ============================= -->
-    <nav id="navBar" class="top-navBar">
-        <div id="navBarContainer">
-
-            <!-- Left side icons -->
-            <div class="leftIcons">
-                <!-- Back button -->
-                <div class="chevron_left-icon">
-                    <img src="./assets/functional-icons/chevron_black_left-icon.svg" alt="chevron black left icon">
-                </div>
-
-                <!-- Hej Fika Logo (click → go to home page) -->
-                <div>
-                    <a href="index.html">
-                        <img src="./assets/logo-horizontal.svg" alt="logotype">
-                    </a>
-                </div>
+<nav id="navBar" class="top-navBar">
+    <div id="navBarContainer">
+        <div class="leftIcons">
+            <div class="chevron_left-icon">
+                <img src="./assets/functional-icons/chevron_black_left-icon.svg">
             </div>
 
-            <!-- Right side icons -->
-            <div class="rightIcons">
-                <!-- Empty bag icon -->
-                <div class="empty_bag-icon">
-                    <img src="./assets/functional-icons/bag-icons/icon-empty_bag_0.svg" alt="empty bag icon">
-                </div>
-
-                <!-- Hamburger menu icon -->
-                <div>
-                    <img src="./assets/functional-icons/hamburger-menu-icon.svg" alt="hamburger menu icon">
-                </div>
-            </div>
-        </div>
-    </nav>
-
-
-    <!-- ============================
-         TOP BACKGROUND IMAGE SECTION
-    ============================= -->
-    <div class="top-background" aria-hidden="true">
-        <div class="section-title">MENU</div>
-    </div>
-
-
-    <!-- ============================
-         MAIN MENU SECTION (DYNAMIC)
-    ============================= -->
-    <main role="main"> <!--role="main" Attribute
-Purpose: ARIA (Accessible Rich Internet Applications) role for accessibility-->
-      <div class="menu-section" id="menuContainer" aria-live="polite"></div>
-      <!-- aria-live="polite"  Most Important Part!
-Purpose: Accessibility feature for dynamic content updates
-What it does:
-Announces content changes to screen readers
-"polite": Waits for current speech to finish before announcing updates
-Alternative values:
-"assertive": Interrupts immediately for urgent updates
-"off": No announcements (default) -->
-    </main>
-
-
-    <!-- ============================
-         MODAL (NOW IN HTML)
-    ============================= -->
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            
-            <div class="modal-product">
-                <img id="modal-img" src="" alt="Product image"> <!-- src="", Only loads when needed. Page loads faster (no unnecessary image downloads) -->
-                <div class="modal-product-header">
-                    <h3 id="modal-name"></h3>
-                    <span id="modal-price"></span>
-                </div>
-
-                 <button id="modalFavoriteBtn" class="favorite-btn">♡</button>
-
-                </div>
-
-                <div class="controls-row">
-                    <div class="qty-wrap">
-                        <button id="decrease" class="qty-btn">-</button>
-                        <span id="quantity">1</span>
-                        <button id="increase" class="qty-btn">+</button>
-                    </div>
-                    
-                    <div class="modal-actions">
-                        <button id="customize-toggle" class="customize-btn">Customize</button>
-                        <button id="favorite-btn" class="favorite-btn">
-
-
-                            
-                            <svg viewBox="0 0 32 32" enable-background="new 0 0 32 32" id="Stock_cut" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                <g id="SVGRepo_iconCarrier">
-                                    <desc></desc>
-                                    <path class="heart-path" d="M28.343,17.48L16,29 L3.657,17.48C1.962,15.898,1,13.684,1,11.365v0C1,6.745,4.745,3,9.365,3h0.17c2.219,0,4.346,0.881,5.915,2.45L16,6l0.55-0.55 C18.119,3.881,20.246,3,22.465,3h0.17C27.255,3,31,6.745,31,11.365v0C31,13.684,30.038,15.898,28.343,17.48z" fill="none" stroke="#c67500" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"></path>
-                                </g>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                
-                <div id="customize-panel">
-                    <!-- Sugar -->
-                    <div class="opt-row">
-                        <label>
-                            <input type="checkbox" class="opt-checkbox" data-opt="sugar">
-                            <span>Sugar</span>
-                        </label>
-                        <div class="opt-controls">
-                            <button class="opt-minus" data-opt="sugar">-</button>
-                            <span class="opt-qty" data-opt="sugar">0</span>
-                            <button class="opt-plus" data-opt="sugar">+</button>
-                        </div>
-                    </div>
-                    
-                    <!-- Ice -->
-                    <div class="opt-row">
-                        <div class="opt-title">Ice</div>
-                        <div class="opt-buttons">
-                            <button class="ice-btn" data-ice="lite">Lite</button>
-                            <button class="ice-btn" data-ice="extra">Extra</button>
-                        </div>
-                    </div>
-                    
-                    <!-- Extra Shot -->
-                    <div class="opt-row">
-                        <label>
-                            <input type="checkbox" class="opt-checkbox" data-opt="shot">
-                            <span>Extra shot</span>
-                        </label>
-                        <div class="opt-controls">
-                            <button class="opt-minus" data-opt="shot">-</button>
-                            <span class="opt-qty" data-opt="shot">0</span>
-                            <button class="opt-plus" data-opt="shot">+</button>
-                        </div>
-                    </div>
-                    
-                    <!-- Lactose-free milk -->
-                    <div class="opt-row">
-                        <label>
-                            <input type="checkbox" class="opt-checkbox" data-opt="lactose">
-                            <span>Lactose-free milk</span>
-                        </label>
-                    </div>
-                    
-                    <!-- Whipped cream -->
-                    <div class="opt-row">
-                        <label>
-                            <input type="checkbox" class="opt-checkbox" data-opt="whip">
-                            <span>Whipped cream</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <button id="add-to-cart" class="add-to-cart-btn">Add to Cart</button>
-                
-                <div id="modal-toast" class="modal-toast"></div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- ============================
-         FOOTER SECTION
-    ============================= -->
-    <footer>
-        <!-- Footer logo -->
-        <div>
-            <a href="index.html">
-                <img src="./assets/logo.svg" alt="logotype">
-            </a>
-        </div>
-
-        <!-- Footer links -->
-        <ul>
-            <li>
-                <a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">
-                    Sveavägen 39, 111 34 Stockholm
+            <div>
+                <a href="index.html">
+                    <img src="./assets/logo-horizontal.svg">
                 </a>
-            </li>
-            <li>Contact us</li>
-            <li>About us</li>
-            <li>Policy</li>
-        </ul>
-
-        <!-- Social icons -->
-        <div id="socialIcons" class="footer-socialIcons">
-            <div><img src="./assets/social-icons/facebook-icon.svg" alt="facebook icon"></div>
-            <div><img src="./assets/social-icons/instagram-icon.svg" alt="instagram icon"></div>
-            <div><img src="./assets/social-icons/github-icon.svg" alt="github icon"></div>
+            </div>
         </div>
-    </footer>
 
+        <div class="rightIcons">
+            <div class="empty_bag-icon">
+                <img src="./assets/functional-icons/bag-icons/icon-empty_bag_0.svg">
+            </div>
 
-   <!-- ============================
-         JAVASCRIPT FILE
-         - Using defer ensures the script runs after the document is parsed.
-         - Replace product.js with the final version I provided earlier.
-    ============================= -->
-    <script src="menu.js" defer></script>
-    <script src="favorite.js"></script>
+            <div>
+                <img src="./assets/functional-icons/hamburger-menu-icon.svg">
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="top-background">
+    <div class="section-title">MENU</div>
+</div>
+
+<main>
+  <div class="menu-section" id="menuContainer"></div>
+</main>
+
+<div id="productModal" class="modal">
+    <div class="modal-content">
+
+        <div class="modal-product">
+
+            <!-- Close -->
+            <span class="close">&times;</span>
+
+            <!-- TOP ROW -->
+            <div class="modal-top-row">
+                <div class="modal-image-wrap">
+                    <img id="modal-img" src="">
+                </div>
+
+                <div class="modal-title-wrap">
+                    <h3 id="modal-name"></h3>
+                </div>
+
+                <div class="favorite-icon-static">
+    <img src="assets/functional-icons/Favorite Heart-icon.svg" alt="favorite">
+</div>
+
+            </div>
+
+            <!-- BOTTOM ROW -->
+            <div class="modal-bottom-row">
+                <div class="qty-wrap">
+                    <button id="decrease" class="qty-btn">-</button>
+                    <span id="quantity">1</span>
+                    <button id="increase" class="qty-btn">+</button>
+                </div>
+
+                <button id="add-to-cart" class="add-to-cart-inline">
+                    <span>Add to Cart</span>
+                    <span id="inline-price"></span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div>
+        <a href="index.html">
+            <img src="./assets/logo.svg">
+        </a>
+    </div>
+
+    <ul>
+        <li>
+            <a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">
+                Sveavägen 39, 111 34 Stockholm
+            </a>
+        </li>
+        <li>Contact us</li>
+        <li>About us</li>
+        <li>Policy</li>
+    </ul>
+
+    <div id="socialIcons" class="footer-socialIcons">
+        <div><img src="./assets/social-icons/facebook-icon.svg"></div>
+        <div><img src="./assets/social-icons/instagram-icon.svg"></div>
+        <div><img src="./assets/social-icons/github-icon.svg"></div>
+    </div>
+</footer>
+
+<script src="menu.js" defer></script>
 </body>
 </html>

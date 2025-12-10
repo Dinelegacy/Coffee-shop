@@ -22,6 +22,11 @@ section {
     list-style: none;
 }
 
+.imagePromo {
+    height: 100%;
+    width: 100%;
+}
+
 /* Removing the carousel bottom bar */
 .carousel ul::-webkit-scrollbar {
     display: none;
