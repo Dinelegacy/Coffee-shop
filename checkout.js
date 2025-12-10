@@ -1,31 +1,48 @@
-/* ---------------------------
-   CHECKOUT FORM HANDLER
----------------------------- */
-const checkoutForm = document.getElementById("checkoutForm");
-const orderMessage = document.getElementById("orderMessage");
+let currentStep = 0;
+const steps = document.querySelectorAll(".step");
+const slider = document.querySelector(".slider-track");
 
-if (checkoutForm) {
-  checkoutForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+// Move forward
+function nextStep() {
+    if (currentStep < 4) {
+        currentStep++;
+        updateSlider();
+    }
+}
 
-    // Get form values
-    const customerData = {
-      name: this.name.value,
-      email: this.email.value,
-      phone: this.phone.value,
-      address: this.address.value,
-      city: this.city.value,
-      postal: this.postal.value
-    };
+// Move backward
+function prevStep() {
+    if (currentStep > 0) {
+        currentStep--;
+        updateSlider();
+    }
+}
 
-    // For demo: display success message
-    orderMessage.textContent = `Thank you, ${customerData.name}! Your order will be delivered to ${customerData.address}, ${customerData.city} (${customerData.postal}).`;
-    orderMessage.style.display = "block";
+// Update slider + progress dots
+function updateSlider() {
+    slider.style.transform = `translateX(-${currentStep * 100}%)`;
 
-    // Reset form
-    this.reset();
+    steps.forEach((step, index) => {
+        step.classList.toggle("active", index <= currentStep);
+    });
+}
 
-    // Optionally scroll to message
-    orderMessage.scrollIntoView({ behavior: "smooth" });
-  });
+/* TIP SELECTION */
+let selectedTip = 0;
+function selectTip(amount) {
+    selectedTip = amount;
+
+    document.querySelectorAll(".tip").forEach(t => t.classList.remove("active"));
+    event.target.classList.add("active");
+
+    document.getElementById("summary-tip").innerText = `$${amount.toFixed(2)}`;
+
+    const baseTotal = 15.40;
+    document.getElementById("summary-total").innerText = `$${(baseTotal + amount).toFixed(2)}`;
+}
+
+/* Confirm order */
+function confirmOrder() {
+    nextStep();
+    document.getElementById("orderMessage").style.display = "block";
 }

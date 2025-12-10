@@ -215,50 +215,8 @@ function setupModalFunctionality() {
     quantity.textContent = parseInt(quantity.textContent) + 1;
   });
 
-<<<<<<< HEAD
-        if (qty) {
-          const val = parseInt(qty.textContent) - 1;
-          qty.textContent = val < 0 ? 0 : val;
-
-          if (val <= 0 && checkbox) checkbox.checked = false;
-        }
-      }
-      
-      // Shot controls
-      if (e.target.classList.contains("opt-plus") && e.target.dataset.opt === "shot") {
-        const qty = customizePanel.querySelector(".opt-qty[data-opt='shot']");
-        const checkbox = customizePanel.querySelector(".opt-checkbox[data-opt='shot']");
-
-        if (qty) qty.textContent = parseInt(qty.textContent) + 1;
-        if (checkbox) checkbox.checked = true;
-      }
-      
-      if (e.target.classList.contains("opt-minus") && e.target.dataset.opt === "shot") {
-        const qty = customizePanel.querySelector(".opt-qty[data-opt='shot']");
-        const checkbox = customizePanel.querySelector(".opt-checkbox[data-opt='shot']");
-
-        if (qty) {
-          const val = parseInt(qty.textContent) - 1;
-          qty.textContent = val < 0 ? 0 : val;
-
-          if (val <= 0 && checkbox) checkbox.checked = false;
-        }
-      }
-      
-      // Ice buttons
-      if (e.target.closest(".ice-btn")) {
-        const btn = e.target.closest(".ice-btn");
-        customizePanel.querySelectorAll(".ice-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-      }
-    });
-  }
-}
-
-=======
   document.getElementById("decrease").addEventListener("click", () => {
     const val = parseInt(quantity.textContent) - 1;
     quantity.textContent = val < 1 ? 1 : val;
   });
 }
->>>>>>> raheel-dev
