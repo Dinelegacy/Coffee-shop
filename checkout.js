@@ -4,17 +4,21 @@ const slider = document.querySelector(".slider-track");
 
 // Move forward
 function nextStep() {
-    if (currentStep < 4) currentStep++;
-    updateSlider();
+    if (currentStep < 4) {
+        currentStep++;
+        updateSlider();
+    }
 }
 
-// Move back
+// Move backward
 function prevStep() {
-    if (currentStep > 0) currentStep--;
-    updateSlider();
+    if (currentStep > 0) {
+        currentStep--;
+        updateSlider();
+    }
 }
 
-// Update sliding + progress indicator
+// Update slider + progress dots
 function updateSlider() {
     slider.style.transform = `translateX(-${currentStep * 100}%)`;
 
