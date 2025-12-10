@@ -134,7 +134,6 @@
 
     <section id="form">
 
-        <p id="error-message"></p>
 
         <form id="form-inputs">
             <div class="input-group">
@@ -143,15 +142,17 @@
             </div>
             <div class="input-group">
                 <label for="password-input">Password</label>
-                <input type="password" name="password" id="password-input" placeholder="Password">
+                <input type="password" name="password" id="password-input" minlength="8" placeholder="Password">
             </div>
+
 
             <div class="goTo-signupPage">
                 <p> Don’t have an account?<a href="signup.html" id="open-register">Sign up</a></p>
             </div>
 
-            <button type="submit" id="login">Login</button>
+            <button type="submit" id="login" disabled>Login </button>
         </form>
+
 
 
     </section>

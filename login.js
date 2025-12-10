@@ -1,39 +1,22 @@
-const form = document.getElementById("form-inputs");
+// Get elements
 const emailInput = document.getElementById("email-input");
 const passwordInput = document.getElementById("password-input");
-const errorMessage = document.getElementById("error-message");
-const submitButton = document.getElementById(".login");
+const loginBtn = document.getElementById("login");
 
-form.addEventListener("submit", (e) => {
-  let error = [];
+// Function to validate fields
+function validateForm() {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
 
-  error = getLoginPageErrors(emailInput.value, passwordInput.value);
-  if (error.length > 0) {
-    e.preventDefault();
-    errorMessage.innerText = error.join(", ");
-  }
-});
-
-function getLoginPageErrors(email, password) {
-  let errors = [];
-
-  if (email === "" || email == null) {
-    errors.push("Email is required");
-    emailInput.parentElement.classList.add("incorrect");
-  }
-
-  if (password === "" || password == null) {
-    errors.push("Password is required");
-    passwordInput.parentElement.classList.add("incorrect");
-  }
-
-  return errors;
+    if (email !== "" && password !== "") {
+        loginBtn.disabled = false;
+        loginBtn.classList.add("active");
+    } else {
+        loginBtn.disabled = true;
+        loginBtn.classList.remove("active");
+    }
 }
 
-const allInputs = [emailInput, passwordInput];
-allInputs.forEach((input) => {
-  input.addEventListener("input", () => {
-    input.parentElement.classList.remove("incorrect");
-    errorMessage.innerText = "";
-  });
-});
+// Attach listeners
+emailInput.addEventListener("input", validateForm);
+passwordInput.addEventListener("input", validateForm);

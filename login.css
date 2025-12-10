@@ -171,14 +171,7 @@ label {
   cursor: pointer;
 }
 
-#error-message {
-  color: #f06272;
-  font-size: 14px;
-  margin-top: 16px;
-  height: 18px;
-  text-align: center;
-  margin-bottom: 20px;
-}
+
 
 .incorrect input {
   border: 2px solid red;
@@ -202,6 +195,13 @@ label {
   background: #afafaf;
   font-size: 16px;
   font-weight: 700;
-  cursor: pointer;
   margin-top: 120px;
 }
+
+
+#login.active {
+  background: #c67500; /* ORANGE */
+  cursor: pointer;
+}
+
+
