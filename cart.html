@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Bag</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="./cart-page.css">
+  <link rel="stylesheet" href="./off-screen-menu.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="./bag.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+
+<body>
+     <div class="off-screen-menu">
+        <div class="offMenu-content">
+            <ul class="menuList">
+                <a href="./login.html">
+                    <li id="Sign-up" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Account-icon.svg" alt="user account icon">
+                        Login / Sign-up
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                </a>
+                <a href="./menu.html">
+                    <li id="menu" class="list">
+                        <div>
+                            <img class="menuIcon" src="./assets/functional-icons/Menu-icon.svg" alt="menu icon">
+                        Menu
+                       </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                </a>
+                <li id="favorites" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Favorite Heart-icon.svg" alt="heart icon">
+                        Favorites
+                    </div>
+
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="yourBag" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/bag-icons/icon-empty_bag-white.svg" alt="empty bag icon">
+                        Your bag
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="wwu" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Work_with_Us-icon.svg" alt="Work with us icon">
+                        Work with us
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="aboutUs" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/About_Us-icon.svg" alt="about us icon">
+                        About us
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+         <nav id="navBar" class="top-navBar">
+<div id="navBarContainer">
+<div class="leftIcons">
+    <div class="chevron_left-icon">
+        <a href="menu.html">   
+            <img src="./assets/functional-icons/chevron_black_left-icon.svg" 
+                alt="chevron black left icon">
+        </a>
+    </div>
+</div>
+<div class="rightIcons">
+    <div class="empty_bag-icon">
+        <img src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="empty bag icon">
+        <span class="bag-item-count">0</span>
+    </div>
+
+    <div class="ham-menu" >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+    </div>
+</div>
+</nav>
+ 
+<div class="intro">
+  <h2 class="intro-cart">READY TO ENJOY?</h2>
+</div>
+
+
+    <main>
+    <div class="cart-items"></div>
+
+    <div class="cart-summary">
+      <div class="row1">
+        <span>Total sum</span>
+        <span id="total-sum" class="total-sum">00.00 SEK</span>
+      </div>
+
+      <div class="row2">
+        <span>VAT included 12%</span>
+        <span id="vat-sum" class="vat">00.00 SEK</span>
+      </div>
+    </div>
+  </main>
+
+ <div class="cart-footer">
+    <button class="checkout-btn">Go to the Checkout</button></div>
+
+
+    <script type="module" src="./cart.js"></script>
+    
+</body>
+</html>
