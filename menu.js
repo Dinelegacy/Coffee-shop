@@ -1,10 +1,10 @@
 const backgrounds = {
-  default: "assets/menu/menu1.png",
-  promotions: "assets/menu/promotions.jpg",
-  coffee: "assets/menu/coffee1.jpg",
-  tea: "assets/menu/tea.jpg",
-  smoothies: "assets/menu/cold-drinks.jpg",
-  snacks: "assets/menu/factory.jpg"
+  default: "assets/menu/menu_covers/Menu-Covers.jpg",
+  promotions: "assets/menu/menu_covers/Promo.jpg",
+  coffee: "assets/menu/menu_covers/coffee.jpg",
+  tea: "assets/menu/menu_covers/tea.jpg",
+  smoothies: "assets/menu/menu_covers/smoothie.jpg",
+  snacks: "assets/menu/menu_covers/snaks3.jpg"
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,15 +26,9 @@ function setTopBackground(type) {
 const menuData = {
   promotions: {
     items: [
-      { img: "assets/menu/Gingerbread Milkshake Mocktail.jpg", name: "Gingerbread Milkshake Mocktail", price: "45:-" },
-      { img: "assets/menu/Sandman Latte with gräde.jpg", name: "Sandman latte with Gräde", price: "45:-" },
-      { img: "assets/menu/xmas reindeer.jpg", name: "Xmas Reindeer", price: "45:-" },
-      { img: "assets/menu/Cappuccino with ginger man.jpg", name: "Cappucciano with ginger man", price: "40:-"},
-      { img: "assets/menu/Hot chocolate with marshmellow.jpg", name: "Hot Chocolate with Marshmellow", price: "45:-"},
-      { img: "assets/menu/Wizard's Coffee with milk.jpg", name: "Wizard's Coffe with milk", price: "45:-"},
-      { img: "assets/menu/Spiced Rum Coffee.jpg", name: "Spiced Rum coffee", price: "45:-"},
-      { img: "assets/menu/Christmas Chai Latte.jpg", name: "Christmas Chai Latte", price: "40:-"},
-      { img: "assets/menu/Pumpkin Spice Latte.jpg", name: "Pumpkin Spice Latte", price: "40:-"}
+      { img: "assets/menu/new_pics/ap_squared.jpg", name: "Gingerbread Milkshake Mocktail", price: "45:-" },
+      { img: "assets/menu/new_pics/three-cups_squared.jpg", name: "By two, get third for free", price: "45:-" },
+      { img: "assets/menu/new_pics/croissant_squared.jpg", name: "Xmas Reindeer", price: "45:-" },
     ]
   },
   coffee: {
