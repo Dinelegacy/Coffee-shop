@@ -19,7 +19,7 @@
 .bag-item-count {
     position: absolute;
     top: 1.2px;       
-    right: -0.1px;     
+    right: -0.00005px;     
     color: black;
     font-size: 0.8rem;
  width: 3rem;
