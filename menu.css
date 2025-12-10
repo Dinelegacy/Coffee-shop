@@ -4,7 +4,7 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background: #f3efe9;
+    background: #EDE8E5;
 }
 
 ul {
@@ -21,7 +21,7 @@ ul {
     height: 9rem;
     display: flex;
     align-items: flex-end;
-    background: #fff;
+    background: #EDE8E5;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -43,7 +43,8 @@ ul {
 ========================================================= */
 .top-background {
     position: relative;
-    background-image: url('assets/menu/menu1.png');
+    background-image: url('assets/menu/menu_covers/Menu-Covers.jpg');
+    max-height: 162px;
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -61,7 +62,8 @@ ul {
     font-size: 50px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
 }
 
 

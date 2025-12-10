@@ -1,12 +1,12 @@
  
 
 const backgrounds = {
-  default: "assets/menu/menu1.png",
-  promotions: "assets/menu/promotions.jpg",
-  coffee: "assets/menu/coffee1.jpg",
-  tea: "assets/menu/tea.jpg",
-  smoothies: "assets/menu/cold-drinks.jpg",
-  snacks: "assets/menu/factory.jpg"
+  default: "assets/menu/menu_covers/Menu-Covers.jpg",
+  promotions: "assets/menu/menu_covers/Promo.jpg",
+  coffee: "assets/menu/menu_covers/coffee.jpg",
+  tea: "assets/menu/menu_covers/tea.jpg",
+  smoothies: "assets/menu/menu_covers/smoothie.jpg",
+  snacks: "assets/menu/menu_covers/snaks3.jpg"
 };
 
 document.addEventListener("DOMContentLoaded", () => {
