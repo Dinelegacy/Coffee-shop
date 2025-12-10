@@ -121,7 +121,7 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 12px 24px 12px 24px;
-  margin-top: 150px;
+  margin-top: 32px;
 }
 .input-group {
   gap: 8px;
@@ -129,11 +129,10 @@ h1 {
   flex-direction: column;
   height: 90px;
 }
-.form-inputs {
+#form-inputs {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: -90px;
 }
 input[type="text"],
 input[type="password"] {
@@ -172,15 +171,27 @@ label {
   cursor: pointer;
 }
 
+#error-message {
+  color: #f06272;
+  font-size: 14px;
+  margin-top: 16px;
+  height: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.incorrect input {
+  border: 2px solid red;
+}
 .goTo-signupPage {
   margin-top: 16px;
   font-size: 16px;
-  color: #7d7d7d;
+  color: #c67500;
   text-decoration: none;
   text-align: center;
   margin-top: 100px;
 }
-.login {
+#login {
   width: 354px;
   height: 48px;
   border-radius: 24px;
@@ -188,7 +199,7 @@ label {
   background: #c67500;
   text-align: center;
   line-height: 48px;
-  color: #ffffff;
+  background: #afafaf;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
