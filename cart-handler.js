@@ -21,11 +21,26 @@ export function addItemToCart(name, price, img, quantity) {
   updateBagCount();
 }
 
-// Update the bag icon count
-export function updateBagCount() {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const count = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
+ export function updateBagCount() {
+    const bagCountElement = document.getElementById("bagCount");
+    const bagContainer = document.getElementById("bagIcon");
+    const bagImage = document.getElementById("bagImage");
 
-  const badge = document.querySelector(".bag-item-count");
-  if (badge) badge.textContent = count;
+    if (!bagCountElement || !bagContainer || !bagImage) return;
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+    bagCountElement.textContent = totalItems;
+
+    if (totalItems === 0) {
+        // Empty bag
+        bagContainer.classList.remove("filled");
+        bagImage.src = "./assets/functional-icons/bag-icons/icon-empty_bag.svg";
+
+    } else {
+        // Filled bag
+        bagContainer.classList.add("filled");
+        bagImage.src = "./assets/functional-icons/bag-icons/icon-filled_bag.svg";
+    }
 }

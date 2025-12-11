@@ -54,7 +54,7 @@ body {
   display: flex;
   flex-direction: row;
    padding:   16px;
-  border-bottom: 0.2px solid #c67500;
+  border-bottom: 0.2px solid #D6C5B4;
   
 }
 
@@ -169,12 +169,16 @@ body {
   z-index: 1000;
 }
 
-.checkout-btn:hover {
-     background-color: #FECB00;
-    color: white;
-    border: none;
+
+.checkout-btn.active {
+  background-color: #c67500; /* orange when filled */
 }
 
+.checkout-btn.disabled {
+    background: #bfbfbf !important;
+    color: white;
+  cursor: not-allowed;
+}
 .empty-cart-message { 
     color: #c67500; 
     text-align: center;

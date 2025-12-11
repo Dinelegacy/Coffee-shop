@@ -55,18 +55,16 @@ ul {
     justify-content: flex-end;
     flex: 2;
 }
+ 
 
-/* Right: Hamburger Menu */
+/* =========================================================
+ 
 .rightIcons {
     display: flex;
     align-items: center;
     flex: 1;
     justify-content: flex-end;
 }
-
-/* =========================================================
-   BAG ICON
-========================================================= */
 .empty_bag-icon {
     position: relative;
     display: flex;
@@ -74,7 +72,7 @@ ul {
 }
 
 .empty_bag-icon img {
-    width: 32px; /* Slightly larger since it's centered */
+    width: 32px; /* Slightly larger since it's centered 
     height: 32px;
     display: block;
 }
@@ -94,7 +92,7 @@ ul {
     font-size: 12px;
     font-weight: bold;
 }
-
+========================================================= */
 /* =========================================================
    HAMBURGER MENU
 ========================================================= */

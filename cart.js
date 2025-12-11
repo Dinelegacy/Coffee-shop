@@ -1,6 +1,7 @@
 // cart.js
 import { updateBagCount } from "./cart-handler.js";
 import { enableSwipe } from "./swipe.js";
+ 
 
 
 const hamMenu = document.querySelector(".ham-menu");
@@ -118,6 +119,33 @@ function saveAndRefresh() {
   saveCart();
   updateBagCount();
   renderCart();
+   updateUIState();
 }
 
- 
+ function updateUIState() {
+  const bagContainer = document.getElementById("bagIcon");
+  const bagImage = document.getElementById("bagImage");
+  const bagCount = document.getElementById("bagCount");
+  const checkoutBtn = document.getElementById("checkoutBtn");
+
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  bagCount.textContent = totalItems;
+
+  if (totalItems === 0) {
+    // EMPTY BAG
+    bagContainer.classList.remove("filled");
+    bagImage.src = "./assets/functional-icons/bag-icons/icon-empty_bag.svg";
+
+    checkoutBtn.classList.add("disabled");
+    checkoutBtn.disabled = true;
+
+  } else {
+    // FILLED BAG
+    bagContainer.classList.add("filled");
+    bagImage.src = "./assets/functional-icons/bag-icons/icon-filled_bag.svg";
+
+    checkoutBtn.classList.remove("disabled");
+    checkoutBtn.disabled = false;
+  }
+}
+

@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="off-screen-menu.css" />
 <link rel="stylesheet" href="popup.css" />
 <link rel="stylesheet" href="favorite.css" />
+<link rel="stylesheet" href="bag.css">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,16 +89,21 @@
       </a>
     </div>
 
-    <!-- Center: Bag Icon -->
+    <!-- Center: Bag Icon 
     <div class="centerIcons">
       <div class="empty_bag-icon">
         <img src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="bag">
         <span class="bag-item-count">0</span>
       </div>
-    </div>
+    </div>-->
 
     <!-- Right: Hamburger Menu -->
-    <div class="rightIcons">
+   <div class="rightIcons">
+    <div id="bagIcon" class="bag-container">
+        <img  id="bagImage" src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="empty bag icon">
+       <span id="bagCount" class="bag-count">0</span>
+    </div>
+
       <div class="ham-menu">
         <span></span>
         <span></span>
