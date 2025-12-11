@@ -27,17 +27,98 @@ ul {
 #navBarContainer {
     width: 100%;
     height: 5rem;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     padding-left: 0.75rem;
     padding-right: 1.125rem;
     justify-content: space-between;
 }
 
+/* Left: Logo */
+.leftIcons {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.nav-logo {
+    height: auto;
+    max-height: 40px; /* Adjust as needed */
+    width: auto;
+}
+
+/* Center: Bag Icon */
+.centerIcons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 2;
+}
+
+/* Right: Hamburger Menu */
+.rightIcons {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* =========================================================
+   BAG ICON
+========================================================= */
+.empty_bag-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.empty_bag-icon img {
+    width: 32px; /* Slightly larger since it's centered */
+    height: 32px;
+    display: block;
+}
+
+.bag-item-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #c67500;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* =========================================================
+   HAMBURGER MENU
+========================================================= */
+.ham-menu {
+    width: 24px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.ham-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 2px;
+}
+
+/* Hide the chevron icon styles since we're not using it */
 .chevron_left-icon {
     display: none;
 }
-
 
 /* =========================================================
    HEADER CONTAINER
