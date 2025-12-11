@@ -13,13 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
   generateMenu();
   setupAccordion();
   setupProductClicks();
-  setupModalFunctionality();
   setTopBackground("default");
+  setupQuantityButtons();
+  setupModalFunctionality();
 });
-
+// -------- Set Top Background --------
 function setTopBackground(type) {
-  const topBg = document.querySelector('.top-background');
-  if(topBg) topBg.style.backgroundImage = `url(${backgrounds[type] || backgrounds.default})`;
+  const bgImg = document.getElementById('bg-image');
+  const url = backgrounds[type] || backgrounds.default;
+  if (bgImg) {
+    bgImg.src = url;
+  }
 }
 
 /* ---------------------------
@@ -211,15 +215,15 @@ function setupProductClicks() {
   });
 }
 
-// -------- Modal --------
+// -------- Modal Funcitonality PopUp --------
 function showModal(name, price, img) {
   const modal = document.getElementById("productModal");
-  modal.style.display = "flex";
-
   const modalImg = document.getElementById("modal-img");
   const modalName = document.getElementById("modal-name");
   const inlinePrice = document.getElementById("inline-price");
   const quantity = document.getElementById("quantity");
+
+   modal.style.display = "flex";
 
   modalImg.src = img;
   modalName.textContent = name;
@@ -229,6 +233,32 @@ function showModal(name, price, img) {
   inlinePrice.textContent = price + ":-";
 
   quantity.textContent = "1";
+}
+
+// -------- Modal Functionality For Closing PopUp--------
+
+ function setupModalFunctionality() {
+  const modal = document.getElementById("productModal");
+  const closeBtn = modal.querySelector(".close");
+
+  // Close when clicking X
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Close when clicking outside modal content
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // Close when pressing ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.style.display = "none";
+    }
+  });
 }
 
 
