@@ -182,22 +182,21 @@ label {
   color: #7d7d7d;
   margin-left: 14px;
 }
-.next-button {
+#nextBtn {
   width: 354px;
   height: 48px;
   border-radius: 24px;
   border: none;
-  background: #afafaf;
   text-align: center;
+  background: #afafaf;
+
   line-height: 48px;
-  color: #ffffff;
   font-size: 16px;
   font-weight: 700;
-  text-decoration: none;
-  margin-top: 145px;
+  margin-top: 120px;
 }
-.next-button:hover {
-  background-color: #c67500;
+#nextBtn.active {
+  background: #c67500;
   cursor: pointer;
 }
 
@@ -251,17 +250,19 @@ input[type="password"] {
   background-color: #e3dedb;
   text-align: left;
 }
-
-.Sign-up {
+#SignupBtn {
   width: 354px;
   border-radius: 24px;
   border: none;
-  background: #c67500;
+  background: #afafaf;
   text-align: center;
   line-height: 48px;
   color: #ffffff;
   font-size: 16px;
   font-weight: 700;
   margin-top: 145px;
+}
+#SignupBtn.active {
+  background: #c67500;
   cursor: pointer;
 }
