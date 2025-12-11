@@ -127,7 +127,6 @@ h1 {
   gap: 8px;
   display: flex;
   flex-direction: column;
-  height: 90px;
 }
 #form-inputs {
   display: flex;
@@ -142,7 +141,6 @@ input[type="password"] {
   padding: 12px 24px;
   border-radius: 24px;
   background-color: #e3dedb;
-  margin-bottom: 10px;
   text-align: left;
 }
 
@@ -153,36 +151,16 @@ label {
   color: #7d7d7d;
   margin-left: 14px;
 }
-.next-button {
-  width: 354px;
-  height: 48px;
-  border-radius: 24px;
-  border: none;
-  background: #afafaf;
-  text-align: center;
-  line-height: 48px;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-}
-.next-button:hover {
-  background-color: #c67500;
-  cursor: pointer;
-}
-
-
 
 .incorrect input {
   border: 2px solid red;
 }
 .goTo-signupPage {
-  margin-top: 16px;
   font-size: 16px;
   color: #c67500;
   text-decoration: none;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 #login {
   width: 354px;
@@ -198,10 +176,7 @@ label {
   margin-top: 120px;
 }
 
-
 #login.active {
   background: #c67500; /* ORANGE */
   cursor: pointer;
 }
-
-
