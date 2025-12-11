@@ -241,35 +241,42 @@ main {
 .product {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Key for keeping price right */
     padding: 8px;
-    background: #EDE8E5;
-
     border-width: 1px;
-    border-bottom-style:double;
+    border-bottom-style: double;
     border-color: #D6C5B4;
-    
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
     will-change: transform, filter;
     position: relative;
     z-index: 10;
 }
+/* Container for image and product name */
+.product-info {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Takes available space, pushes price to right */
+}
 
 .product img {
     width: 64px;
     height: 64px;
     object-fit: cover;
-    margin-right: 12px;
+     margin-right: 9px; /* Space between image and name */
     transition: transform 0.3s ease;
 }
 
-.product span:first-child {
+.product-name {
     flex: 1;
-    margin-left: 10px;
     text-align: left;
 }
 
+.product-price {
+    font-weight: bold;
+    min-width: 60px;
+    text-align: right;
+}
 
 /* =========================================================
    FOOTER
