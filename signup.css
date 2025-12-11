@@ -198,6 +198,7 @@ label {
 #nextBtn.active {
   background: #c67500;
   cursor: pointer;
+  color: white;
 }
 
 /* signUp next page  */
@@ -257,7 +258,6 @@ input[type="password"] {
   background: #afafaf;
   text-align: center;
   line-height: 48px;
-  color: #ffffff;
   font-size: 16px;
   font-weight: 700;
   margin-top: 145px;
@@ -265,4 +265,18 @@ input[type="password"] {
 #SignupBtn.active {
   background: #c67500;
   cursor: pointer;
+  color: white;
+}
+
+input {
+  background-color: #e3dedb !important; /* your desired color */
+  -webkit-box-shadow: 0 0 0px 1000px #e3dedb inset !important;
+  box-shadow: 0 0 0px 1000px #e3dedb inset !important;
+}
+
+input:-webkit-autofill {
+  background-color: #e3dedb !important;
+  -webkit-box-shadow: 0 0 0px 1000px #e3dedb inset !important;
+  box-shadow: 0 0 0px 1000px #e3dedb inset !important;
+  -webkit-text-fill-color: #000 !important;
 }
