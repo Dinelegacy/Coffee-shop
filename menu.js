@@ -139,9 +139,11 @@ function generateMenu() {
       product.dataset.img = item.img;
 
       product.innerHTML = `
-        <img src="${item.img}">
-        <span>${item.name}</span>
-        <span>${item.price}</span>
+          <div class="product-info">
+          <img src="${item.img}">
+          <span class="product-name">${item.name}</span>
+        </div>
+        <span class="product-price">${item.price}:-</span>
       `;
       content.appendChild(product);
     });

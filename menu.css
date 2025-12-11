@@ -27,17 +27,98 @@ ul {
 #navBarContainer {
     width: 100%;
     height: 5rem;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     padding-left: 0.75rem;
     padding-right: 1.125rem;
     justify-content: space-between;
 }
 
+/* Left: Logo */
+.leftIcons {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.nav-logo {
+    height: auto;
+    max-height: 40px; /* Adjust as needed */
+    width: auto;
+}
+
+/* Center: Bag Icon */
+.centerIcons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 2;
+}
+
+/* Right: Hamburger Menu */
+.rightIcons {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* =========================================================
+   BAG ICON
+========================================================= */
+.empty_bag-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.empty_bag-icon img {
+    width: 32px; /* Slightly larger since it's centered */
+    height: 32px;
+    display: block;
+}
+
+.bag-item-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #c67500;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* =========================================================
+   HAMBURGER MENU
+========================================================= */
+.ham-menu {
+    width: 24px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.ham-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 2px;
+}
+
+/* Hide the chevron icon styles since we're not using it */
 .chevron_left-icon {
     display: none;
 }
-
 
 /* =========================================================
    HEADER CONTAINER
@@ -113,7 +194,8 @@ main {
    ACCORDION
 ========================================================= */
 .accordion {
-    border-bottom: 1px solid #EDE8E5;
+    border-bottom: 1px solid #f8f6f5;
+    margin-bottom: 1px;
 }
 
 .accordion-header {
@@ -132,13 +214,18 @@ main {
 
 /* Hover effect */
 .accordion-header:hover {
-    background-color: #c67500 !important; /* Slightly lighter black on hover */
+    background: #c67500 !important;
+    transform: translateY(-2px);
 }
 
 /* Active (open) accordion */
 .accordion-header.active {
-    background-color: #c67500 !important; /* Gold/orange color when open */
-    border-bottom: 1px solid #000000 !important;
+    background: #c67500 !important;
+}
+
+/* No jump on active hover */
+.accordion-header.active:hover {
+    transform: none;
 }
 
 .accordion-content {
@@ -154,35 +241,42 @@ main {
 .product {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Key for keeping price right */
     padding: 8px;
-    background: #EDE8E5;
-
     border-width: 1px;
-    border-bottom-style:double;
+    border-bottom-style: double;
     border-color: #D6C5B4;
-    
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
     will-change: transform, filter;
     position: relative;
     z-index: 10;
 }
+/* Container for image and product name */
+.product-info {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Takes available space, pushes price to right */
+}
 
 .product img {
     width: 64px;
     height: 64px;
     object-fit: cover;
-    margin-right: 12px;
+     margin-right: 9px; /* Space between image and name */
     transition: transform 0.3s ease;
 }
 
-.product span:first-child {
+.product-name {
     flex: 1;
-    margin-left: 10px;
     text-align: left;
 }
 
+.product-price {
+    font-weight: bold;
+    min-width: 60px;
+    text-align: right;
+}
 
 /* =========================================================
    FOOTER
@@ -203,6 +297,7 @@ footer ul {
     font-size: 1rem;
     font-weight: 700;
     line-height: 2.5rem;
+    list-style: ;
 }
 
 #socialIcons {
