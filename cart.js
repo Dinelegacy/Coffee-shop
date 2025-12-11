@@ -1,5 +1,6 @@
 // cart.js
 import { updateBagCount } from "./cart-handler.js";
+import { enableSwipe } from "./swipe.js";
 
 
 const hamMenu = document.querySelector(".ham-menu");
@@ -51,7 +52,7 @@ function renderCart() {
     div.className = "cart-item";
 
     div.innerHTML = `
-      <div class="cart-header">
+      <div class="cart-info">
         <img class="cart-item-img" src="${item.img}">
         <div class="cart-item-info">
           <p>${item.name}</p>
@@ -64,7 +65,16 @@ function renderCart() {
         <span class="qty">${item.quantity}</span>
         <button class="plus" data-index="${index}">+</button>
       </div>
-    `;
+    
+
+    
+      <div class="cart-actions">
+        <button class="minus" data-index="${index}">−</button>
+        <span class="qty">${item.quantity}</span>
+        <button class="plus" data-index="${index}">+</button>
+      </div>
+
+ `;
 
     container.appendChild(div);
   });
@@ -88,6 +98,7 @@ function attachQuantityButtons() {
       saveAndRefresh();
     });
   });
+  enableSwipe(); 
 
   document.querySelectorAll(".minus").forEach(btn => {
     btn.addEventListener("click", () => {
