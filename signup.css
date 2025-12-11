@@ -152,31 +152,26 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 12px 24px 12px 24px;
-  gap: 200px;
-  margin-top: 150px;
-  margin-bottom: 85px;
+  margin-top: 32px;
 }
 .input-group {
   gap: 8px;
   display: flex;
   flex-direction: column;
-  height: 90px;
 }
-.form-inputs {
+#form-inputs {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: -90px;
 }
 input[type="text"],
 input[type="date"] {
   width: 354px;
   border: 1px solid #a1a1a1;
-  color: #7d7d7d;
+  color: #000000;
   padding: 12px 24px;
   border-radius: 24px;
   background-color: #e3dedb;
-  margin-bottom: 10px;
   text-align: left;
 }
 
@@ -187,21 +182,21 @@ label {
   color: #7d7d7d;
   margin-left: 14px;
 }
-.next-button {
+#nextBtn {
   width: 354px;
   height: 48px;
   border-radius: 24px;
   border: none;
-  background: #afafaf;
   text-align: center;
+  background: #afafaf;
+
   line-height: 48px;
-  color: #ffffff;
   font-size: 16px;
   font-weight: 700;
-  text-decoration: none;
+  margin-top: 120px;
 }
-.next-button:hover {
-  background-color: #c67500;
+#nextBtn.active {
+  background: #c67500;
   cursor: pointer;
 }
 
@@ -253,21 +248,21 @@ input[type="password"] {
   padding: 12px 24px;
   border-radius: 24px;
   background-color: #e3dedb;
-  margin-bottom: 10px;
   text-align: left;
 }
-
-.Sign-up {
+#SignupBtn {
   width: 354px;
-  height: 48px;
   border-radius: 24px;
   border: none;
-  background: #c67500;
+  background: #afafaf;
   text-align: center;
   line-height: 48px;
   color: #ffffff;
   font-size: 16px;
   font-weight: 700;
   margin-top: 145px;
+}
+#SignupBtn.active {
+  background: #c67500;
   cursor: pointer;
 }

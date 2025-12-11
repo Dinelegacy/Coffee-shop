@@ -32,38 +32,18 @@ function setTopBackground(type) {
 const menuData = {
   promotions: {
     items: [
-      { img: "assets/menu/Sandman Latte with gräde.jpg", 
-        name: "Sandman latte with Gräde", 
+      { img: "assets/menu/new_pics/ap_squared.jpg", 
+        name: "American Pancakes", 
         price: 45
        },
-      { img: "assets/menu/xmas reindeer.jpg", 
-        name: "Xmas Reindeer",
-         price: 45 
+      { img: "assets/menu/new_pics/three-cups_squared.jpg", 
+        name: "Pay two, get one extra",
+         price: 60 
         },
-      { img: "assets/menu/Cappuccino with ginger man.jpg", 
-        name: "Cappucciano with ginger man",
+      { img: "assets/menu/new_pics/ap_squared.jpg", 
+        name: "1 Croissant free, for each coffe",
          price: 40
         },
-      { img: "assets/menu/Hot chocolate with marshmellow.jpg",
-         name: "Hot Chocolate with Marshmellow", 
-         price: 45
-        },
-      { img: "assets/menu/Wizard's Coffee with milk.jpg",
-         name: "Wizard's Coffe with milk", 
-         price: 45
-        },
-      { img: "assets/menu/Spiced Rum Coffee.jpg", 
-        name: "Spiced Rum coffee",
-         price: 45
-        },
-      { img: "assets/menu/Christmas Chai Latte.jpg", 
-        name: "Christmas Chai Latte",
-         price: 40
-        },
-      { img: "assets/menu/Pumpkin Spice Latte.jpg", 
-        name: "Pumpkin Spice Latte", 
-        price: 40
-      }
     ]
   },
   coffee: {
