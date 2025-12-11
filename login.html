@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="navegationBar.css">
     <link rel="stylesheet" href="off-screen-menu.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
 </head>
 
 <body>
@@ -125,31 +133,32 @@
     </section>
 
     <section id="form">
-        <form class="form-inputs">
+
+
+        <form id="form-inputs">
             <div class="input-group">
                 <label for="email-input">Email</label>
                 <input type="text" name="email" id="email-input" placeholder="Email">
             </div>
             <div class="input-group">
                 <label for="password-input">Password</label>
-                <input type="password" name="password" id="password-input" placeholder="Password">
+                <input type="password" name="password" id="password-input" minlength="8" placeholder="Password">
             </div>
 
 
+            <div class="goTo-signupPage">
+                <p> Don’t have an account?<a href="signup.html" id="open-register">Sign up</a></p>
+            </div>
+
+            <button type="submit" id="login" disabled>Login </button>
         </form>
-
-
-        <div class="goTo-signupPage">
-            <p> Don’t have an account?<a href="signup.html" id="open-register">Sign up</a></p>
-        </div>
-
-        <button type="submit" class="login">Login</button>
 
 
 
     </section>
 
     <script src="index.js"></script>
+    <script src="login.js"> </script>
 </body>
 
 </html>

@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="navegationBar.css">
     <link rel="stylesheet" href="off-screen-menu.css">
 
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
 </head>
 
 <body>
@@ -129,7 +137,7 @@
     </section>
 
     <section id="form">
-        <form class="form-inputs">
+        <form id="form-inputs">
             <div class="input-group">
                 <label for="email-input">Email *</label>
                 <input type="email" name="email" id="email-input" placeholder="Email" required>
@@ -148,13 +156,15 @@
             </div>
 
 
-            <button type="submit" class="Sign-up">Sign-up</button>
+            <button type="submit" id="SignupBtn" disabled>Sign-up </button>
 
         </form>
 
     </section>
 
     <script src="index.js"></script>
+    <script src="signupNextPage.js"></script>
+
 
 </body>
 

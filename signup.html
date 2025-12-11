@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="signup.css">
     <link rel="stylesheet" href="navegationBar.css">
     <link rel="stylesheet" href="off-screen-menu.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
 </head>
 
 <body>
@@ -130,7 +138,7 @@
     </section>
 
     <section id="form">
-        <form class="form-inputs">
+        <form id="form-inputs">
             <div class="input-group">
                 <label for="firstname-input">First Name *</label>
                 <input type="text" name="firstname" id="firstname-input" placeholder="First Name">
@@ -147,12 +155,14 @@
         </form>
 
 
-        <a class="next-button" href="signupNextPage.html">Next</a>
-
+        <button type="button" id="nextBtn" disabled>
+            Next
+        </button>
 
     </section>
 
     <script src="index.js"></script>
+    <script src="signup.js"></script>
 
 </body>
 
