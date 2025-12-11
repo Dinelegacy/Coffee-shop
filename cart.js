@@ -37,9 +37,11 @@ function renderCart() {
   container.innerHTML = "";
 
   if (cart.length === 0) {
-    container.innerHTML = `<div class="empty-cart-message">Your cart is empty.</div>`;
+    container.innerHTML = `<div class="empty-cart-message">Your bag is empty!</div>`;
     totalEl.textContent = "00.00 SEK";
     vatEl.textContent = "00.00 SEK";
+
+     document.querySelector(".cart-summary").style.display = "none";
     return;
   }
 

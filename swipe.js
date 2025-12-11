@@ -4,24 +4,24 @@
 
   document.querySelectorAll(".cart-item").forEach(item => {
 
-    item.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
+    item.addEventListener("touchstart", (swipeLeftRight) => {
+      startX = swipeLeftRight.touches[0].clientX;
       currentX = startX;
     });
 
-    item.addEventListener("touchmove", (e) => {
-      currentX = e.touches[0].clientX;
+    item.addEventListener("touchmove", (swipeLeftRight) => {
+      currentX = swipeLeftRight.touches[0].clientX;
     });
 
-    item.addEventListener("touchend", (e) => {
+    item.addEventListener("touchend", (swipeLeftRight) => {
       const diff = startX - currentX;
 
       // 1️⃣ If touching inside PLUS or MINUS → DO NOT CLOSE SWIPE
-      if (e.target.closest(".plus") || e.target.closest(".minus")) {
+      if (swipeLeftRight.target.closest(".plus") || swipeLeftRight.target.closest(".minus")) {
         return; 
       }
 
-      // 2️⃣ Ignore tiny finger movement (tap)
+      // 2️⃣ Ignore small swipes
       if (Math.abs(diff) < 40) return;
 
       // 3️⃣ Swipe left → open actions

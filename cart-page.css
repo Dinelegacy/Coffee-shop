@@ -171,7 +171,7 @@ body {
 
 
 .checkout-btn.active {
-  background-color: #c67500; /* orange when filled */
+  background-color: #c67500;  
 }
 
 .checkout-btn.disabled {
@@ -182,11 +182,13 @@ body {
 .empty-cart-message { 
     color: #c67500; 
     text-align: center;
+    align-items: center;
+    justify-content: center;
      padding: 1rem 1rem; 
-     border-radius: 10px; 
-     font-size: 1.1rem; 
-     margin: 1.5rem auto;
-      width: fit-content; 
+     font-size: 1.5rem; 
+      width: 90%; 
+      font-weight: 500;
+      margin-top: 200px;
     }
 
 
@@ -195,11 +197,7 @@ body {
     cursor: pointer;
 }
 
-.rightIcons {
-    display: flex;
-    gap: 2rem;
-}
-
+ 
 .ham-menu {
     width: 32px;
     height: 22px;
