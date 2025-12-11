@@ -28,11 +28,12 @@ li div {
     align-items: center;
     text-align: center;
     transition: .3s ease;
-    z-index: 1;
+    z-index: 9999;
 }
 
 .off-screen-menu.active {
     right: 0;
+    transform: translateX(0);
 }
 
 /* Hamburger Menu */

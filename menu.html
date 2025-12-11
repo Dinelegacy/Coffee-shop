@@ -5,88 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hej Fika Menu</title>
 
+  <!-- Styles -->
   <link rel="stylesheet" href="menu.css" />
-  <link rel="stylesheet" href="popup.css"/>
-  <link rel="stylesheet" href="favorite.css">
-<link rel="stylesheet" href="./bag.css">
+  <link rel="stylesheet" href="navegationBar.css" />
+  <link rel="stylesheet" href="off-screen-menu.css" />
+  <link rel="stylesheet" href="popup.css" />
+  <link rel="stylesheet" href="favorite.css" />
+  <link rel="stylesheet" href="bag.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<nav id="navBar" class="top-navBar">
-    <div id="navBarContainer">
-        <div class="leftIcons">
-            <div class="chevron_left-icon">
-                <img src="./assets/functional-icons/chevron_black_left-icon.svg">
-            </div>
-
-            <div>
-                <a href="index.html">
-                    <img src="./assets/logo-horizontal.svg">
-                </a>
-            </div>
-        </div>
- 
-        <div class="rightIcons">
-    <div class="empty_bag-icon">
-        <img src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="empty bag icon">
-        <span class="bag-item-count">0</span>
-    </div>  </div>
-
-            <div>
-                <img src="./assets/functional-icons/hamburger-menu-icon.svg">
-            </div>
-        </div>
-    </div>
-</nav>
-
-<div class="top-background">
-    <div  class="section-title">MENU</div>
+<!-- Off-screen Menu -->
+<div class="off-screen-menu">
+  <div class="offMenu-content">
+    <ul class="menuList">
+      <a href="./login.html"><li class="list">Login / Sign-up</li></a>
+      <a href="./menu.html"><li class="list">Menu</li></a>
+      <li class="list">Favorites</li>
+      <li class="list">Your bag</li>
+      <li class="list">Work with us</li>
+      <li class="list">About us</li>
+    </ul>
+  </div>
 </div>
 
+<!-- Navigation Bar -->
+<nav id="navBar" class="top-navBar">
+  <div id="navBarContainer">
+
+    <div class="leftIcons">
+      <div class="chevron_left-icon">
+        <a href="index.html">
+          <img src="./assets/functional-icons/chevron_black_left-icon.svg" alt="back">
+        </a>
+      </div>
+      <div>
+        <a href="index.html">
+          <img src="./assets/logo-horizontal.svg" alt="logo">
+        </a>
+      </div>
+    </div>
+
+    <div class="rightIcons">
+      <div class="empty_bag-icon">
+        <img src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="bag">
+        <span class="bag-item-count">0</span>
+      </div>
+
+      <!-- Hamburger -->
+      <div class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Top Background -->
+<div class="header-container">
+  <div class="top-background">
+    <div class="background-image-container">
+      <img id="bg-image" src="assets/menu/menu_covers/Menu-Covers.jpg" alt="Menu Background">
+    </div>
+    <div class="section-title">MENU</div>
+  </div>
+</div>
+
+<!-- Main Menu Container -->
 <main>
   <div class="menu-section" id="menuContainer"></div>
 </main>
 
+<!-- Product Modal -->
 <div id="productModal" class="modal">
-    <div class="modal-content">
+  <div class="modal-content">
 
-        <div class="modal-product">
+    <div class="modal-product">
 
-            <!-- Close -->
-            <span class="close">&times;</span>
+      <span class="close">&times;</span>
 
-            <!-- TOP ROW -->
-            <div class="modal-top-row">
-                <div class="modal-image-wrap">
-                    <img id="modal-img" src="">
-                </div>
+      <div class="modal-top-row">
 
-                <div class="modal-title-wrap">
-                    <h3 id="modal-name"></h3>
-                </div>
-
-                <div class="favorite-icon-static">
-    <img src="assets/functional-icons/Favorite Heart-icon.svg" alt="favorite">
-</div>
-
-            </div>
-
-            <!-- BOTTOM ROW -->
-            <div class="modal-bottom-row">
-                <div class="qty-wrap">
-                    <button id="decrease" class="qty-btn">-</button>
-                    <span id="quantity">1</span>
-                    <button id="increase" class="qty-btn">+</button>
-                </div>
-
-                <button id="add-to-cart" class="add-to-cart-inline">
-                    <span>Add to Cart</span>
-                    <span id="inline-price"></span>
-                </button>
-            </div>
-
+        <div class="modal-image-wrap">
+          <img id="modal-img" src="" alt="">
         </div>
+
+        <div class="modal-title-wrap">
+          <h3 id="modal-name"></h3>
+        </div>
+
+        <div class="favorite-icon-static">
+          <img src="assets/functional-icons/Favorite Heart-icon.svg" alt="favorite">
+        </div>
+
+      </div>
+
+      <div class="modal-bottom-row">
+        <div class="qty-wrap">
+          <button id="decrease" class="qty-btn">-</button>
+          <span id="quantity">1</span>
+          <button id="increase" class="qty-btn">+</button>
+        </div>
+
+        <button id="add-to-cart" class="add-to-cart-inline">
+          <span>Add to Cart</span>
+          <span id="inline-price"></span>
+        </button>
+      </div>
+
     </div>
+  </div>
 </div>
 
     <footer>
@@ -105,11 +141,15 @@
     </footer>
 
 
-<script src="menu.js" defer></script>
+<!-- Scripts (correct order and safe) -->
+<script src="index.js" defer></script>
 <script src="favorite.js" defer></script>
- <script src="index.js" defer></script>
-  <script type="module" src="cart-handler.js"></script>
- <script type="module" src="menu-cart.js"></script>
- 
+<script src="script.js" defer></script>
+
+<script type="module" src="cart-handler.js"></script>
+<script type="module" src="menu-cart.js"></script>
+<!-- Module script for menu logic -->
+<script type="module" src="menu.js"></script>
+
 </body>
 </html>
