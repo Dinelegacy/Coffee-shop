@@ -56,27 +56,20 @@ function renderCart() {
 
     div.innerHTML = `
       <div class="cart-info">
-        <img class="cart-item-img" src="${item.img}">
-        <div class="cart-item-info">
-          <p>${item.name}</p>
-          <p class="price-line">${item.quantity} × ${item.price}:-</p>
-        </div>
-      </div>
+    <img class="cart-item-img" src="${item.img}">
+
+    <div class="cart-middle">
+        <p class="item-name">${item.name}</p>
+        <p class="price-line">${item.quantity} × ${item.price}:-</p>
+    </div>
+</div>
+     
 
       <div class="cart-actions">
         <button class="minus" data-index="${index}">−</button>
         <span class="qty">${item.quantity}</span>
         <button class="plus" data-index="${index}">+</button>
       </div>
-    
-
-    
-      <div class="cart-actions">
-        <button class="minus" data-index="${index}">−</button>
-        <span class="qty">${item.quantity}</span>
-        <button class="plus" data-index="${index}">+</button>
-      </div>
-
  `;
 
     container.appendChild(div);
