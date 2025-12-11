@@ -60,7 +60,7 @@ function renderCart() {
 
     <div class="cart-middle">
         <p class="item-name">${item.name}</p>
-        <p class="price-line">${item.quantity} × ${item.price}:-</p>
+        <p class="price-line"><span class="hidden">${item.quantity} × </span> ${item.price}:-</p>
     </div>
 </div>
      

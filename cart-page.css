@@ -110,7 +110,7 @@ body {
   align-items: center;
 }
 
-.cart-item.show-actions .price-line {
+.cart-item.show-actions .hidden {
   display: none;
 }
 
