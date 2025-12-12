@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,198 +6,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hej Fika Menu</title>
 
-  <!-- Styles -->
-<!-- Change the order - navigation first -->
-<link rel="stylesheet" href="navegationBar.css" />
-<link rel="stylesheet" href="menu.css" />
-<link rel="stylesheet" href="off-screen-menu.css" />
-<link rel="stylesheet" href="popup.css" />
-<link rel="stylesheet" href="favorite.css" />
+  <!-- ========== STYLESHEETS ========== -->
+  <!-- NAVIGATION FIRST (Most important for user interaction) -->
+  <link rel="stylesheet" href="navegationBar.css" />
+  <!-- Note: 'navegationBar.css' has a typo (should be 'navigationBar.css') -->
+  <!-- PAGE-SPECIFIC STYLES -->
+  <link rel="stylesheet" href="menu.css" />           <!-- Main menu styling -->
+  <link rel="stylesheet" href="off-screen-menu.css" /> <!-- Hidden side menu -->
+  <link rel="stylesheet" href="popup.css" />          <!-- Modal/popup windows -->
+  <link rel="stylesheet" href="favorite.css" />       <!-- Favorite/heart styling -->
 
-  <!-- Fonts -->
+  <!-- ========== GOOGLE FONTS ========== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Another preconnect for the font files themselves -->
+  
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
-
 </head>
+<!-- END OF HEAD SECTION -->
 
 <body>
+  <!-- ========== OFF-SCREEN MENU ========== -->
+  <div class="off-screen-menu">
+    <div class="offMenu-content">
+      <ul class="menuList">
 
-<!-- Off-screen Menu -->
-<div class="off-screen-menu">
-        <div class="offMenu-content">
-            <ul class="menuList">
-                <a href="./login.html">
-                    <li id="Sign-up" class="list">
-                    <div>
-                        <img class="menuIcon" src="./assets/functional-icons/Account-icon.svg" alt="user account icon">
-                        Login / Sign-up
-                    </div>
-                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
-                </li>
-                </a>
-                <a href="./menu.html">
-                    <li id="menu" class="list">
-                        <div>
-                            <img class="menuIcon" src="./assets/functional-icons/Menu-icon.svg" alt="menu icon">
-                        Menu
-                       </div>
-                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
-                </li>
-                </a>
-                <li id="favorites" class="list">
-                    <div>
-                        <img class="menuIcon" src="./assets/functional-icons/Favorite Heart-icon.svg" alt="heart icon">
-                        Favorites
-                    </div>
-
-                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
-                </li>
-                <li id="yourBag" class="list">
-                    <div>
-                        <img class="menuIcon" src="./assets/functional-icons/bag-icons/icon-empty_bag-white.svg" alt="empty bag icon">
-                        Your bag
-                    </div>
-                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
-                </li>
-                <li id="wwu" class="list">
-                    <div>
-                        <img class="menuIcon" src="./assets/functional-icons/Work_with_Us-icon.svg" alt="Work with us icon">
-                        Work with us
-                    </div>
-                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
-                </li>
-                <li id="aboutUs" class="list">
-                    <div>
-                        <img class="menuIcon" src="./assets/functional-icons/About_Us-icon.svg" alt="about us icon">
-                        About us
-                    </div>
-                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
-                </li>
-            </ul>
-        </div>
+        <a href="./login.html">
+          <li id="Sign-up" class="list">
+            <div>
+              <img class="menuIcon" src="./assets/functional-icons/Account-icon.svg" alt="user account icon">
+              Login / Sign-up
+            </div>
+            <!-- Right chevron indicates "this item is clickable" -->
+            <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+          </li>
+        </a>
+        <!-- More menu items follow same pattern... -->
+      </ul>
     </div>
+  </div>
+  <!-- END OFF-SCREEN MENU -->
 
-<!-- Navigation Bar -->
-<nav id="navBar" class="top-navBar">
-  <div id="navBarContainer">
+  <!-- ========== NAVIGATION BAR (Always visible) ========== -->
+  <nav id="navBar" class="top-navBar">
+    <div id="navBarContainer">
+      
+      <!-- LEFT: Logo (always takes you back to home page) -->
+      <div class="leftIcons">
+        <a href="index.html">
+          <img src="./assets/logo-horizontal.svg" alt="logo" class="nav-logo">
+        </a>
+      </div>
 
-    <!-- Left: Logo -->
-    <div class="leftIcons">
+      <!-- CENTER: Shopping bag with item counter -->
+      <div class="centerIcons">
+        <div class="empty_bag-icon">
+          <img src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="bag">
+          <!-- This number updates via JavaScript when items are added -->
+          <span class="bag-item-count">0</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Hamburger menu (3 lines) -->
+      <div class="rightIcons">
+        <div class="ham-menu">
+          <!-- Three spans create the "hamburger" icon -->
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      
+    </div>
+  </nav>
+  <!-- END NAVIGATION -->
+
+  <!-- ========== PAGE HEADER WITH BACKGROUND ========== -->
+  <div class="header-container">
+    <div class="top-background">
+      <!-- Large background image for visual appeal -->
+      <div class="background-image-container">
+        <img id="bg-image" src="assets/menu/menu_covers/Menu-Covers.jpg" alt="Menu Background">
+      </div>
+      <!-- Main page title overlayed on background -->
+      <div class="section-title">MENU</div>
+    </div>
+  </div>
+  <!-- END HEADER -->
+
+  <!-- ========== MAIN CONTENT AREA ========== -->
+  <main>
+    <!-- This container will be FILLED by JavaScript -->
+    <div class="menu-section" id="menuContainer"></div>
+    <!-- JavaScript will dynamically insert menu items here
+         This is called "dynamic content rendering" -->
+  </main>
+  <!-- END MAIN CONTENT -->
+
+  <!-- ========== PRODUCT MODAL (Hidden popup) ========== -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-product">
+        
+        <!-- Close button (X in top-right corner) -->
+        <span class="close">&times;</span>
+        
+        <!-- Top row: Product image and name -->
+        <div class="modal-top-row">
+          <div class="modal-image-wrap">
+            <!-- JavaScript will insert the product image here -->
+            <img id="modal-img" src="">
+          </div>
+          <div class="modal-title-wrap">
+            <!-- JavaScript will insert the product name here -->
+            <h3 id="modal-name"></h3>
+          </div>
+          <!-- Note: The favorite heart icon will be added by JavaScript -->
+        </div>
+        
+        <!-- Bottom row: Quantity controls and add to cart -->
+        <div class="modal-bottom-row">
+          <!-- Quantity selector: minus, number, plus -->
+          <div class="qty-wrap">
+            <button id="decrease" class="qty-btn">-</button>
+            <span id="quantity">1</span>
+            <button id="increase" class="qty-btn">+</button>
+          </div>
+          
+          <!-- Add to cart button with price display -->
+          <button id="add-to-cart" class="add-to-cart-inline">
+            <span>Add to Cart</span>
+            <!-- JavaScript will insert the price here -->
+            <span id="inline-price"></span>
+          </button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- END MODAL -->
+
+  <!-- ========== FOOTER (Bottom of page) ========== -->
+  <footer>
+    <!-- Logo in footer -->
+    <div>
       <a href="index.html">
-        <img src="./assets/logo-horizontal.svg" alt="logo" class="nav-logo">
+        <img src="./assets/logo.svg" alt="logo">
       </a>
     </div>
 
-    <!-- Center: Bag Icon -->
-    <div class="centerIcons">
-      <div class="empty_bag-icon">
-        <img src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="bag">
-        <span class="bag-item-count">0</span>
-      </div>
+    <!-- Footer links -->
+    <ul>
+      <li>
+        <!-- Link opens in new tab (target="_blank") -->
+        <a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">
+          Sveavägen 39, 111 34 Stockholm
+        </a>
+      </li>
+      <li>Contact us</li>   <!-- Note: These aren't links yet -->
+      <li>About us</li>
+      <li>Policy</li>
+    </ul>
+
+    <!-- Social media icons -->
+    <div id="socialIcons" class="footer-socialIcons">
+      <div><img src="./assets/social-icons/facebook-icon.svg" alt="Facebook"></div>
+      <div><img src="./assets/social-icons/instagram-icon.svg" alt="Instagram"></div>
+      <div><img src="./assets/social-icons/github-icon.svg" alt="GitHub"></div>
     </div>
+  </footer>
+  <!-- END FOOTER -->
 
-    <!-- Right: Hamburger Menu -->
-    <div class="rightIcons">
-      <div class="ham-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
+  <!-- ========== JAVASCRIPT FILES ========== -->
+  <!-- 'defer' means: "Wait until HTML is fully loaded, THEN execute" -->
+  <script src="index.js" defer></script>      <!-- General site functionality -->
+  <script src="favorite.js" defer></script>   <!-- Favorite/heart functionality -->
 
-  </div>
-</nav>
+  <!-- 'type="module"' allows using modern JavaScript imports/exports -->
+  <script type="module" src="cart-handler.js"></script>  <!-- Shopping cart logic -->
+  <script type="module" src="menu-cart.js"></script>     <!-- Menu-specific cart features -->
 
-<!-- Top Background -->
-<div class="header-container">
-  <div class="top-background">
-    <div class="background-image-container">
-      <img id="bg-image" src="assets/menu/menu_covers/Menu-Covers.jpg" alt="Menu Background">
-    </div>
-    <div class="section-title">MENU</div>
-  </div>
-</div>
-
-<!-- Main Menu Container -->
-<main>
-  <div class="menu-section" id="menuContainer"></div>
-</main>
-
-<!-- Product Modal -->
-<div id="productModal" class="modal">
-  <div class="modal-content">
-
-    <div class="modal-product">
-
-      <span class="close">&times;</span>
-
-      <div class="modal-top-row">
-
-        <div class="modal-image-wrap">
-          <img id="modal-img" src="" alt="">
-        </div>
-
-        <div class="modal-title-wrap">
-          <h3 id="modal-name"></h3>
-        </div>
-
-        <div class="favorite-icon-static"></div>      
-
-
-      </div>
-
-      <div class="modal-bottom-row">
-        <div class="qty-wrap">
-          <button id="decrease" class="qty-btn">-</button>
-          <span id="quantity">1</span>
-          <button id="increase" class="qty-btn">+</button>
-        </div>
-
-        <button id="add-to-cart" class="add-to-cart-inline">
-          <span>Add to Cart</span>
-          <span id="inline-price"></span>
-        </button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer>
-  <div>
-    <a href="index.html">
-      <img src="./assets/logo.svg" alt="logo">
-    </a>
-  </div>
-
-  <ul>
-    <li>
-      <a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">
-        Sveavägen 39, 111 34 Stockholm
-      </a>
-    </li>
-    <li>Contact us</li>
-    <li>About us</li>
-    <li>Policy</li>
-  </ul>
-
-  <div id="socialIcons" class="footer-socialIcons">
-    <div><img src="./assets/social-icons/facebook-icon.svg" alt=""></div>
-    <div><img src="./assets/social-icons/instagram-icon.svg" alt=""></div>
-    <div><img src="./assets/social-icons/github-icon.svg" alt=""></div>
-  </div>
-</footer>
-
-<!-- Scripts (correct order and safe) -->
-<script src="index.js" defer></script>
-<script src="favorite.js" defer></script>
-
-<script type="module" src="cart-handler.js"></script>
-<script type="module" src="menu-cart.js"></script>
-<!-- Module script for menu logic -->
-<script type="module" src="menu.js"></script>
+  <!-- MAIN MENU LOGIC - loads LAST because it needs everything else ready -->
+  <script type="module" src="menu.js"></script>
 
 </body>
 </html>

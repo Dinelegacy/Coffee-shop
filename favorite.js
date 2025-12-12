@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     // Insert favorite button next to modal name
-    modalName.parentElement.appendChild(favBtn);
+    // modalName.parentElement.appendChild(favBtn);
+    
+    document.querySelector(".modal-top-row").appendChild(favBtn);   //Changed by Raheel
 
     // Load saved favorites and remove null values once
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];

@@ -1,130 +1,185 @@
+/* ============================================================================
+   🪟 MODAL OVERLAY (Background dimming layer)
+   ============================================================================ */
 .modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+    display: none; /* HIDDEN BY DEFAULT: Only shown when product is clicked */
+    position: fixed; /* FIXED POSITIONING: Stays in place even when scrolling */
+    inset: 0; /* COVERS ENTIRE VIEWPORT */
+    background: rgba(0,0,0,0.5); /* DARK SEMI-TRANSPARENT BACKGROUND */
+    justify-content: center; /* CENTER MODAL CONTENT horizontally */
+    align-items: center; /* CENTER MODAL CONTENT vertically */
+    z-index: 9999; /* HIGH Z-INDEX: On top of everything */
 }
 
+/* ============================================================================
+   🪟 MODAL CONTENT BOX (The white popup box)
+   ============================================================================ */
 .modal-content {
-    background: #fff;
-    padding: 20px;
-    width: 90%;
-    max-width: 420px;
-    position: relative;
+    background: #fff; /* WHITE BACKGROUND */
+    padding: 10px; /* INTERNAL SPACING */
+    width: 100%; /* FULL WIDTH ON MOBILE */
+    max-width: 420px; /* MAXIMUM WIDTH on desktop */
+    position: relative; /* Allows absolute positioning of child elements */
 }
 
+/* ============================================================================
+   ❌ CLOSE BUTTON (X in top-right corner)
+   ============================================================================ */
 .close {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    font-size: 22px;
-    cursor: pointer;
+    position: absolute; /* Position relative to .modal-content */
+    top: 0; /* 10px from top edge */
+    right: 3px; /* 12px from right edge */
+    font-size: 22px; /* Large and clickable */
+    cursor: pointer; /* Shows hand pointer on hover */
 }
 
-/* Top row */
+/* ============================================================================
+   📋 MODAL TOP ROW (Image, Name, and Favorite Button)
+   ============================================================================ */
 .modal-top-row {
-    display: flex;
-    align-items: center; /* This centers everything vertically */
-    gap: 12px;
-    margin-bottom: 20px;
+    margin-top: 13px; /* Space from top of modal */
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertical center alignment */
+    gap: 15px; /* Space between image and text */
+    margin-bottom: 20px; /* Space before bottom section */
+    position: relative; /* For absolute positioning of favorite button */
 }
 
+/* ============================================================================
+   🖼️ MODAL IMAGE CONTAINER
+   ============================================================================ */
+.modal-image-wrap {
+    min-width: 0; /* Allows text wrapping in sibling */
+    padding-right: 5px; /* Room for favorite button */
+    width: 100px; /* Fixed width for image */
+    height: 100px; /* Fixed height (square) */
+    display: flex; /* Center image inside */
+    align-items: center; /* Vertical center */
+    justify-content: center; /* Horizontal center */
+    overflow: hidden; /* Hide image overflow */
+    flex-shrink: 0; /* Don't shrink */
+}
+
+/* ============================================================================
+   🖼️ MODAL IMAGE
+   ============================================================================ */
+.modal-image-wrap img {
+    width: 100%; /* Fill container */
+    object-fit: contain; /* Show entire image without cropping */
+}
+
+/* ============================================================================
+   📝 PRODUCT NAME CONTAINER
+   ============================================================================ */
 .modal-title-wrap {
     flex: 1; /* Take available space */
-    display: flex;
+    display: flex; /* For vertical centering */
     align-items: center; /* Center text vertically */
     height: 100px; /* Match image height */
 }
 
-.modal-image-wrap {
-    width: 100px; /* Fixed width */
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    flex-shrink: 0; /* Don't shrink */
-}
-
-.modal-image-wrap img {
-    width: 100%;
-    /* height: 100%; */
-    object-fit: contain;
-}
-
+/* ============================================================================
+   📝 PRODUCT NAME TEXT
+   ============================================================================ */
 .modal-title-wrap h3 {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 500;
-    text-align: left;
-    display: flex;
-    align-items: center; /* Center the text */
-    height: 100%;
+    margin: 0; /* Remove default margins */
+    font-size: 15px; /* Readable size */
+    font-weight: 500; /* Medium weight */
+    text-align: left; /* Standard reading direction */
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Modern text wrapping */
+    line-height: 1.3; /* Good readability */
+    display: block; /* Proper text flow */
+    margin-right: 10px; /* Space before favorite button */
 }
 
+/* ============================================================================
+   ❤️ FAVORITE ICON (Heart button)
+   ============================================================================ */
 .favorite-icon-static {
-    display: flex;
-    align-items: center; /* Center heart icon */
-    height: 100px; /* Match image height */
+    position: absolute; /* Remove from normal flow */
+    right: 0; /* Far right of container */
+    top: 0; /* Top of container */
+    width: 30px; /* Fixed width */
+    height: 30px; /* Fixed height */
+    display: flex; /* Center icon */
+    align-items: center; /* Vertical center */
+    justify-content: center; /* Horizontal center */
+    flex-shrink: 0; /* Maintain size */
 }
 
-/* Bottom row */
+/* ============================================================================
+   📦 MODAL BOTTOM ROW (Quantity and Add to Cart)
+   ============================================================================ */
 .modal-bottom-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertical alignment */
+    gap: 12px; /* Space between quantity and cart button */
 }
 
+/* ============================================================================
+   🔢 QUANTITY WRAPPER
+   ============================================================================ */
 .qty-wrap {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex; /* Horizontal layout for buttons and number */
+    align-items: center; /* Vertical center alignment */
+    gap: 10px; /* Space between elements */
 }
 
+/* ============================================================================
+   ➕➖ QUANTITY BUTTONS
+   ============================================================================ */
 .qty-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 2px solid #c67500;
-    background: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
-/* Quantity number styling */
-#quantity {
-    font-size: 22px; /* Adjust size as needed */
-    min-width: 30px; /* Ensure consistent width */
-    text-align: center;
+    width: 48px; /* Fixed width for easy tapping */
+    height: 48px; /* Fixed height (matches width) */
+    border-radius: 50%; /* Perfect circle */
+    border: 2px solid #c67500; /* Orange border */
+    background: #fff; /* White background */
+    font-size: 24px; /* Large symbols */
+    cursor: pointer; /* Clickable indicator */
+    display: flex; /* Center symbols */
+    align-items: center; /* Vertical center */
+    justify-content: center; /* Horizontal center */
+    transition: all 0.2s ease; /* Smooth hover effects */
 }
 
-/* Minus button specific styling */
+/* ============================================================================
+   🔢 QUANTITY NUMBER DISPLAY
+   ============================================================================ */
+#quantity {
+    font-size: 22px; /* Large, easy to read */
+    min-width: 30px; /* Prevent layout shift */
+    text-align: center; /* Center alignment */
+}
+
+/* ============================================================================
+   ➖ MINUS BUTTON
+   ============================================================================ */
 #decrease {
     color: #c67500; /* Orange color */
-    border-color: #c67500;
+    border-color: #c67500; /* Orange border */
 }
 
-/* Plus button specific styling */
+/* ============================================================================
+   ➕ PLUS BUTTON
+   ============================================================================ */
 #increase {
     color: #c67500; /* Orange color */
-    border-color: #c67500;
+    border-color: #c67500; /* Orange border */
 }
 
+/* ============================================================================
+   🛒 ADD TO CART BUTTON
+   ============================================================================ */
 .add-to-cart-inline {
-    flex: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 17px 18px;
-    border-radius: 30px;
-    background: #c67500;
-    color: #fff;
-    font-weight: 800;
-    border: none;
+    flex: 2rem; /* Takes more space than quantity controls */
+    display: flex; /* Horizontal layout for text and price */
+    justify-content: space-between; /* Text left, price right */
+    align-items: center; /* Vertical center */
+    padding: 17px 18px; /* Generous padding for easy tapping */
+    border-radius: 30px; /* Pill shape */
+    background: #c67500; /* Orange background */
+    color: #fff; /* White text */
+    font-weight: 800; /* Extra bold for emphasis */
+    border: none; /* Clean, no border */
 }
