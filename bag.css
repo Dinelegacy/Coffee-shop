@@ -1,12 +1,14 @@
 .rightIcons { 
     display: flex;
-     gap: 1.5rem;
+     gap: 1rem; 
+     
 }
 
 .empty_bag-icon {
     position: relative;
-    width: 3rem;
-    height: 4rem;
+    width: 4rem;
+    height: 5rem;
+    
 }
 
  
