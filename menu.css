@@ -1,293 +1,328 @@
 /* =========================================================
    GENERAL STYLES
-========================================================= */
+   ========================================================= */
 body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #EDE8E5;
+    margin: 0; /* Remove browser's default margin */
+    font-family: 'Montserrat', sans-serif; /* Use custom font */
+    background-color: #EDE8E5; /* Light beige background */
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    margin: 0; /* Remove default list indentation */
+    padding: 0; /* Remove default list padding */
+    list-style: none; /* Remove bullet points */
 }
 
 /* =========================================================
    NAVBAR
-========================================================= */
+   ========================================================= */
 #navBar {
-    width: 100%;
-    height: 9rem;
+    width: 100%; /* Full width of screen */
+    height: 9rem; /* 9 × root font size (144px if root is 16px) */
     display: flex;
-    align-items: end;
-    background-color: #EDE8E5;
+    align-items: end; /* Align children to bottom of navbar */
+    background-color: #EDE8E5; /* Same as page background */
+    
+    /* STICKY NAVBAR - Stays at top when scrolling */
+    position: sticky; /* Crucial: Makes navbar stick */
+    top: 0; /* Stick 0px from top of viewport */
+    z-index: 1000; /* Ensure navbar is above other content */
 }
 
 #navBarContainer {
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    padding-left: 0.75rem;
-    padding-right: 1.125rem;
-    justify-content: space-between;
+    width: 100%; /* Full width of parent (#navBar) */
+    height: 5rem; /* 5 × root font size (80px if root is 16px) */
+    display: inline-flex; /* Flexbox for children */
+    align-items: center; /* Vertically center children */
+    padding-left: 0.75rem; /* 12px if root is 16px */
+    padding-right: 1.125rem; /* 18px if root is 16px */
+    justify-content: space-between; /* Space out left/center/right */
 }
 
-/* Left: Logo */
+/* ===== LEFT SECTION: Logo ===== */
 .leftIcons {
     display: flex;
     align-items: center;
-    flex: 1;
-    justify-content: flex-start;
+    flex: 1; /* Takes 1 portion of available space */
+    justify-content: flex-start; /* Align content to left */
 }
 
 .nav-logo {
-    height: auto;
-    max-height: 40px; /* Adjust as needed */
-    width: auto;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 50px; /* Don't exceed 50px in height */
+    width: auto; /* Width adjusts automatically */
 }
 
-/* Center: Bag Icon */
+/* ===== CENTER SECTION: Bag Icon ===== */
 .centerIcons {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    flex: 2;
+    justify-content: flex-end; /* Align content to right */
+    flex: 2; /* Takes 2 portions (twice as much as left/right) */
 }
 
-/* Right: Hamburger Menu */
+/* ===== RIGHT SECTION: Hamburger Menu ===== */
 .rightIcons {
     display: flex;
     align-items: center;
-    flex: 1;
-    justify-content: flex-end;
+    flex: 1; /* Takes 1 portion (same as left) */
+    justify-content: flex-end; /* Align content to right */
 }
 
 /* =========================================================
    BAG ICON
-========================================================= */
+   ========================================================= */
 .empty_bag-icon {
-    position: relative;
+    position: relative; /* Allows absolute positioning of child */
     display: flex;
     align-items: center;
+}
+
+/* Global image reset */
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
 }
 
 .empty_bag-icon img {
-    width: 32px; /* Slightly larger since it's centered */
-    height: 32px;
-    display: block;
+    width: 48px; /* Fixed size for bag icon */
+    height: 48px;
+    display: block; /* Removes extra space under image */
 }
 
+/* Item counter badge on bag */
 .bag-item-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: #c67500;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    position: absolute; /* Position relative to .empty_bag-icon */
+    top: -8px; /* Move up 8px from top edge */
+    right: -8px; /* Move right 8px from right edge */
+    color: black;
+    width: 65px; /* Large width for positioning */
+    height: 70px; /* Large height for positioning */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
+    align-items: center; /* Center number vertically */
+    justify-content: center; /* Center number horizontally */
+    font-size: 16px;
 }
 
 /* =========================================================
-   HAMBURGER MENU
-========================================================= */
+   HAMBURGER MENU (Three-line icon)
+   ========================================================= */
 .ham-menu {
     width: 24px;
     height: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
+    flex-direction: column; /* Stack spans vertically */
+    justify-content: space-between; /* Equal space between lines */
+    cursor: pointer; /* Shows hand cursor on hover */
 }
 
 .ham-menu span {
     display: block;
-    height: 3px;
-    width: 100%;
-    background-color: #000;
-    border-radius: 2px;
+    height: 3px; /* Height of each hamburger line */
+    width: 100%; /* Full width of parent */
+    background-color: white; /* Color of lines */
+    border-radius: 2px; /* Slightly rounded ends */
 }
 
-/* Hide the chevron icon styles since we're not using it */
+/* Hide the chevron icon (not used in this design) */
 .chevron_left-icon {
-    display: none;
+    display: none; /* Completely removes from layout */
+}
+
+/* =========================================================
+   HAMBURGER MENU LINK COLORS
+   (For the off-screen menu - ensures white text)
+   ========================================================= */
+.off-screen-menu a {
+    color: white !important; /* !important overrides other styles */
 }
 
 /* =========================================================
    HEADER CONTAINER
-========================================================= */
+   ========================================================= */
 .header-container {
   width: 100%;
-  background: #EDE8E5;
+  background: #EDE8E5; /* Match page background */
 }
 
 /* =========================================================
-   TOP BACKGROUND (FIXED POSITIONING)
-========================================================= */
+   TOP BACKGROUND (Menu title section)
+   ========================================================= */
 .top-background {
   width: 100%;
-  height: 300px;
-  position: relative;
-  overflow: none;
+  height: 176px; /* Fixed height for background section */
+  overflow: none; /* Typo: should be 'overflow: visible' or 'hidden' */
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  /* CRITICAL: Push down below sticky navbar */
+  margin-top: 9rem; /* Same as navbar height */
 }
 
 .background-image-container {
+  /* Absolute positioning relative to .top-background */
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: -138px;
+  bottom: 350px; /* Creates height: stretches from top to 350px from bottom */
   display: flex;
   align-items: center;
-  background: #EDE8E5; /* Fallback color */
+  background: #EDE8E5; /* Fallback if image doesn't load */
 }
 
 .background-image-container img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* Shows entire image without cropping */
+  max-width: 100%; /* Never wider than container */
+  max-height: 100%; /* Never taller than container */
+  object-fit: contain; /* Show entire image (no cropping) */
   display: block;
 }
 
+/* "MENU" title text overlay */
 .section-title {
   position: absolute;
-  bottom: 0;
+  bottom: 483px; /* Position from bottom of .top-background */
   left: 0;
   right: 0;
   padding: 12px 15px;
   color: white;
-  font-weight: 900;
+  font-weight: 900; /* Black weight (heaviest) */
   font-size: 50px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-shadow: -1px -1px 0 #000,
-               1px -1px 0 #000,
-              -1px 1px 0 #000,
-               1px 1px 0 #000;
+  letter-spacing: 1px; /* Slightly spread letters */
+  text-transform: uppercase; /* All caps */
+  
+  /* Text outline/shadow effect */
+  text-shadow: -1px -1px 0 #000,  /* Top-left shadow */
+                1px -1px 0 #000,   /* Top-right shadow */
+               -1px 1px 0 #000,    /* Bottom-left shadow */
+                1px 1px 0 #000;    /* Bottom-right shadow */
+                
+  /* Gradient overlay on text */
   background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
 }
+
 /* =========================================================
-   MAIN CONTENT (Ensure it's below the background)
-========================================================= */
+   MAIN CONTENT (Menu items area)
+   ========================================================= */
 main {
-  position: relative;
-  z-index: 3;
+  position: relative; /* Establishes stacking context */
+  z-index: 3; /* Above background, below navbar */
   background: #EDE8E5;
+  
+  /* CRITICAL: Pull content up behind navbar */
+  margin-top: -9rem; /* Negative margin overlaps with background */
 }
 
 .menu-section {
   position: relative;
-  z-index: 4;
+  z-index: 4; /* Above main, below navbar */
 }
 
 /* =========================================================
-   ACCORDION
-========================================================= */
+   ACCORDION (Expandable menu categories)
+   ========================================================= */
 .accordion {
-    border-bottom: 1px solid #f8f6f5;
+    border-bottom: 1px solid #f8f6f5; /* Light separator line */
     margin-bottom: 1px;
 }
 
+/* Accordion header (clickable title) */
 .accordion-header {
     padding: 15px;
     font-size: 18px;
-    font-weight: 700;
-    background: #000000;
-    color: #EDE8E5;
-    cursor: pointer;
+    font-weight: 700; /* Bold */
+    background: #000000; /* Black background */
+    color: #EDE8E5; /* Light text */
+    cursor: pointer; /* Hand cursor */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Title left, arrow right */
     align-items: center;
+    
+    /* Smooth animations */
     transition: background 0.3s ease, transform 0.2s ease;
-    will-change: background, transform;
+    will-change: background, transform; /* Hint for browser optimization */
 }
 
 /* Hover effect */
 .accordion-header:hover {
-    background: #c67500 !important;
-    transform: translateY(-2px);
+    background: #c67500 !important; /* Orange on hover */
+    transform: translateY(-2px); /* Slight lift */
 }
 
 /* Active (open) accordion */
 .accordion-header.active {
-    background: #c67500 !important;
+    background: #c67500 !important; /* Orange when open */
 }
 
-/* No jump on active hover */
+/* Prevent lift when already active */
 .accordion-header.active:hover {
-    transform: none;
+    transform: none; /* Remove translateY when active */
 }
 
+/* Hidden content area */
 .accordion-content {
-    background: #EDE8E5;
+    background: #EDE8E5; /* Match page background */
     padding: 16px;
-    display: none;
+    display: none; /* Hidden by default, shown by JavaScript */
 }
-
 
 /* =========================================================
-   PRODUCT CARDS
-========================================================= */
+   PRODUCT CARDS (Individual menu items)
+   ========================================================= */
 .product {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Key for keeping price right */
+    justify-content: space-between; /* Name left, price right */
     padding: 8px;
     border-width: 1px;
-    border-bottom-style: double;
-    border-color: #D6C5B4;
-    cursor: pointer;
+    border-bottom-style: double; /* Two-line border */
+    border-color: #D6C5B4; /* Light brown border */
+    cursor: pointer; /* Clickable */
+    
+    /* Smooth hover effects */
     transition: transform 0.3s ease, filter 0.3s ease;
     will-change: transform, filter;
     position: relative;
-    z-index: 10;
+    z-index: 10; /* Above other content */
 }
+
 /* Container for image and product name */
 .product-info {
     display: flex;
     align-items: center;
-    flex: 1; /* Takes available space, pushes price to right */
+    flex: 1; /* Takes available space, pushes price to far right */
 }
 
 .product img {
-    width: 64px;
+    width: 64px; /* Fixed size for product images */
     height: 64px;
-    object-fit: cover;
-     margin-right: 9px; /* Space between image and name */
-    transition: transform 0.3s ease;
+    object-fit: cover; /* Crop image to fill 64x64 box */
+    margin-right: 24px; /* Space between image and name */
+    transition: transform 0.3s ease; /* Smooth image hover effect */
 }
 
 .product-name {
-    flex: 1;
+    flex: 1; /* Takes remaining space in .product-info */
     text-align: left;
 }
 
 .product-price {
     font-weight: bold;
-    min-width: 60px;
-    text-align: right;
+    min-width: 60px; /* Ensures price column stays consistent */
+    text-align: right; /* Align price to right edge */
 }
 
 /* =========================================================
    FOOTER
-========================================================= */
+   ========================================================= */
 footer {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 3rem;
-    background-color: #EDE8E5;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center horizontally */
+    padding-top: 3rem; /* Space above footer content */
+    background-color: #EDE8E5; /* Match page */
 }
 
 footer ul {
@@ -300,8 +335,9 @@ footer ul {
     list-style: ;
 }
 
+/* Social media icons container */
 #socialIcons {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 1rem; /* Space between icons */
+    margin-bottom: 2rem; /* Space below icons */
 }
