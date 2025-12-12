@@ -27,7 +27,7 @@ ul {
 #navBarContainer {
     width: 100%;
     height: 5rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     padding-left: 0.75rem;
     padding-right: 1.125rem;
@@ -44,7 +44,7 @@ ul {
 
 .nav-logo {
     height: auto;
-    max-height: 40px; /* Adjust as needed */
+    max-height: 50px; /* Adjust as needed */
     width: auto;
 }
 
@@ -73,9 +73,14 @@ ul {
     align-items: center;
 }
 
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
 .empty_bag-icon img {
-    width: 32px; /* Slightly larger since it's centered */
-    height: 32px;
+    width: 48px; /* Slightly larger since it's centered */
+    height: 48px;
     display: block;
 }
 
@@ -83,16 +88,13 @@ ul {
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: #c67500;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    color: black;
+    width: 65px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 16px;
 }
 
 /* =========================================================
@@ -111,13 +113,20 @@ ul {
     display: block;
     height: 3px;
     width: 100%;
-    background-color: #000;
+    background-color: white;
     border-radius: 2px;
 }
 
 /* Hide the chevron icon styles since we're not using it */
 .chevron_left-icon {
     display: none;
+}
+
+/* =========================================================
+   HAMBURGER MENU LINK COLORS
+========================================================= */
+.off-screen-menu a {
+    color: white !important;
 }
 
 /* =========================================================
@@ -263,7 +272,7 @@ main {
     width: 64px;
     height: 64px;
     object-fit: cover;
-     margin-right: 9px; /* Space between image and name */
+     margin-right: 24px; /* Space between image and name */
     transition: transform 0.3s ease;
 }
 
