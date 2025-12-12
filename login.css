@@ -157,10 +157,14 @@ label {
 }
 .goTo-signupPage {
   font-size: 16px;
-  color: #c67500;
+  color: #7d7d7d;
   text-decoration: none;
   text-align: center;
   margin-top: 30px;
+}
+#open-register {
+  font-weight: 700;
+  color: #c67500; /* ORANGE */
 }
 #login {
   width: 354px;
@@ -178,4 +182,18 @@ label {
 #login.active {
   background: #c67500; /* ORANGE */
   cursor: pointer;
+  color: white;
+}
+
+input {
+  background-color: #e3dedb !important; /* your desired color */
+  -webkit-box-shadow: 0 0 0px 1000px #e3dedb inset !important;
+  box-shadow: 0 0 0px 1000px #e3dedb inset !important;
+}
+
+input:-webkit-autofill {
+  background-color: #e3dedb !important;
+  -webkit-box-shadow: 0 0 0px 1000px #e3dedb inset !important;
+  box-shadow: 0 0 0px 1000px #e3dedb inset !important;
+  -webkit-text-fill-color: #000 !important;
 }
