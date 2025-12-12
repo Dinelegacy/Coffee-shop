@@ -329,14 +329,10 @@ footer ul {
     margin-top: 1rem;
     margin-bottom: 2rem;
     text-align: center;
-    font-size: 1rem; /* 16px if root is 16px */
-    font-weight: 700; /* Bold */
-    line-height: 2.5rem; /* Space between list items */
-}
-
-/* Footer links */
-footer ul li a {
-    color: #000000; /* Black links */
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+    list-style: ;
 }
 
 /* Social media icons container */
