@@ -5,16 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalImg = document.getElementById("modal-img");
     const modalPrice = document.getElementById("inline-price");
 
+    const image = document.createElement("img"); 
+    image.src = "assets/functional-icons/Favorite-heart-orange.svg"
+    document.body.appendChild(image);
+
     
     const favBtn = document.createElement("button");
     favBtn.id = "favorite-btn";
-    favBtn.innerHTML = "♡";
+    favBtn.innerHTML = "image";
     
 
     // Insert favorite button next to modal name
-    // modalName.parentElement.appendChild(favBtn);
-    
-    document.querySelector(".modal-top-row").appendChild(favBtn);   //Changed by Raheel
+    modalName.parentElement.appendChild(favBtn);
 
     // Load saved favorites and remove null values once
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -23,9 +25,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateHeart() {
     const isFav = favorites.includes(modalName.textContent.trim());
-    favBtn.innerHTML = isFav ? "❤️" : "♡";
-    favBtn.classList.toggle("active", isFav);  
+
+    if (isFav) {
+        // Red heart emoji for favorite
+        favBtn.innerHTML = "❤️";
+    } else {
+        // Show the orange heart image when not favorite
+        favBtn.innerHTML = ""; // Clear existing content
+        const img = document.createElement("img");
+        img.src = "assets/functional-icons/Favorite-heart-orange.svg";
+        
+        favBtn.appendChild(img);
+    }
+   favBtn.classList.toggle("active", isFav);
 }
+
 
 
     // Detect when modal opens update heart
