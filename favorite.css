@@ -1,31 +1,115 @@
-#favorite-btn {
-    font-size: 24px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    border: 2px solid #c67500;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+
+.off-screen-menu {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, #c67500, #b86500);
+    z-index: 999;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Content wrapper */
+.offMenu-content {
+    margin-top: 32px;
+}
+
+/* Menu list */
+.menuList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* Menu row */
+.list {
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    margin-left: auto;
-    transition: all 0.2s ease;
-
+    justify-content: space-between;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-/* ON state */
-#favorite-btn.active {
-    font-size: 25px;             
-    transform: scale(1.08);
-    box-shadow: 0 3px 8px rgba(255,0,0,0.15);
+/* Left side (icon + text) */
+.menu-item-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
 
+/* Icons */
+.menuIcon {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+}
+
+/* Chevron */
+.menuChevron {
+    width: 14px;
+    height: 14px;
+    opacity: 0.85;
+    filter: brightness(0) invert(1);
+}
+
+/* Remove link styling */
+.menuList a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Touch feedback */
+.list:active {
+    opacity: 0.75;
+    transform: scale(0.98);
 }
 
 
-#favorite-btn img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain; 
+@media (min-width: 768px) {
+    .off-screen-menu {
+        padding: 40px;
+    }
+
+    .list {
+        font-size: 1.1rem;
+    }
+
+    .menuIcon {
+        width: 24px;
+        height: 24px;
+    }
 }
+
+@media (min-width: 768px) {
+    .off-screen-menu {
+        padding: 40px;
+    }
+
+    .list {
+        font-size: 1.1rem;
+    }
+
+    .menuIcon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .off-screen-menu {
+        width: 420px;
+        inset: 0 auto 0 0; /* slide from left */
+    }
+
+    .menuList {
+        gap: 26px;
+    }
+}
+
+
+
+
