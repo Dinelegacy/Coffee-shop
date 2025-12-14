@@ -5,10 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalImg = document.getElementById("modal-img");
     const modalPrice = document.getElementById("inline-price");
 
-    
     const favBtn = document.createElement("button");
     favBtn.id = "favorite-btn";
-    favBtn.innerHTML = "♡";
+    
     
 
     // Insert favorite button next to modal name
@@ -19,11 +18,29 @@ document.addEventListener("DOMContentLoaded", () => {
     favorites = favorites.filter(item => item && item !== "null");
     localStorage.setItem("favorites", JSON.stringify(favorites));
 
+    function isFavorite(name) {
+        return favorites.some(item => item.name === name);
+    }
+
     function updateHeart() {
-    const isFav = favorites.includes(modalName.textContent.trim());
-    favBtn.innerHTML = isFav ? "❤️" : "♡";
-    favBtn.classList.toggle("active", isFav);  
+    const name = modalName.textContent.trim();
+    const isFav = isFavorite(name);
+
+    favBtn.innerHTML = "";
+
+    if (isFav) {
+        favBtn.innerHTML = "❤️";
+    } else {
+        const img = document.createElement("img");
+        img.src = "assets/functional-icons/Favorite-heart-orange.svg";
+        img.alt = "favorite";
+        favBtn.appendChild(img);
+    }
+
+    favBtn.classList.toggle("active", isFav);
 }
+
+
 
 
     // Detect when modal opens update heart
@@ -37,12 +54,21 @@ document.addEventListener("DOMContentLoaded", () => {
     
     favBtn.addEventListener("click", () => {
         const name = modalName.textContent.trim();
-        if (!name) return;  // Prevent null from being stored
+        const price = modalPrice.textContent.trim();
+        const image = modalImg.src;
 
-        if (!favorites.includes(name)) {
-            favorites.push(name);
+        if (!name) return;
+
+        if (!isFavorite(name)) {
+            // ADD to favorites
+            favorites.push({
+                name: name,
+                price: price,
+                image: image
+            });
         } else {
-            favorites = favorites.filter(item => item !== name);
+            // REMOVE from favorites
+            favorites = favorites.filter(item => item.name !== name);
         }
 
         localStorage.setItem("favorites", JSON.stringify(favorites));
