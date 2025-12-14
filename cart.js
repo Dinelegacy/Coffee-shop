@@ -79,7 +79,6 @@ div.className = "cart-item";
     container.appendChild(div);
 
  if (index === 0) {
-  // clear previous loop if renderCart runs again
   clearInterval(div._hintInterval);
 
   div._hintInterval = setInterval(() => {

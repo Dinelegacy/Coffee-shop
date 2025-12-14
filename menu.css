@@ -53,60 +53,7 @@ ul {
     width: auto; /* Width adjusts automatically */
 }
 
-/* ===== CENTER SECTION: Bag Icon ===== */
-.centerIcons {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Align content to right */
-    flex: 2; /* Takes 2 portions (twice as much as left/right) */
-}
-
-/* ===== RIGHT SECTION: Hamburger Menu ===== */
-.rightIcons {
-    display: flex;
-    align-items: center;
-    flex: 1; /* Takes 1 portion (same as left) */
-    justify-content: flex-end; /* Align content to right */
-}
-
-/* =========================================================
-   BAG ICON
-   ========================================================= */
-.empty_bag-icon {
-    position: relative; /* Allows absolute positioning of child */
-    display: flex;
-    align-items: center;
-}
-
-/* Global image reset */
-img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-}
-
-.empty_bag-icon img {
-    width: 48px; /* Fixed size for bag icon */
-    height: 48px;
-    display: block; /* Removes extra space under image */
-}
-
-/* Item counter badge on bag */
-.bag-item-count {
-    position: absolute; /* Position relative to .empty_bag-icon */
-    top: -8px; /* Move up 8px from top edge */
-    right: -8px; /* Move right 8px from right edge */
-    color: black;
-    width: 65px; /* Large width for positioning */
-    height: 70px; /* Large height for positioning */
-    display: flex;
-    align-items: center; /* Center number vertically */
-    justify-content: center; /* Center number horizontally */
-    font-size: 16px;
-}
-
-/* =========================================================
-   HAMBURGER MENU (Three-line icon)
-   ========================================================= */
+ 
 .ham-menu {
     width: 24px;
     height: 20px;
