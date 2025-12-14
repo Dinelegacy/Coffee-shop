@@ -25,6 +25,7 @@ export function addItemToCart(name, price, img, quantity) {
     const bagCountElement = document.getElementById("bagCount");
     const bagContainer = document.getElementById("bagIcon");
     const bagImage = document.getElementById("bagImage");
+      const checkoutBtn = document.getElementById("checkoutBtn");
 
     if (!bagCountElement || !bagContainer || !bagImage) return;
 
@@ -38,9 +39,21 @@ export function addItemToCart(name, price, img, quantity) {
         bagContainer.classList.remove("filled");
         bagImage.src = "./assets/functional-icons/bag-icons/icon-empty_bag.svg";
 
+        
+    if (checkoutBtn) {
+      checkoutBtn.classList.add("disabled");
+      checkoutBtn.disabled = true;
+    }
+
     } else {
         // Filled bag
         bagContainer.classList.add("filled");
         bagImage.src = "./assets/functional-icons/bag-icons/icon-filled_bag.svg";
+
+          if (checkoutBtn) {
+      checkoutBtn.classList.remove("disabled");
+      checkoutBtn.disabled = false;
+    }
     }
 }
+
