@@ -54,7 +54,7 @@ body {
   flex-direction: row;
   border-bottom: 0.2px solid #D6C5B4;
    font-family: "Montserrat", sans-serif; 
-   padding: 9px 0;
+   padding: 5px 0;
   width: 100%;  
     position: relative;
   overflow: hidden;
@@ -161,11 +161,23 @@ body {
 
  
 .cart-footer {
+  .cart-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 40px;
+
+  background: #ede8e5;             
+  padding: 16px 16px 24px;
+  box-sizing: border-box;
+
+  z-index: 1000;
+ 
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.12);
+}
+
      
 }
  
