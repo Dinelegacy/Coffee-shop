@@ -3,6 +3,7 @@ import { updateBagCount } from "./cart-handler.js";
 import { enableSwipe } from "./swipe.js";
  
 
+let wasCartEmpty = true;
 
 const hamMenu = document.querySelector(".ham-menu");
 
@@ -37,6 +38,7 @@ function renderCart() {
   container.innerHTML = "";
 
   if (cart.length === 0) {
+      wasCartEmpty = true; 
     container.innerHTML = `<div class="empty-cart-message">Your bag is empty!</div>`;
     totalEl.textContent = "00.00 SEK";
     vatEl.textContent = "00.00 SEK";
@@ -50,9 +52,11 @@ function renderCart() {
   cart.forEach((item, index) => {
     const itemTotal = item.quantity * item.price;
     total += itemTotal;
+ 
+ 
+ const div = document.createElement("div");
+div.className = "cart-item"; 
 
-    const div = document.createElement("div");
-    div.className = "cart-item";
 
     div.innerHTML = `
       <div class="cart-info">
@@ -73,10 +77,26 @@ function renderCart() {
  `;
 
     container.appendChild(div);
+
+ if (index === 0) {
+  // clear previous loop if renderCart runs again
+  clearInterval(div._hintInterval);
+
+  div._hintInterval = setInterval(() => {
+    div.classList.add("show-actions");
+
+    setTimeout(() => {
+      div.classList.remove("show-actions");
+    }, 900);
+  }, 2500);
+}
+
+
   });
 
   updateTotals(total);
   attachQuantityButtons();
+  wasCartEmpty = false;
 }
 
 // -------------------- Totals --------------------
