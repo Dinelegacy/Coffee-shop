@@ -113,10 +113,10 @@ ul {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 350px; /* Creates height: stretches from top to 350px from bottom */
+  bottom: 400px; /* Creates height: stretches from top to 350px from bottom */
   display: flex;
   align-items: center;
-  background: #EDE8E5; /* Fallback if image doesn't load */
+  /* Fallback if image doesn't load */
 }
 
 .background-image-container img {
@@ -129,7 +129,7 @@ ul {
 /* "MENU" title text overlay */
 .section-title {
   position: absolute;
-  bottom: 483px; /* Position from bottom of .top-background */
+  bottom: 510px; /* Position from bottom of .top-background */
   left: 0;
   right: 0;
   padding: 12px 15px;
