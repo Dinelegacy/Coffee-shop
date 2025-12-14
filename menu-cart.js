@@ -6,11 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setupAddToCartButton();
   updateBagCount();
 
-
-  const bag = document.querySelector(".empty_bag-icon");
-  if (bag) {
-    bag.style.cursor = "pointer";
-    bag.addEventListener("click", () => {
+  const bagIcon = document.getElementById("bagIcon");
+  if (bagIcon) {
+    bagIcon.style.cursor = "pointer";
+    bagIcon.addEventListener("click", () => {
       window.location.href = "./cart.html";
     });
   }

@@ -81,9 +81,9 @@
     </div>
 </div>
 <div class="rightIcons">
-    <div class="empty_bag-icon">
-        <img src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="empty bag icon">
-        <span class="bag-item-count">0</span>
+    <div id="bagIcon" class="bag-container">
+        <img  id="bagImage" src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="empty bag icon">
+       <span id="bagCount" class="bag-count" class="bag-item-count">0</span>
     </div>
 
     <div class="ham-menu" >
@@ -116,11 +116,17 @@
     </div>
   </main>
 
- <div class="cart-footer">
-    <button class="checkout-btn">Go to the Checkout</button></div>
+  <div class="cart-footer">
+  <button id="checkoutBtn" class="checkout-btn">
+    Go to the Checkout
+  </button>
+</div>
+
+
 
 
     <script type="module" src="./cart.js"></script>
+    <script type="module" src="./swipe.js"></script>
     
 </body>
 </html>

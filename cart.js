@@ -1,6 +1,10 @@
 // cart.js
 import { updateBagCount } from "./cart-handler.js";
+import { enableSwipe } from "./swipe.js";
+ 
+ 
 
+let wasCartEmpty = true;
 
 const hamMenu = document.querySelector(".ham-menu");
 
@@ -35,9 +39,12 @@ function renderCart() {
   container.innerHTML = "";
 
   if (cart.length === 0) {
-    container.innerHTML = `<div class="empty-cart-message">Your cart is empty.</div>`;
+      wasCartEmpty = true; 
+    container.innerHTML = `<div class="empty-cart-message">Your bag is empty!</div>`;
     totalEl.textContent = "00.00 SEK";
     vatEl.textContent = "00.00 SEK";
+
+     document.querySelector(".cart-summary").style.display = "none";
     return;
   }
 
@@ -46,31 +53,51 @@ function renderCart() {
   cart.forEach((item, index) => {
     const itemTotal = item.quantity * item.price;
     total += itemTotal;
+ 
+ 
+ const div = document.createElement("div");
+div.className = "cart-item"; 
 
-    const div = document.createElement("div");
-    div.className = "cart-item";
 
     div.innerHTML = `
-      <div class="cart-header">
-        <img class="cart-item-img" src="${item.img}">
-        <div class="cart-item-info">
-          <p>${item.name}</p>
-          <p class="price-line">${item.quantity} × ${item.price}:-</p>
-        </div>
-      </div>
+      <div class="cart-info">
+    <img class="cart-item-img" src="${item.img}">
+
+    <div class="cart-middle">
+        <p class="item-name">${item.name}</p>
+        <p class="price-line"><span class="hidden">${item.quantity} × </span> ${item.price}:-</p>
+    </div>
+</div>
+     
 
       <div class="cart-actions">
         <button class="minus" data-index="${index}">−</button>
         <span class="qty">${item.quantity}</span>
         <button class="plus" data-index="${index}">+</button>
       </div>
-    `;
+
+ `;
 
     container.appendChild(div);
+
+ if (index === 0) {
+  clearInterval(div._hintInterval);
+
+  div._hintInterval = setInterval(() => {
+    div.classList.add("show-actions");
+
+    setTimeout(() => {
+      div.classList.remove("show-actions");
+    }, 900);
+  }, 2500);
+}
+
+
   });
 
   updateTotals(total);
   attachQuantityButtons();
+  wasCartEmpty = false;
 }
 
 // -------------------- Totals --------------------
@@ -88,6 +115,7 @@ function attachQuantityButtons() {
       saveAndRefresh();
     });
   });
+  enableSwipe(); 
 
   document.querySelectorAll(".minus").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -107,6 +135,7 @@ function saveAndRefresh() {
   saveCart();
   updateBagCount();
   renderCart();
+   updateUIState();
 }
-
+ 
  
