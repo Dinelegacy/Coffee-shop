@@ -113,3 +113,127 @@
 
 
 
+
+
+/* 
+
+/* RESET + BASE */
+*,
+/* *::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ede8e5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;   
+  align-items: center;
+}
+
+/* ---------------- HAMBURGER ---------------- */
+
+.hamburger {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin-left: auto;
+  margin-top: 48px;
+
+  
+}
+
+.hamburger img {
+  width: 28px;
+  height: 28px;
+}
+
+/* ---------------- OFF SCREEN MENU ---------------- */
+
+.off-screen-menu {
+  background-color: #C67500;
+  color: white;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: .3s ease;
+  z-index: 9999;
+}
+
+.off-screen-menu.active {
+  right: 0;
+  transform: translateX(0);
+}
+
+.offMenu-content {
+  padding: 2rem 1.5rem;
+}
+
+.menuList {
+  
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    padding: 0%;
+    list-style: none;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3rem;
+
+}
+
+/* ---------------- MENU ITEMS ---------------- */
+
+.list {
+   height: 5rem;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.menu-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.menuIcon {
+  height: 48px;
+}
+
+.menuChevron {
+  width: 48px;
+  height: 48px;
+}
+
+/* Tap feedback */
+.menu-link:active {
+  opacity: 0.6;
+}
+
+/* ---------------- MAIN CONTENT ---------------- */
+
+main {
+  padding: 5rem 1rem 2rem;
+}
+
+h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+} */
+
+ 
