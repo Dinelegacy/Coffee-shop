@@ -1,5 +1,6 @@
 // cart.js
 import { updateBagCount } from "./cart-handler.js";
+
 import { enableSwipe } from "./swipe.js";
  
  
@@ -65,7 +66,7 @@ div.className = "cart-item";
 
     <div class="cart-middle">
         <p class="item-name">${item.name}</p>
-        <p class="price-line"><span class="hidden">${item.quantity} × </span> ${item.price}:-</p>
+        <p class="price-line"><span class="hidden">${item.quantity} × </span> <span class="priceAnimation">${item.price}:- </span></p>
     </div>
 </div>
      
@@ -79,16 +80,25 @@ div.className = "cart-item";
  `;
 
     container.appendChild(div);
-
  if (index === 0) {
   clearInterval(div._hintInterval);
 
+  let hintCount = 0;
+
   div._hintInterval = setInterval(() => {
+    // stop after 3 times
+    if (hintCount >= 3) {
+      clearInterval(div._hintInterval);
+      return;
+    }
+
     div.classList.add("show-actions");
 
     setTimeout(() => {
       div.classList.remove("show-actions");
     }, 900);
+
+    hintCount++;
   }, 2500);
 }
 
