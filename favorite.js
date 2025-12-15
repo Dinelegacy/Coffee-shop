@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (favorites.length === 0) {
       favoriteContainer.innerHTML = `
         <p style="text-align:center; margin-top:2rem;">
-          Your favorites list is empty 🤍
+          Your favorites list is empty 
         </p>
       `;
       return;
