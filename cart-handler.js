@@ -1,15 +1,16 @@
 // cart-handler.js
 
 // Add item to cart or update quantity
-export function addItemToCart(name, price, img, quantity) {
+ export function addItemToCart(id, name, price, img, quantity) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  const existing = cart.find(item => item.name === name && item.img === img);
+  const existing = cart.find(item => item.id === id);
 
   if (existing) {
-    existing.quantity += quantity;
+    existing.quantity += Number(quantity);
   } else {
     cart.push({
+      id,
       name,
       img,
       price: Number(price),
@@ -49,11 +50,6 @@ export function addItemToCart(name, price, img, quantity) {
         // Filled bag
         bagContainer.classList.add("filled");
         bagImage.src = "./assets/functional-icons/bag-icons/icon-filled_bag.svg";
-
-          if (checkoutBtn) {
-      checkoutBtn.classList.remove("disabled");
-      checkoutBtn.disabled = false;
-    }
     }
 }
 
