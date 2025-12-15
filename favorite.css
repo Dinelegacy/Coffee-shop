@@ -1,72 +1,164 @@
 
+
+#favorite-btn {
+    font-size: 24px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #c67500;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all 0.2s ease;
+
+}
+
+
+#favorite-btn.active {
+    font-size: 25px;             
+    transform: scale(1.08);
+    box-shadow: 0 3px 8px rgba(255,0,0,0.15);
+
+}
+
+
+#favorite-btn img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain; 
+}
+
+
+
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ede8e5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.hamburger {
+  position: fixed;
+  top: 40px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+
+
 .off-screen-menu {
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(180deg, #c67500, #b86500);
-    z-index: 999;
-    padding: 24px 20px;
-    display: flex;
-    flex-direction: column;
+  background-color: #C67500;
+  color: white;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 140px;
+
+  right: -100%;            
+  transform: translateX(0);
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: right 0.3s ease;
+  z-index: 1000;
 }
 
-/* Content wrapper */
+
+.off-screen-menu.active {
+  right: 0;
+  transform: translateX(0);
+}
+
 .offMenu-content {
-    margin-top: 32px;
+  padding: 2rem 1.5rem;
 }
 
-/* Menu list */
 .menuList {
+  
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    padding: 0%;
     list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-
-/* Menu row */
-.list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #ffffff;
+    text-align: center;
     font-size: 1rem;
-    font-weight: 500;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3rem;
+
 }
 
-/* Left side (icon + text) */
+
+
+.list {
+   height: 5rem;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
 .menu-item-left {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-/* Icons */
 .menuIcon {
-    width: 22px;
-    height: 22px;
-    filter: brightness(0) invert(1);
+  height: 48px;
 }
 
-/* Chevron */
 .menuChevron {
-    width: 14px;
-    height: 14px;
-    opacity: 0.85;
-    filter: brightness(0) invert(1);
+  width: 48px;
+  height: 48px;
 }
 
-/* Remove link styling */
-.menuList a {
-    text-decoration: none;
-    color: inherit;
+
+.menu-link:active {
+  opacity: 0.6;
 }
 
-/* Touch feedback */
-.list:active {
-    opacity: 0.75;
-    transform: scale(0.98);
+
+
+main {
+  padding: 5rem 1rem 2rem;
 }
+
+h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+} 
 
 
 @media (min-width: 768px) {
@@ -102,138 +194,90 @@
 @media (min-width: 1024px) {
     .off-screen-menu {
         width: 420px;
-        inset: 0 auto 0 0; /* slide from left */
+        inset: 0 auto 0 0; 
     }
 
     .menuList {
         gap: 26px;
     }
 }
+ 
 
-
-
-
-
-
-/* 
-
-/* RESET + BASE */
-*,
-/* *::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  background-color: #ede8e5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;   
-  align-items: center;
-}
-
-/* ---------------- HAMBURGER ---------------- */
-
-.hamburger {
-  position: relative;
-  width: 48px;
-  height: 48px;
-  margin-left: auto;
-  margin-top: 48px;
-
-  
-}
-
-.hamburger img {
-  width: 28px;
-  height: 28px;
-}
-
-/* ---------------- OFF SCREEN MENU ---------------- */
-
-.off-screen-menu {
-  background-color: #C67500;
-  color: white;
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 100px;
+#favorite-container {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  transition: .3s ease;
-  z-index: 9999;
+  gap: 1rem;
 }
 
-.off-screen-menu.active {
-  right: 0;
-  transform: translateX(0);
-}
-
-.offMenu-content {
-  padding: 2rem 1.5rem;
-}
-
-.menuList {
-  
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-    padding: 0%;
-    list-style: none;
-    text-align: center;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 3rem;
-
-}
-
-/* ---------------- MENU ITEMS ---------------- */
-
-.list {
-   height: 5rem;
-}
-
-.menu-link {
+.favorite-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  text-decoration: none;
-  color: white;
+  gap: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.favorite-item img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.favorite-info h3 {
+  margin: 0;
   font-size: 1rem;
 }
 
-.menu-item-left {
+.favorite-info p {
+  margin: 0.3rem 0 0;
+  font-weight: 600;
+}
+
+
+.favorite-item {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  justify-content: space-between;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
 }
 
-.menuIcon {
-  height: 48px;
+.favorite-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.menuChevron {
-  width: 48px;
-  height: 48px;
+.favorite-info {
+  flex: 1;
+  margin-left: 1rem;
 }
 
-/* Tap feedback */
-.menu-link:active {
-  opacity: 0.6;
+.favorite-info h3 {
+  font-size: 1rem;
+  margin: 0;
 }
 
-/* ---------------- MAIN CONTENT ---------------- */
-
-main {
-  padding: 5rem 1rem 2rem;
+.favorite-info p {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
 }
 
-h1 {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-} */
+.remove-favorite {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
- 
+.remove-favorite img {
+  width: 24px;
+  height: 24px;
+}
+
+
+
