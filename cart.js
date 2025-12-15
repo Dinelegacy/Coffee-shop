@@ -145,7 +145,7 @@ function saveAndRefresh() {
   saveCart();
   updateBagCount();
   renderCart();
-   updateUIState();
+    updateBagCount() ;
 }
  
  
