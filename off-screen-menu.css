@@ -1,16 +1,19 @@
 .offMenu-content {
     margin: 64px;
     width: 340px;
+    color: white;
 }
 
 .list {
     display: flex;
     height: 5rem;
     justify-content: space-between;
+     
 }
 li div {
     display: flex;
     gap: .75rem;
+    
 }
 
 /* .off screen menu */
@@ -34,6 +37,8 @@ li div {
 .off-screen-menu.active {
     right: 0;
     transform: translateX(0);
+     
+     
 }
 
 /* Hamburger Menu */
@@ -54,6 +59,8 @@ li div {
     left: 50%;
     transform:translate(-50%, -50%);
     transition: .3s ease;
+    
+    
 }
 .ham-menu span:nth-child(1) {
     top: 29%;
@@ -86,6 +93,8 @@ li div {
     font-style: normal;
     font-weight: 700;
     line-height: 3rem;
+    color: white;
+   
 }
 
 .menuIcon {

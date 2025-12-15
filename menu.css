@@ -269,8 +269,9 @@ footer {
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center horizontally */
     padding-top: 3rem; /* Space above footer content */
-    background-color: #EDE8E5; /* Match page */
-}
+    background-color: #EDE8E5;
+} /* Match page */
+
 
 footer ul {
     margin-top: 1rem;
@@ -286,4 +287,8 @@ footer ul {
     display: flex;
     gap: 1rem; /* Space between icons */
     margin-bottom: 2rem; /* Space below icons */
+}
+
+a {
+    color: black;
 }
