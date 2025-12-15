@@ -97,7 +97,7 @@ ul {
    ========================================================= */
 .top-background {
   width: 100%;
-  height: 130px; /* Fixed height for background section */
+  height: 176px; /* Fixed height for background section */
   overflow: none; /* Typo: should be 'overflow: visible' or 'hidden' */
   display: flex;
   justify-content: center;
@@ -110,10 +110,10 @@ ul {
 .background-image-container {
   /* Absolute positioning relative to .top-background */
   position: absolute;
-  top: 10px;
+  top: 0;
   left: 0;
   right: 0;
-  bottom: 410px; /* Creates height: stretches from top to 350px from bottom */
+  bottom: 170px; /* Creates height: stretches from top to 350px from bottom */
   display: flex;
   align-items: center;
   /* Fallback if image doesn't load */
@@ -158,7 +158,7 @@ main {
   background: #EDE8E5;
   
   /* CRITICAL: Pull content up behind navbar */
-  margin-top: -6rem; /* Negative margin overlaps with background */
+  margin-top: -9rem; /* Negative margin overlaps with background */
 }
 
 .menu-section {
