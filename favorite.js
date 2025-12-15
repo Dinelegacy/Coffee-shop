@@ -89,30 +89,31 @@ document.addEventListener("DOMContentLoaded", () => {
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
   function renderFavorites() {
-    if (favorites.length === 0) {
-      favoriteContainer.innerHTML = `
-        <p style="text-align:center; margin-top:2rem;">
-          Your favorites list is empty 
-        </p>
-      `;
-      return;
-    }
-
-    favoriteContainer.innerHTML = favorites
-      .map((item, index) => `
-        <div class="favorite-item" data-index="${index}">
-          <img src="${item.image}" alt="${item.name}">
-          <div class="favorite-info">
-            <h3>${item.name}</h3>
-            <p>${item.price}</p>
-          </div>
-          <button class="remove-favorite">
-          
-          </button>
-        </div>
-      `)
-      .join("");
+  if (favorites.length === 0) {
+    favoriteContainer.innerHTML = `
+      <p style="text-align:center; margin-top:2rem;">
+        Your favorites list is empty 
+      </p>
+    `;
+    return;
   }
+
+  favoriteContainer.innerHTML = favorites
+    .map((item, index) => `
+      <div class="favorite-item" data-index="${index}">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="favorite-info">
+          <h3>${item.name}</h3>
+          <p>${item.price}</p>
+        </div>
+        <div class="favorite-buttons">
+          <button class="add-favorite">+ Add</button>
+          <button class="remove-favorite">Remove</button>
+        </div>
+      </div>
+    `)
+    .join("");
+}
 
   renderFavorites();
 
@@ -129,3 +130,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+
