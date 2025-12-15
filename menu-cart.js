@@ -18,9 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
 function setupModalOverrides() {
   const originalShowModal = window.showModal;
 
-  window.showModal = function(name, price, img) {
-    originalShowModal(name, price, img);
+  window.showModal = function(id,name, price, img) {
+    originalShowModal( id,name, price, img);
 
+ const modal = document.getElementById("productModal");
+    modal.dataset.productId = id;
     // Ensure base price saved
     const inlinePrice = document.getElementById("inline-price");
     inlinePrice.dataset.base = Number(price);
@@ -52,17 +54,22 @@ function setupQuantityButtons() {
 }
 
 // -------------------- Add to Cart Button --------------------
-function setupAddToCartButton() {
+ function setupAddToCartButton() {
   const btn = document.getElementById("add-to-cart");
+
   btn.addEventListener("click", () => {
+    const modal = document.getElementById("productModal");
+    const id = modal.dataset.productId;
+
     const name = document.getElementById("modal-name").textContent;
     const img = document.getElementById("modal-img").src;
     const qty = Number(document.getElementById("quantity").textContent);
-    const basePrice = Number(document.getElementById("inline-price").dataset.base);
+    const basePrice = Number(
+      document.getElementById("inline-price").dataset.base
+    );
 
-    addItemToCart(name, basePrice, img, qty);
+    addItemToCart(id, name, basePrice, img, qty);
 
-    // Close modal
-    document.getElementById("productModal").style.display = "none";
+    modal.style.display = "none";
   });
 }
