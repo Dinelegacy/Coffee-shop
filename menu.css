@@ -113,7 +113,7 @@ ul {
   top: 10px;
   left: 0;
   right: 0;
-  bottom: 140px; /* Creates height: stretches from top to 350px from bottom */
+  bottom: 410px; /* Creates height: stretches from top to 350px from bottom */
   display: flex;
   align-items: center;
   /* Fallback if image doesn't load */
@@ -129,7 +129,7 @@ ul {
 /* "MENU" title text overlay */
 .section-title {
   position: absolute;
-  bottom: 277px; /* Position from bottom of .top-background */
+  bottom: 510px; /* Position from bottom of .top-background */
   left: 0;
   right: 0;
   padding: 12px 15px;
