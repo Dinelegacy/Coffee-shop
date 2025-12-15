@@ -97,7 +97,7 @@ ul {
    ========================================================= */
 .top-background {
   width: 100%;
-  height: 130px; /* Fixed height for background section */
+  height: 122px; /* Fixed height for background section */
   overflow: none; /* Typo: should be 'overflow: visible' or 'hidden' */
   display: flex;
   justify-content: center;
@@ -110,10 +110,9 @@ ul {
 .background-image-container {
   /* Absolute positioning relative to .top-background */
   position: absolute;
-  top: 10px;
+  top: 140px;
   left: 0;
   right: 0;
-  bottom: 140px; /* Creates height: stretches from top to 350px from bottom */
   display: flex;
   align-items: center;
   /* Fallback if image doesn't load */
@@ -129,7 +128,7 @@ ul {
 /* "MENU" title text overlay */
 .section-title {
   position: absolute;
-  bottom: 277px; /* Position from bottom of .top-background */
+  bottom: 616px; /* Position from bottom of .top-background */
   left: 0;
   right: 0;
   padding: 12px 15px;
