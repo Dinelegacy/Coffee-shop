@@ -189,25 +189,26 @@ body {
   background: #c67500;
   color: #ffffff;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   position: fixed;
   bottom: 110px;
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
   z-index: 1000;
-  
+   
 
 }
 
 
 .checkout-btn.active {
-  background-color: #c67500;  
+  background-color: #c67500; 
+   
 }
 
 .checkout-btn.disabled {
-    background: #bfbfbf !important;
-    color: white;
+    background: #afafaf !important;
+    color: #7d7d7d;
   cursor: not-allowed;
 }
 .empty-cart-message { 
