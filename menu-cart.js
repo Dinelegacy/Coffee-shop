@@ -24,6 +24,7 @@ function setupModalOverrides() {
  const modal = document.getElementById("productModal");
     modal.dataset.productId = id;
     // Ensure base price saved
+
     const inlinePrice = document.getElementById("inline-price");
     inlinePrice.dataset.base = Number(price);
     inlinePrice.textContent = price + ":-";
@@ -56,7 +57,7 @@ function setupQuantityButtons() {
 // -------------------- Add to Cart Button --------------------
  function setupAddToCartButton() {
   const btn = document.getElementById("add-to-cart");
-
+if (!btn) return;
   btn.addEventListener("click", () => {
     const modal = document.getElementById("productModal");
     const id = modal.dataset.productId;
