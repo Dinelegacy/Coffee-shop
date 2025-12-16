@@ -1,3 +1,5 @@
+
+
 #favorite-btn {
     font-size: 24px;
     background-color: #ffffff;
@@ -15,7 +17,7 @@
 
 }
 
-/* ON state */
+
 #favorite-btn.active {
     font-size: 25px;             
     transform: scale(1.08);
@@ -29,3 +31,242 @@
     height: 24px;
     object-fit: contain; 
 }
+
+
+
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ede8e5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.hamburger {
+  position: fixed;
+  top: 40px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+
+
+.off-screen-menu {
+  background-color: #C67500;
+  color: white;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 140px;
+
+  right: -100%;            
+  transform: translateX(0);
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+
+.off-screen-menu.active {
+  right: 0;
+  transform: translateX(0);
+}
+
+.offMenu-content {
+  padding: 2rem 1.5rem;
+}
+
+.menuList {
+  
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    padding: 0%;
+    list-style: none;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3rem;
+
+}
+
+
+
+.list {
+   height: 5rem;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.menu-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.menuIcon {
+  height: 48px;
+}
+
+.menuChevron {
+  width: 48px;
+  height: 48px;
+}
+
+
+.menu-link:active {
+  opacity: 0.6;
+}
+
+
+
+main {
+  padding: 5rem 1rem 2rem;
+}
+
+h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+} 
+
+
+@media (min-width: 768px) {
+    .off-screen-menu {
+        padding: 40px;
+    }
+
+    .list {
+        font-size: 1.1rem;
+    }
+
+    .menuIcon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (min-width: 768px) {
+    .off-screen-menu {
+        padding: 40px;
+    }
+
+    .list {
+        font-size: 1.1rem;
+    }
+
+    .menuIcon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .off-screen-menu {
+        width: 420px;
+        inset: 0 auto 0 0; 
+    }
+
+    .menuList {
+        gap: 26px;
+    }
+}
+ 
+#favorite-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ede8e5; 
+  padding: 0.5rem 1rem; 
+  border-bottom: 1px solid #ccc; 
+}
+
+.favorite-item:last-child {
+  border-bottom: none;
+}
+
+.favorite-item img {
+  width: 64px; 
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.favorite-info {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.favorite-info h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.favorite-info p {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+}
+
+.favorite-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.add-favorite {
+  background-color: #C67500;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.add-favorite:hover {
+  background-color: #a85c00;
+}
+
+.remove-favorite {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
