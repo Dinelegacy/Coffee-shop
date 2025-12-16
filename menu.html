@@ -8,14 +8,15 @@
 
   <!-- ========== STYLESHEETS ========== -->
   <!-- NAVIGATION FIRST (Most important for user interaction) -->
-  <link rel="stylesheet" href="navegationBar.css" />
+  
   <!-- Note: 'navegationBar.css' has a typo (should be 'navigationBar.css') -->
   <!-- PAGE-SPECIFIC STYLES -->
   <link rel="stylesheet" href="menu.css" />           <!-- Main menu styling -->
   <link rel="stylesheet" href="off-screen-menu.css" /> <!-- Hidden side menu -->
-  <link rel="stylesheet" href="popup.css" />          <!-- Modal/popup windows -->
-  <link rel="stylesheet" href="favorite.css" />       <!-- Favorite/heart styling -->
+  <link rel="stylesheet" href="popup.css" />          <!-- Modal/popup windows -->       <!-- Favorite/heart styling -->
   <link rel="stylesheet" href="./bag.css">
+
+  <link rel="stylesheet" href="./footer.css">
   
 
   <!-- ========== GOOGLE FONTS ========== -->
@@ -186,34 +187,20 @@
   <!-- END MODAL -->
 
   <!-- ========== FOOTER (Bottom of page) ========== -->
-  <footer>
-    <!-- Logo in footer -->
-    <div>
-      <a href="index.html">
-        <img src="./assets/logo.svg" alt="logo">
-      </a>
-    </div>
-
-    <!-- Footer links -->
-    <ul>
-      <li>
-        <!-- Link opens in new tab (target="_blank") -->
-        <a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">
-          Sveavägen 39, 111 34 Stockholm
-        </a>
-      </li>
-      <li>Contact us</li>   <!-- Note: These aren't links yet -->
-      <li>About us</li>
-      <li>Policy</li>
-    </ul>
-
-    <!-- Social media icons -->
-    <div id="socialIcons" class="footer-socialIcons">
-      <div><img src="./assets/social-icons/facebook-icon.svg" alt="Facebook"></div>
-      <div><img src="./assets/social-icons/instagram-icon.svg" alt="Instagram"></div>
-      <div><img src="./assets/social-icons/github-icon.svg" alt="GitHub"></div>
-    </div>
-  </footer>
+     <footer>
+        <div><a href="index.html"><img src="./assets/logo.svg" alt="logotype"></a></div>
+        <ul class="ullinks">
+            <li class="linkAddress"><a class="footerAddress" href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">Sveavägen 39, 111 34 Stockholm</a></li>
+            <li class="linkContact">Contact us</li>
+            <li class="linkAbout">About us</li>
+            <li class="linkPolicy">Policy</li>
+        </ul>
+        <div id="socialIcons" class="footer-socialIcons">
+            <div><img src="./assets/social-icons/facebook-icon.svg" alt="facebook icon"></div>
+            <div><img src="./assets/social-icons/instagram-icon.svg" alt="instagram icon"></div>
+            <div><img src="./assets/social-icons/github-icon.svg" alt="github icon"></div>
+        </div>
+    </footer>
   <!-- END FOOTER -->
 
   <!-- ========== JAVASCRIPT FILES ========== -->

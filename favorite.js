@@ -2,22 +2,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Hamburger section 
 
-  const menu = document.querySelector(".off-screen-menu");
-  const hamburger = document.querySelector(".hamburger");
+  const hamMenu = document.querySelector(".ham-menu");
 
-  if (menu && hamburger) {
-    hamburger.addEventListener("click", () => {
-      menu.classList.toggle("active");
-    });
-  }
+const offScreenMenu = document.querySelector(".off-screen-menu");
 
+hamMenu.addEventListener('click', () => {
+    hamMenu.classList.toggle('active');
+    offScreenMenu.classList.toggle('active');
+}); 
+  
 
-
-document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("productModal");
     const modalName = document.getElementById("modal-name");
     const modalImg = document.getElementById("modal-img");
     const modalPrice = document.getElementById("inline-price");
+
+  
+
 
     const favBtn = document.createElement("button");
     favBtn.id = "favorite-btn";
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
             updateHeart();
         }
     });
-    observer.observe(modal, { attributes: true, attributeFilter: ["style"] });
+    
 
     
     favBtn.addEventListener("click", () => {
