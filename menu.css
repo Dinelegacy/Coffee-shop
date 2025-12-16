@@ -92,6 +92,7 @@
   max-height: 100%; /* Never taller than container */
   object-fit: contain; /* Show entire image (no cropping) */
   display: block;
+  height: 225px;
 }
 
 /* "MENU" title text overlay */
