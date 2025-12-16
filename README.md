@@ -80,7 +80,6 @@ Coffee-shop/
 
 - **Mobile:** Default styles (`max-width: 420px`)
 - **Tablet/Desktop:** `@media (min-width: 1200px)`
-- **Large Desktop:** `@media (min-width: 1800px)`
 
 ---
 
