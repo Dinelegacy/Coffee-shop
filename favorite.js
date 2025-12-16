@@ -104,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="${item.image}" alt="${item.name}">
         <div class="favorite-info">
           <h3>${item.name}</h3>
-          <p>${item.price}</p>
         </div>
         <div class="favorite-buttons">
           <button class="add-favorite">+ Add</button>
