@@ -1,3 +1,11 @@
+body { 
+  background-color: #ede8e5; 
+  margin: 0; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  font-family: "Montserrat", sans-serif; 
+ }
 
 
 #favorite-btn {
@@ -39,46 +47,7 @@
 *::after {
   box-sizing: border-box;
 }
-
  
-
- 
-
-
- 
-
- 
-
-@media (min-width: 768px) {
-    .off-screen-menu {
-        padding: 40px;
-    }
-
-    .list {
-        font-size: 1.1rem;
-    }
-
-    .menuIcon {
-        width: 24px;
-        height: 24px;
-    }
-}
-
-@media (min-width: 768px) {
-    .off-screen-menu {
-        padding: 40px;
-    }
-
-    .list {
-        font-size: 1.1rem;
-    }
-
-    .menuIcon {
-        width: 24px;
-        height: 24px;
-    }
-}
-
 @media (min-width: 1024px) {
      
 }
