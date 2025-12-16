@@ -5,91 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favorites</title>
     <link rel="stylesheet" href="favorite.css">
+    <link rel="stylesheet" href="./bag.css">
+      <link rel="stylesheet" href="off-screen-menu.css">
 </head>
 <body>
     
-    <div class="hamburger">
-  <img src="./assets/functional-icons/hamburger-menu-icon.svg" alt="menu">
-</div>
 
-
-
-    <nav class="off-screen-menu">
+     <div class="off-screen-menu">
         <div class="offMenu-content">
             <ul class="menuList">
-
-                
-                <li class="list">
-                    <a href="./login.html" class="menu-link">
-                        <div class="menu-item-left">
-                            <img class="menuIcon" src="./assets/functional-icons/Account-icon.svg" alt="user account icon">
-                            <span>Login / Sign-up</span>
-                        </div>
-                        <img class="menuChevron" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron">
-                    </a>
+                <a href="./login.html">
+                    <li id="Sign-up" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Account-icon.svg" alt="user account icon">
+                        Login / Sign-up
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
                 </li>
-
-            
-                <li class="list">
-                    <a href="./menu.html" class="menu-link">
-                        <div class="menu-item-left">
+                </a>
+                <a href="./menu.html">
+                    <li id="menu" class="list">
+                        <div>
                             <img class="menuIcon" src="./assets/functional-icons/Menu-icon.svg" alt="menu icon">
-                            <span>Menu</span>
-                        </div>
-                        <img class="menuChevron" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron">
-                    </a>
+                        Menu
+                       </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
                 </li>
+                </a>
+                <a href="favorite.html"> <li id="favorites" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Favorite Heart-icon.svg" alt="heart icon">
+                        Favorites
+                    </div>
 
-            
-                <li class="list">
-                    <a href="./favorite.html" class="menu-link">
-                        <div class="menu-item-left">
-                            <img class="menuIcon" src="./assets/functional-icons/Favorite Heart-icon.svg" alt="heart icon">
-                            <span>Favorites</span>
-                        </div>
-                        <img class="menuChevron" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron">
-                    </a>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
                 </li>
-
-            
-                <li class="list">
-                    <a href="#" class="menu-link">
-                        <div class="menu-item-left">
-                            <img class="menuIcon" src="./assets/functional-icons/bag-icons/icon-empty_bag-white.svg" alt="empty bag icon">
-                            <span>Your bag</span>
-                        </div>
-                        <img class="menuChevron" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron">
-                    </a>
-                </li>
-
+             </a>
                 
-                <li class="list">
-                    <a href="#" class="menu-link">
-                        <div class="menu-item-left">
-                            <img class="menuIcon" src="./assets/functional-icons/Work_with_Us-icon.svg" alt="work with us icon">
-                            <span>Work with us</span>
-                        </div>
-                        <img class="menuChevron" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron">
-                    </a>
+                <li id="yourBag" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/bag-icons/icon-empty_bag-white.svg" alt="empty bag icon">
+                        Your bag
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
                 </li>
-
-            
-                <li class="list">
-                    <a href="#" class="menu-link">
-                        <div class="menu-item-left">
-                            <img class="menuIcon" src="./assets/functional-icons/About_Us-icon.svg" alt="about us icon">
-                            <span>About us</span>
-                        </div>
-                        <img class="menuChevron" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron">
-                    </a>
+                <li id="wwu" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Work_with_Us-icon.svg" alt="Work with us icon">
+                        Work with us
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
                 </li>
-
+                <li id="aboutUs" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/About_Us-icon.svg" alt="about us icon">
+                        About us
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
             </ul>
         </div>
-    </nav>
+    </div>
+
+         <nav id="navBar" class="top-navBar">
+<div id="navBarContainer">
+<div class="leftIcons">
+    <div class="chevron_left-icon">
+        <a href="menu.html">   
+            <img src="./assets/functional-icons/chevron_black_left-icon.svg" 
+                alt="chevron black left icon">
+        </a>
+    </div>
+</div>
+<div class="rightIcons">
+    <div id="bagIcon" class="bag-container">
+        <img  id="bagImage" src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="empty bag icon">
+       <span id="bagCount" class="bag-count" class="bag-item-count">0</span>
+    </div>
+
+    <div class="ham-menu" >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+    </div>
+</div>
+</nav>
+
+     
 
     <main>
-        <h1>MY DELICIOUS ITEMS</h1>
+      <div class="intro">
+        <h1 class="intro-cart">MY DELICIOUS ITEMS</h1></div>
+
+
+
         <div id="favorite-container"></div>
     </main>
 
