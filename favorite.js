@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-const hamMenu = document.querySelector(".ham-menu");
+  //Hamburger section 
 
-const offScreenMenu = document.querySelector(".off-screen-menu");
+  const menu = document.querySelector(".off-screen-menu");
+  const hamburger = document.querySelector(".hamburger");
 
-hamMenu.addEventListener('click', () => {
-    hamMenu.classList.toggle('active');
-    offScreenMenu.classList.toggle('active');
-}); 
+  if (menu && hamburger) {
+    hamburger.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  }
 
 
 
