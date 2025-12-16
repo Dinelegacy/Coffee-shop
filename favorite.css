@@ -40,15 +40,16 @@
   box-sizing: border-box;
 }
 
-body {
+/* this setting should not be here. */
+/* body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   background-color: #ede8e5;
-  min-height: 100vh;
+  min-height: 100vh;                
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 
 .hamburger {
@@ -150,10 +151,8 @@ body {
 }
 
 
-
-main {
-  padding: 5rem 1rem 2rem;
-}
+/* main {
+  padding: 5rem 1rem 2rem; }   /* this was suppose to be not here  */  
 
 h1 {
   font-size: 1.2rem;
@@ -161,8 +160,9 @@ h1 {
   text-align: center;
 } 
 
+/* this is duplicate */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .off-screen-menu {
         padding: 40px;
     }
@@ -175,7 +175,7 @@ h1 {
         width: 24px;
         height: 24px;
     }
-}
+} */
 
 @media (min-width: 768px) {
     .off-screen-menu {
@@ -195,7 +195,7 @@ h1 {
 @media (min-width: 1024px) {
     .off-screen-menu {
         width: 420px;
-        inset: 0 auto 0 0; 
+       /* inset: 0 auto 0 0;        this is also breaking page */ 
     }
 
     .menuList {
@@ -214,7 +214,8 @@ h1 {
   justify-content: space-between;
   background: #ede8e5; 
   padding: 0.5rem 1rem; 
-  border-bottom: 1px solid #ccc; 
+  border-bottom: 1px solid #ccc;  
+  margin-top: 3rem;                     /* added by Raheel*/
 }
 
 .favorite-item:last-child {
