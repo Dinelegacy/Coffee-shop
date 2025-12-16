@@ -21,6 +21,7 @@ ul {
     height: 9rem; /* 9 × root font size (144px if root is 16px) */
     display: flex;
     align-items: flex-end; /* Align children to bottom of navbar */
+    align-items: flex-end; /* Align children to bottom of navbar */
     background-color: #EDE8E5; /* Same as page background */
     
     /* STICKY NAVBAR - Stays at top when scrolling */
@@ -33,8 +34,10 @@ ul {
     width: 100%; /* Full width of parent (#navBar) */
     height: 5rem; /* 5 × root font size (80px if root is 16px) */
     display: flex; /* Flexbox for children */
+    display: flex; /* Flexbox for children */
     align-items: center; /* Vertically center children */
     justify-content: space-between; /* Space out left/center/right */
+      padding: 0 1rem;
       padding: 0 1rem;
 }
 
@@ -42,6 +45,15 @@ ul {
 .leftIcons {
     display: flex;
     align-items: center;
+}
+
+.rightIcons {
+    gap: 2rem;
+}
+
+.chevron_left-icon,
+.empty_bag-icon {
+    display: none;
 }
 
 .rightIcons {
@@ -101,10 +113,30 @@ ul {
     letter-spacing: 1px;
     text-transform: uppercase;       
     text-shadow: #000000 2px 2px 4px;       
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    height: auto;
+    transition: background-image 0.5s ease;
+}
+
+.section-title {
+    position: absolute;
+     bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 15px;
+    color: white;
+    font-weight: 900;
+    font-size: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;       
+    text-shadow: #000000 2px 2px 4px;       
 }
 
 .background-image-container {
   /* Absolute positioning relative to .top-background */
+  top: 0px;
   top: 0px;
   display: flex;
   align-items: center;
@@ -112,6 +144,9 @@ ul {
 }
 
 .background-image-container img {
+  width: 100%; /* Never wider than container */
+  height: auto; /* Never taller than container */
+  /*object-fit: contain; /* Show entire image (no cropping) */
   width: 100%; /* Never wider than container */
   height: auto; /* Never taller than container */
   /*object-fit: contain; /* Show entire image (no cropping) */
@@ -235,6 +270,7 @@ footer {
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center horizontally */
     padding-top: 9rem; /* Space above footer content */
+    padding-top: 9rem; /* Space above footer content */
     background-color: #EDE8E5; /* Match page */
 }
 
@@ -245,6 +281,10 @@ footer ul {
     font-size: 1rem;
     font-weight: 700;
     line-height: 2.5rem;
+}
+
+footer ul li a {
+    color: #000000; /* Black links */
 }
 
 footer ul li a {
