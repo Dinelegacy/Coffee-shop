@@ -75,6 +75,7 @@ li::scroll-marker:target-current {
     justify-content: space-evenly;
     padding-top: 3px;
     position: relative;
+
 }
 
 #bigButtons button {
@@ -86,6 +87,10 @@ li::scroll-marker:target-current {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+
+    @media (min-width: 402px) {
+        width: 100%;
+    }
 }
 
 button:hover {
