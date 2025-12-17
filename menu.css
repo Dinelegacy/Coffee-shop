@@ -1,17 +1,12 @@
-/* =========================================================
-   GENERAL STYLES
-   ========================================================= */
-body {
-    margin: 0; /* Remove browser's default margin */
-    font-family: 'Montserrat', sans-serif; /* Use custom font */
-    background-color: #EDE8E5; /* Light beige background */
-}
+ body { 
+  background-color: #ede8e5; 
+  margin: 0; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  font-family: "Montserrat", sans-serif; 
+ }
 
-ul {
-    margin: 0; /* Remove default list indentation */
-    padding: 0; /* Remove default list padding */
-    list-style: none; /* Remove bullet points */
-}
 
 /* =========================================================
    NAVBAR
@@ -42,102 +37,53 @@ ul {
 }
 
 /* ===== LEFT SECTION: Logo ===== */
-.leftIcons {
-    display: flex;
-    align-items: center;
-}
-
-.rightIcons {
-    gap: 2rem;
-}
-
-.chevron_left-icon,
-.empty_bag-icon {
-    display: none;
-}
-
-.rightIcons {
-    gap: 2rem;
-}
-
-.chevron_left-icon,
-.empty_bag-icon {
-    display: none;
-}
+ 
 
  
-.ham-menu {
-    width: 24px;
-    height: 20px;
-    display: flex;
-    flex-direction: column; /* Stack spans vertically */
-    justify-content: space-between; /* Equal space between lines */
-    cursor: pointer; /* Shows hand cursor on hover */
-}
 
-.ham-menu span {
-    display: block;
-    height: 3px; /* Height of each hamburger line */
-    width: 100%; /* Full width of parent */
-    background-color: white; /* Color of lines */
-    border-radius: 2px; /* Slightly rounded ends */
-}
+ 
+ 
+
+ 
+
+/* Hide the chevron icon (not used in this design) */
+ 
 
 /* =========================================================
    HAMBURGER MENU LINK COLORS
    (For the off-screen menu - ensures white text)
    ========================================================= */
-.off-screen-menu a {
-    color: white !important; /* !important overrides other styles */
+ 
+
+/* =========================================================
+   HEADER CONTAINER
+   ========================================================= */
+.header-container {
+  width: 100%;
+  background: #EDE8E5; /* Match page background */
 }
+
 /* =========================================================
    TOP BACKGROUND (Menu title section)
    ========================================================= */
 .top-background {
-    position: relative;
-    background-size: contain;
-    background-position: center;
-    height: auto;
-    transition: background-image 0.5s ease;
-}
-
-.section-title {
-    position: absolute;
-     bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 12px 15px;
-    color: white;
-    font-weight: 900;
-    font-size: 50px;
-    letter-spacing: 1px;
-    text-transform: uppercase;       
-    text-shadow: #000000 2px 2px 4px;       
-    position: relative;
-    background-size: contain;
-    background-position: center;
-    height: auto;
-    transition: background-image 0.5s ease;
-}
-
-.section-title {
-    position: absolute;
-     bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 12px 15px;
-    color: white;
-    font-weight: 900;
-    font-size: 50px;
-    letter-spacing: 1px;
-    text-transform: uppercase;       
-    text-shadow: #000000 2px 2px 4px;       
+  width: 100%;
+  height: 80px; /* Fixed height for background section */
+  overflow: none; /* Typo: should be 'overflow: visible' or 'hidden' */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* CRITICAL: Push down below sticky navbar */
+  margin-top: 9rem; /* Same as navbar height */
 }
 
 .background-image-container {
   /* Absolute positioning relative to .top-background */
-  top: 0px;
-  top: 0px;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   /* Fallback if image doesn't load */
@@ -151,6 +97,30 @@ ul {
   height: auto; /* Never taller than container */
   /*object-fit: contain; /* Show entire image (no cropping) */
   display: block;
+  height: 225px;
+}
+
+/* "MENU" title text overlay */
+.section-title {
+  position: absolute;
+  bottom: 550px; /* Position from bottom of .top-background */
+   top: 220px;
+  left: 0;
+  right: 0;
+  color: white;
+  font-weight: 900; /* Black weight (heaviest) */
+  font-size: 50px;
+  letter-spacing: 1px; /* Slightly spread letters */
+  text-transform: uppercase; /* All caps */
+  
+  /* Text outline/shadow effect */
+  text-shadow: -1px -1px 0 #000,  /* Top-left shadow */
+                1px -1px 0 #000,   /* Top-right shadow */
+               -1px 1px 0 #000,    /* Bottom-left shadow */
+                1px 1px 0 #000;    /* Bottom-right shadow */
+                
+  /* Gradient overlay on text */
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
 }
 
 /* =========================================================
@@ -160,13 +130,19 @@ main {
   position: relative; /* Establishes stacking context */
   top: 0px; /* Pulls main content up behind navbar */
   background: #EDE8E5;
- }
+ 
+
+  /* CRITICAL: Pull content up behind navbar */
+  margin-top: -6rem; /* Negative margin overlaps with background */
+  width: 100%;
+}
 
 .menu-section {
   position: relative;
   z-index: 4; /* Above main, below navbar */
+   width: 100%;
+  
 }
-
 /* =========================================================
    ACCORDION (Expandable menu categories)
    ========================================================= */
@@ -264,36 +240,10 @@ main {
 /* =========================================================
    FOOTER
    ========================================================= */
-footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center horizontally */
-    padding-top: 9rem; /* Space above footer content */
-    padding-top: 9rem; /* Space above footer content */
-    background-color: #EDE8E5; /* Match page */
-}
+  a {
+    color: white;
+ }
 
-footer ul {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 2.5rem;
-}
-
-footer ul li a {
-    color: #000000; /* Black links */
-}
-
-footer ul li a {
-    color: #000000; /* Black links */
-}
-
-/* Social media icons container */
-#socialIcons {
-    display: flex;
-    gap: 1rem; /* Space between icons */
-    margin-bottom: 2rem; /* Space below icons */
+.footerAddress {
+    color: black;
 }

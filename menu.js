@@ -1,19 +1,22 @@
 // ============================================================================
 // SECTION 1: BACKGROUND IMAGES CONFIGURATION
-// ============================================================================
-// CRITICAL: This object MUST be defined FIRST because:
-// 1. Functions like setTopBackground() depend on it
-// 2. Constants should be defined before any execution logic
-// 3. It's a data structure, not behavior - define data before functions
-// Define an object called 'backgrounds' to store all background image paths for different menu categories
+//   const hamMenu = document.querySelector(".ham-menu");
 
-const backgrounds = { // Object to store background image paths for different categories
-  default: "assets/menu/menu_covers/Menu-Covers.jpg", // Default background image path
-  promotions: "assets/menu/menu_covers/Promo.jpg", // Promotions category background image path
-  coffee: "assets/menu/menu_covers/coffee.jpg", // Coffee category background image path
-  tea: "assets/menu/menu_covers/tea.jpg", // Tea category background image path
-  smoothies: "assets/menu/menu_covers/smoothie.jpg", // Smoothies category background image path
-  snacks: "assets/menu/menu_covers/snaks3.jpg" // Snacks category background image path
+const offScreenMenu = document.querySelector(".off-screen-menu");
+
+hamMenu.addEventListener('click', () => {
+    hamMenu.classList.toggle('active');
+    offScreenMenu.classList.toggle('active');
+});  
+// This object stores all background image paths for different menu categories
+// WHY AT TOP: Constants should be defined before they're used anywhere in the code
+const backgrounds = {
+  default: "assets/menu/menu_covers/Menu-Covers.jpg",       // Default background image
+  promotions: "assets/menu/menu_covers/Promo.jpg",          // Promotions category background
+  coffee: "assets/menu/menu_covers/coffee.jpg",             // Coffee category background
+  tea: "assets/menu/menu_covers/tea.jpg",                   // Tea category background
+  smoothies: "assets/menu/menu_covers/smoothie.jpg",        // Smoothies category background
+  snacks: "assets/menu/menu_covers/snaks3.jpg"              // Snacks category background
 };
 
 // ============================================================================
