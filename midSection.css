@@ -21,15 +21,20 @@ section {
     @media (max-width: 360px) {
         width: 115vw;
     }
-
+    @media (min-width: 960px) {
+        display: none;
+    }
 }
 
+.imagePromoLarge {
+    @media (max-width: 960px) {
+        display: none;
+    }
+}
 .promo {
     flex: 0 0 100%;
     scroll-snap-align: center;
     list-style: none;
-
-
 }
 
 .imagePromo {
