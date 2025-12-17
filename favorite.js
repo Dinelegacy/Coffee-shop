@@ -1,18 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
 
   //Hamburger section 
 
-  const menu = document.querySelector(".off-screen-menu");
-  const hamburger = document.querySelector(".hamburger");
+  const hamMenu = document.querySelector(".ham-menu");
 
-  if (menu && hamburger) {
-    hamburger.addEventListener("click", () => {
-      menu.classList.toggle("active");
-    });
-  }
+const offScreenMenu = document.querySelector(".off-screen-menu");
 
-  //Modal and favorite section
-
+hamMenu.addEventListener('click', () => {
+    hamMenu.classList.toggle('active');
+    offScreenMenu.classList.toggle('active');
+}); 
+  
   const modal = document.getElementById("productModal");
   const modalName = document.getElementById("modal-name");
   const modalImg = document.getElementById("modal-img");
@@ -131,3 +129,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+ 

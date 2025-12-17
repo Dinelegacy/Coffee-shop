@@ -1,6 +1,13 @@
 // ============================================================================
 // SECTION 1: BACKGROUND IMAGES CONFIGURATION
-// ============================================================================
+//   const hamMenu = document.querySelector(".ham-menu");
+
+const offScreenMenu = document.querySelector(".off-screen-menu");
+
+hamMenu.addEventListener('click', () => {
+    hamMenu.classList.toggle('active');
+    offScreenMenu.classList.toggle('active');
+});  
 // This object stores all background image paths for different menu categories
 // WHY AT TOP: Constants should be defined before they're used anywhere in the code
 const backgrounds = {
