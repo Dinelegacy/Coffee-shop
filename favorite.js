@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
 
   //Hamburger section 
 
@@ -127,3 +127,6 @@ hamMenu.addEventListener('click', () => {
   });
 
 });
+
+
+ 
