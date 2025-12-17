@@ -1,144 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Out</title>
-    <link rel="stylesheet" href="checkout.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="./cart-page.css">
+  <link rel="stylesheet" href="./off-screen-menu.css">
+  <link rel="stylesheet" href="./footer.css">
+  <link rel="stylesheet" href="./bag.css">
+  <link rel="stylesheet" href="./checkout.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
+
 <body>
+     <div class="off-screen-menu">
+        <div class="offMenu-content">
+            <ul class="menuList">
+                <a href="./login.html">
+                    <li id="Sign-up" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Account-icon.svg" alt="user account icon">
+                        Login / Sign-up
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                </a>
+                <a href="./menu.html">
+                    <li id="menu" class="list">
+                        <div>
+                            <img class="menuIcon" src="./assets/functional-icons/Menu-icon.svg" alt="menu icon">
+                        Menu
+                       </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                </a>
+                <li id="favorites" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Favorite Heart-icon.svg" alt="heart icon">
+                        Favorites
+                    </div>
 
-  <!-- CHECKOUT SECTION -->
-<div class="checkout-wrapper">
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="yourBag" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/bag-icons/icon-empty_bag-white.svg" alt="empty bag icon">
+                        Your bag
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="wwu" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/Work_with_Us-icon.svg" alt="Work with us icon">
+                        Work with us
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+                <li id="aboutUs" class="list">
+                    <div>
+                        <img class="menuIcon" src="./assets/functional-icons/About_Us-icon.svg" alt="about us icon">
+                        About us
+                    </div>
+                    <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
+                </li>
+            </ul>
+        </div>
+    </div>
 
-  <!-- Header + Progress Steps -->
-  <div id="header">
-      <h1>Checkout</h1>
+         <nav id="navBar" class="top-navBar">
+<div id="navBarContainer">
+<div class="leftIcons">
+    <div class="chevron_left-icon">
+        <a href="menu.html">   
+            <img src="./assets/functional-icons/chevron_black_left-icon.svg" 
+                alt="chevron black left icon">
+        </a>
+    </div>
+</div>
+<div class="rightIcons">
+    <div id="bagIcon" class="bag-container">
+        <img  id="bagImage" src="./assets/functional-icons/bag-icons/icon-empty_bag.svg" alt="empty bag icon">
+       <span id="bagCount" class="bag-count" class="bag-item-count">0</span>
+    </div>
 
-      <div class="progress">
-          <div class="step active" data-step="1">1</div>
-          <div class="line"></div>
-          <div class="step" data-step="2">2</div>
-          <div class="line"></div>
-          <div class="step" data-step="3">3</div>
-          <div class="line"></div>
-          <div class="step" data-step="4">4</div>
-          <div class="line"></div>
-          <div class="step" data-step="5">5</div>
-      </div>
-  </div>
-
-  <!-- Slider -->
-  <div class="slider-viewport">
-      <div class="slider-track">
-
-          <!-- CARD 1 — Customer Info -->
-          <div class="card">
-              <h2>Customer Information</h2>
-              <div class="form-inputs">
-                  <div class="input-group">
-                      <label>Full Name</label>
-                      <input type="text" id="name" placeholder="John Doe">
-                  </div>
-                  <div class="input-group">
-                      <label>Email</label>
-                      <input type="email" id="email" placeholder="name@email.com">
-                  </div>
-                  <div class="input-group">
-                      <label>Phone Number</label>
-                      <input type="tel" id="phone" placeholder="123-456-7890">
-                  </div>
-              </div>
-
-              <div class="card-actions">
-                  <button class="next-button" onclick="nextStep()">Next</button>
-              </div>
-          </div>
-
-          <!-- CARD 2 — Table Number -->
-          <div class="card">
-              <h2>Table Number</h2>
-
-              <div class="input-group">
-                  <label>Enter Your Table Number</label>
-                  <input type="number" id="table-number" placeholder="e.g. 12">
-              </div>
-
-              <div class="card-actions">
-                  <button class="back-button" onclick="prevStep()">Back</button>
-                  <button class="next-button" onclick="nextStep()">Next</button>
-              </div>
-          </div>
-
-          <!-- CARD 3 — Payment -->
-          <div class="card">
-              <h2>Payment Details</h2>
-
-              <div class="form-inputs">
-                  <div class="input-group">
-                      <label>Card Number</label>
-                      <input type="text" placeholder="xxxx xxxx xxxx xxxx">
-                  </div>
-
-                  <div class="row">
-                      <div class="input-group" style="flex:1;">
-                          <label>Expiry</label>
-                          <input type="month">
-                      </div>
-                      <div class="input-group" style="flex:1;">
-                          <label>CVC</label>
-                          <input type="password">
-                      </div>
-                  </div>
-              </div>
-
-              <div class="card-actions">
-                  <button class="back-button" onclick="prevStep()">Back</button>
-                  <button class="next-button" onclick="nextStep()">Next</button>
-              </div>
-          </div>
-
-          <!-- CARD 4 — Review Order -->
-          <div class="card">
-              <h2>Review Your Order</h2>
-
-              <div class="order-summary">
-                  <div class="summary-row"><span>Items</span> <span id="summary-items">$14.00</span></div>
-                  <div class="summary-row"><span>Tax</span> <span>$1.40</span></div>
-                  <div class="summary-row"><span>Tip</span> <span id="summary-tip">$0.00</span></div>
-                  <div class="summary-row total-row"><span>Total</span> <span id="summary-total">$15.40</span></div>
-              </div>
-
-              <h3>Add a Tip?</h3>
-              <div class="tip-buttons">
-                  <div class="tip" onclick="selectTip(0)">No Tip</div>
-                  <div class="tip" onclick="selectTip(2)">$2</div>
-                  <div class="tip" onclick="selectTip(5)">$5</div>
-              </div>
-
-              <div class="card-actions">
-                  <button class="back-button" onclick="prevStep()">Back</button>
-                  <button class="confirm-button" onclick="confirmOrder()">Confirm</button>
-              </div>
-          </div>
-
-          <!-- CARD 5 — Success -->
-          <div class="card">
-              <h2>Order Successful 🎉</h2>
-              <p>Your coffee is being prepared!</p>
-
-              <div class="order-message" id="orderMessage">Enjoy your drink!</div>
-          </div>
-
-      </div>
-  </div>
+    <div class="ham-menu" >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+    </div>
+</div>
+</nav>
+ 
+<div class="intro">
+  <h2 class="intro-cart">Checkout</h2>
 </div>
 
 
-  
-  <script src="checkout.js" defer></script>
-</body>
+<main class="checkout-container">
 
-</html>
+    <!-- ORDER SUMMARY -->
+    <section class="order-summary">
+      <h3>Order Summary</h3>
+      <div class="summary-row">
+        <span>Latte</span>
+        <span>€4.50</span>
+      </div>
+      <div class="summary-row">
+        <span>Cappuccino</span>
+        <span>4.00 SEK</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span>8.50 SEK</span>
+      </div>
+    </section>
+  
+    <!-- PAYMENT METHODS -->
+    <section class="payment-section">
+      <h3>Payment Method</h3>
+  
+      <div class="payment-tabs">
+        <button class="payment-tab active" data-method="card">Credit Card</button>
+        <button class="payment-tab" data-method="apple">Apple Pay</button>
+        <button class="payment-tab" data-method="swish">Swish</button>
+      </div>
+  
+      <!-- CREDIT CARD -->
+      <form class="payment-form active" id="card-form">
+        <input type="text" placeholder="Cardholder Name" required>
+        <input type="text" placeholder="Card Number" maxlength="16" pattern="\d{16}" required>
+        <div class="row">
+          <input type="text" placeholder="MM/YY" pattern="\d{2}/\d{2}" required>
+          <input type="text" placeholder="CVC" maxlength="3" pattern="\d{3}" required>
+        </div>
+      </form>
+  
+      <!-- APPLE PAY -->
+      <form class="payment-form" id="apple-form">
+        <input type="email" placeholder="Apple ID Email" required>
+      </form>
+  
+      <!-- SWISH -->
+      <form class="payment-form" id="swish-form">
+        <input type="tel" placeholder="Swish Phone Number" pattern="\d{10}" required>
+      </form>
+  
+    </section>
+  
+  </main>
+  
+  <!-- PAY BUTTON -->
+  <div class="cart-footer">
+    <button id="checkoutBtn" class="checkout-btn" disabled>
+      Pay Now
+    </button>
+  </div>
+  
+  <script type="module" src="./cart.js"></script>
+  <script type="module" src="./swipe.js"></script>
+  <script src="./checkout.js"></script>
+  
+  </body>
+  </html>

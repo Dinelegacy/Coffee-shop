@@ -1,48 +1,42 @@
-let currentStep = 0;
-const steps = document.querySelectorAll(".step");
-const slider = document.querySelector(".slider-track");
+const tabs = document.querySelectorAll(".payment-tab");
+const forms = document.querySelectorAll(".payment-form");
+const payBtn = document.getElementById("checkoutBtn");
 
-// Move forward
-function nextStep() {
-    if (currentStep < 4) {
-        currentStep++;
-        updateSlider();
+let activeForm = document.querySelector(".payment-form.active");
+
+// SWITCH PAYMENT METHOD
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    tabs.forEach(t => t.classList.remove("active"));
+    forms.forEach(f => f.classList.remove("active"));
+
+    tab.classList.add("active");
+    activeForm = document.getElementById(`${tab.dataset.method}-form`);
+    activeForm.classList.add("active");
+
+    validateForm();
+  });
+});
+
+// VALIDATION
+document.querySelectorAll("input").forEach(input => {
+  input.addEventListener("input", validateForm);
+});
+
+function validateForm() {
+  const inputs = activeForm.querySelectorAll("input");
+  let valid = true;
+
+  inputs.forEach(input => {
+    if (!input.checkValidity() || input.value.trim() === "") {
+      valid = false;
     }
+  });
+
+  payBtn.disabled = !valid;
 }
 
-// Move backward
-function prevStep() {
-    if (currentStep > 0) {
-        currentStep--;
-        updateSlider();
-    }
-}
-
-// Update slider + progress dots
-function updateSlider() {
-    slider.style.transform = `translateX(-${currentStep * 100}%)`;
-
-    steps.forEach((step, index) => {
-        step.classList.toggle("active", index <= currentStep);
-    });
-}
-
-/* TIP SELECTION */
-let selectedTip = 0;
-function selectTip(amount) {
-    selectedTip = amount;
-
-    document.querySelectorAll(".tip").forEach(t => t.classList.remove("active"));
-    event.target.classList.add("active");
-
-    document.getElementById("summary-tip").innerText = `$${amount.toFixed(2)}`;
-
-    const baseTotal = 15.40;
-    document.getElementById("summary-total").innerText = `$${(baseTotal + amount).toFixed(2)}`;
-}
-
-/* Confirm order */
-function confirmOrder() {
-    nextStep();
-    document.getElementById("orderMessage").style.display = "block";
-}
+// PAY BUTTON ACTION
+payBtn.addEventListener("click", () => {
+  alert("Payment successful ☕");
+});

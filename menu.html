@@ -8,14 +8,16 @@
 
   <!-- ========== STYLESHEETS ========== -->
   <!-- NAVIGATION FIRST (Most important for user interaction) -->
-  <link rel="stylesheet" href="navegationBar.css" />
+  
   <!-- Note: 'navegationBar.css' has a typo (should be 'navigationBar.css') -->
   <!-- PAGE-SPECIFIC STYLES -->
   <link rel="stylesheet" href="menu.css" />           <!-- Main menu styling -->
   <link rel="stylesheet" href="off-screen-menu.css" /> <!-- Hidden side menu -->
-  <link rel="stylesheet" href="popup.css" />          <!-- Modal/popup windows -->
-  <link rel="stylesheet" href="favorite.css" />       <!-- Favorite/heart styling -->
+  <link rel="stylesheet" href="popup.css" />          <!-- Modal/popup windows -->       <!-- Favorite/heart styling -->
   <link rel="stylesheet" href="./bag.css">
+
+  <link rel="stylesheet" href="./footer.css">
+  <link rel="stylesheet" href="./heart.css">
   
 
   <!-- ========== GOOGLE FONTS ========== -->
@@ -43,7 +45,7 @@
             <!-- Right chevron indicates "this item is clickable" -->
             <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
           </li>
-        </a>
+        </
         <a href="./menu.html">
                     <li id="menu" class="list">
                         <div>
@@ -53,19 +55,22 @@
                     <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
                 </li>
                 </a>
+                <a href="./favorite.html"> 
                 <li id="favorites" class="list">
                     <div>
                         <img class="menuIcon" src="./assets/functional-icons/Favorite Heart-icon.svg" alt="heart icon">
                         Favorites
                     </div>
-
+                          </a>
                     <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
                 </li>
+                 <a href="./cart.html"> 
                 <li id="yourBag" class="list">
                     <div>
                         <img class="menuIcon" src="./assets/functional-icons/bag-icons/icon-empty_bag-white.svg" alt="empty bag icon">
                         Your bag
                     </div>
+                    </a>
                     <img class="menuIcon" src="./assets/functional-icons/chevron_white_right-icon.svg" alt="chevron white right icon">
                 </li>
                 <li id="wwu" class="list">
@@ -186,47 +191,34 @@
   <!-- END MODAL -->
 
   <!-- ========== FOOTER (Bottom of page) ========== -->
-  <footer>
-    <!-- Logo in footer -->
-    <div>
-      <a href="index.html">
-        <img src="./assets/logo.svg" alt="logo">
-      </a>
-    </div>
-
-    <!-- Footer links -->
-    <ul>
-      <li>
-        <!-- Link opens in new tab (target="_blank") -->
-        <a href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">
-          Sveavägen 39, 111 34 Stockholm
-        </a>
-      </li>
-      <li>Contact us</li>   <!-- Note: These aren't links yet -->
-      <li>About us</li>
-      <li>Policy</li>
-    </ul>
-
-    <!-- Social media icons -->
-    <div id="socialIcons" class="footer-socialIcons">
-      <div><img src="./assets/social-icons/facebook-icon.svg" alt="Facebook"></div>
-      <div><img src="./assets/social-icons/instagram-icon.svg" alt="Instagram"></div>
-      <div><img src="./assets/social-icons/github-icon.svg" alt="GitHub"></div>
-    </div>
-  </footer>
+     <footer>
+        <div><a href="index.html"><img src="./assets/logo.svg" alt="logotype"></a></div>
+        <ul class="ullinks">
+            <li class="linkAddress"><a class="footerAddress" href="https://maps.app.goo.gl/qqVpT9CNNpfgvbWc6" target="_blank">Sveavägen 39, 111 34 Stockholm</a></li>
+            <li class="linkContact">Contact us</li>
+            <li class="linkAbout">About us</li>
+            <li class="linkPolicy">Policy</li>
+        </ul>
+        <div id="socialIcons" class="footer-socialIcons">
+            <div><img src="./assets/social-icons/facebook-icon.svg" alt="facebook icon"></div>
+            <div><img src="./assets/social-icons/instagram-icon.svg" alt="instagram icon"></div>
+            <div><img src="./assets/social-icons/github-icon.svg" alt="github icon"></div>
+        </div>
+    </footer>
   <!-- END FOOTER -->
 
   <!-- ========== JAVASCRIPT FILES ========== -->
   <!-- 'defer' means: "Wait until HTML is fully loaded, THEN execute" -->
   <script src="index.js" defer></script>      <!-- General site functionality -->
-  <script src="favorite.js" defer></script>   <!-- Favorite/heart functionality -->
-
+     <!-- Favorite/heart functionality -->
+<script src="favorite.js" defer></script> 
   <!-- 'type="module"' allows using modern JavaScript imports/exports -->
   <script type="module" src="cart-handler.js"></script>  <!-- Shopping cart logic -->
   <script type="module" src="menu-cart.js"></script>     <!-- Menu-specific cart features -->
-
+ 
   <!-- MAIN MENU LOGIC - loads LAST because it needs everything else ready -->
   <script type="module" src="menu.js"></script>
+    
 
 </body>
 </html>
