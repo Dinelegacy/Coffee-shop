@@ -99,7 +99,7 @@
 .section-title {
   position: absolute;
   bottom: 550px; /* Position from bottom of .top-background */
-   top: 220px;
+   top: 203px;
   left: 0;
   right: 0;
   color: white;
@@ -130,6 +130,7 @@ main {
   /* CRITICAL: Pull content up behind navbar */
   margin-top: -6rem; /* Negative margin overlaps with background */
   width: 100%;
+  margin-bottom: 0px;
 }
 
 .menu-section {
@@ -242,3 +243,36 @@ main {
 .footerAddress {
     color: black;
 }
+
+ footer {
+    width: 300px;
+    display: inline-flex;
+    padding-top: 6rem;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    
+}
+
+ul.ullinks {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    padding: 0%;
+    list-style: none;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3rem;
+}
+
+.linkAddress, .linkContact, .linkAbout, .linkPolicy {
+    justify-content: center;
+}
+
+#socialIcons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 72px;
+}
+
