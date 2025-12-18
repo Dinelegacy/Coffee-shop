@@ -15,7 +15,8 @@
     width: 100%; /* Full width of screen */
     height: 9rem; /* 9 × root font size (144px if root is 16px) */
     display: flex;
-    align-items: end; /* Align children to bottom of navbar */
+    align-items: flex-end; /* Align children to bottom of navbar */
+    align-items: flex-end; /* Align children to bottom of navbar */
     background-color: #EDE8E5; /* Same as page background */
     
     /* STICKY NAVBAR - Stays at top when scrolling */
@@ -27,11 +28,12 @@
 #navBarContainer {
     width: 100%; /* Full width of parent (#navBar) */
     height: 5rem; /* 5 × root font size (80px if root is 16px) */
-    display: inline-flex; /* Flexbox for children */
+    display: flex; /* Flexbox for children */
+    display: flex; /* Flexbox for children */
     align-items: center; /* Vertically center children */
-    padding-left: 0.75rem; /* 12px if root is 16px */
-    padding-right: 1.125rem; /* 18px if root is 16px */
     justify-content: space-between; /* Space out left/center/right */
+      padding: 0 1rem;
+      padding: 0 1rem;
 }
 
 /* ===== LEFT SECTION: Logo ===== */
@@ -88,9 +90,12 @@
 }
 
 .background-image-container img {
-  max-width: 100%; /* Never wider than container */
-  max-height: 100%; /* Never taller than container */
-  object-fit: contain; /* Show entire image (no cropping) */
+  width: 100%; /* Never wider than container */
+  height: auto; /* Never taller than container */
+  /*object-fit: contain; /* Show entire image (no cropping) */
+  width: 100%; /* Never wider than container */
+  height: auto; /* Never taller than container */
+  /*object-fit: contain; /* Show entire image (no cropping) */
   display: block;
   height: 225px;
 }
@@ -123,7 +128,7 @@
    ========================================================= */
 main {
   position: relative; /* Establishes stacking context */
-  z-index: 3; /* Above background, below navbar */
+  top: 0px; /* Pulls main content up behind navbar */
   background: #EDE8E5;
  
 

@@ -21,7 +21,8 @@ body {
   justify-content: space-between;
   background: #ede8e5; 
   padding: 0.5rem 1rem; 
-  border-bottom: 1px solid #ccc; 
+  border-bottom: 1px solid #ccc;  
+  margin-top: 3rem;                     /* added by Raheel*/
 }
 
 .favorite-item:last-child {
