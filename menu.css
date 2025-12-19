@@ -104,8 +104,8 @@
 .section-title {
   position: absolute;
   bottom: 550px; /* Position from bottom of .top-background */
-   top: 203px;
-  left: 0;
+   top: 139px;
+  left: 14px;
   right: 0;
   color: white;
   font-weight: 900; /* Black weight (heaviest) */
