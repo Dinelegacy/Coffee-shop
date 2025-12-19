@@ -119,8 +119,7 @@
                -1px 1px 0 #000,    /* Bottom-left shadow */
                 1px 1px 0 #000;    /* Bottom-right shadow */
                 
-  /* Gradient overlay on text */
-  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+
 }
 
 /* =========================================================
