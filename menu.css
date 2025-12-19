@@ -13,7 +13,7 @@
    ========================================================= */
 #navBar {
     width: 100%; /* Full width of screen */
-    height: 9rem; /* 9 × root font size (144px if root is 16px) */
+    height: 5rem; /* 9 × root font size (144px if root is 16px) */
     display: flex;
     align-items: flex-end; /* Align children to bottom of navbar */
     align-items: flex-end; /* Align children to bottom of navbar */
