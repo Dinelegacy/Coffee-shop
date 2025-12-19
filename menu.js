@@ -1,6 +1,35 @@
  /* =========================
    BACKGROUND CONFIG (MUST BE FIRST)
 ========================= */
+ document.addEventListener("DOMContentLoaded", () => {
+  const hamMenu = document.querySelector(".ham-menu");
+  const offScreenMenu = document.querySelector(".off-screen-menu");
+
+  if (!hamMenu || !offScreenMenu) return;
+
+  // TOGGLE HAMBURGER
+  hamMenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+    hamMenu.classList.toggle("active");
+    offScreenMenu.classList.toggle("active");
+  });
+
+  // PREVENT CLICKS INSIDE MENU FROM CLOSING ACCORDION
+  offScreenMenu.addEventListener("click", (e) => {
+    e.stopPropagation(); // ⛔ CRITICAL FIX
+  });
+
+  // INIT YOUR EXISTING MENU LOGIC (UNCHANGED)
+  generateMenu();
+  setupAccordion();
+  setupProductClicks();
+  setTopBackground("default");
+  setupQuantityButtons();
+  setupModalFunctionality();
+});
+
+
+ 
 
 const backgrounds = {
   default: "assets/menu/menu_covers/Menu-Covers.jpg",
@@ -16,44 +45,11 @@ const backgrounds = {
    DOM READY
 ========================= */
 
- document.addEventListener("DOMContentLoaded", () => {
-
-  const hamMenu = document.querySelector(".ham-menu");
-  const offScreenMenu = document.querySelector(".off-screen-menu");
-
-  if (!hamMenu || !offScreenMenu) {
-    console.warn("Hamburger elements not found");
-    return;
-  }
-
-  // OPEN / CLOSE MENU
-  hamMenu.addEventListener("click", (e) => {
-    e.stopPropagation(); // ⛔ stop document click
-    offScreenMenu.classList.toggle("active");
-    hamMenu.classList.toggle("active");
-    document.body.classList.toggle("menu-open");
-  });
-
-  // CLICK INSIDE MENU → DO NOTHING
-  offScreenMenu.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
-
-  // CLICK OUTSIDE → CLOSE MENU
-  document.addEventListener("click", () => {
-    offScreenMenu.classList.remove("active");
-    hamMenu.classList.remove("active");
-    document.body.classList.remove("menu-open");
-  });
-
-  // INIT APP
-  generateMenu();
-  setupAccordion();
-  setupProductClicks();
-  setTopBackground("default");
-  setupQuantityButtons();
-  setupModalFunctionality();
-});
+ 
+ 
+ 
+ 
+ 
 
 /* =========================
    FUNCTIONS
