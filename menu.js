@@ -1,71 +1,70 @@
- 
- const hamMenu = document.querySelector(".ham-menu");
+ /* =========================
+   BACKGROUND CONFIG (MUST BE FIRST)
+========================= */
 
-const offScreenMenu = document.querySelector(".off-screen-menu");
-
-hamMenu.addEventListener('click', () => {
-    hamMenu.classList.toggle('active');
-    offScreenMenu.classList.toggle('active');
-}); 
-
-  
- 
- const backgrounds = {
-  default: "assets/menu/menu_covers/Menu-Covers.jpg",       // Default background image
-  promotions: "assets/menu/menu_covers/Promo.jpg",          // Promotions category background
-  coffee: "assets/menu/menu_covers/coffee.jpg",             // Coffee category background
-  tea: "assets/menu/menu_covers/tea.jpg",                   // Tea category background
-  smoothies: "assets/menu/menu_covers/smoothie.jpg",        // Smoothies category background
-  snacks: "assets/menu/menu_covers/snaks3.jpg"              // Snacks category background
+const backgrounds = {
+  default: "assets/menu/menu_covers/Menu-Covers.jpg",
+  promotions: "assets/menu/menu_covers/Promo.jpg",
+  coffee: "assets/menu/menu_covers/coffee.jpg",
+  tea: "assets/menu/menu_covers/tea.jpg",
+  smoothies: "assets/menu/menu_covers/smoothie.jpg",
+  snacks: "assets/menu/menu_covers/snaks3.jpg"
 };
- 
-// This object stores all background image paths for different menu categories
-// WHY AT TOP: Constants should be defined before they're used anywhere in the code
- 
 
-// ============================================================================
-// SECTION 2: MAIN INITIALIZATION - DOMContentLoaded Event
-// ============================================================================
-// This event fires when the HTML document has been completely loaded and parsed
-// WHY EARLY: Shows the entry point of our application logic
- 
-  // EXECUTION ORDER IS CRITICAL:
-  // 1. generateMenu() - Creates the HTML structure first (foundation)
-  // 2. setupAccordion() - Adds behavior to the created structure
-  // 3. setupProductClicks() - Enables clicking on products
-  // 4. setTopBackground() - Sets the initial visual background
-  // 5. setupQuantityButtons() - Prepares modal quantity controls
-  // 6. setupModalFunctionality() - Sets up modal closing behavior
- 
- 
+
+/* =========================
+   DOM READY
+========================= */
+
  document.addEventListener("DOMContentLoaded", () => {
-  generateMenu();             // Build menu from data
-  setupAccordion();           // Make accordions expandable
-  setupProductClicks();       // Make products clickable
-  setTopBackground("default"); // Set initial background image
-  setupQuantityButtons();     // Setup + and - buttons in modal
-  setupModalFunctionality();  // Setup modal closing functionality
+
+  const hamMenu = document.querySelector(".ham-menu");
+  const offScreenMenu = document.querySelector(".off-screen-menu");
+
+  if (!hamMenu || !offScreenMenu) {
+    console.warn("Hamburger elements not found");
+    return;
+  }
+
+  // OPEN / CLOSE MENU
+  hamMenu.addEventListener("click", (e) => {
+    e.stopPropagation(); // ⛔ stop document click
+    offScreenMenu.classList.toggle("active");
+    hamMenu.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
+
+  // CLICK INSIDE MENU → DO NOTHING
+  offScreenMenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // CLICK OUTSIDE → CLOSE MENU
+  document.addEventListener("click", () => {
+    offScreenMenu.classList.remove("active");
+    hamMenu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  });
+
+  // INIT APP
+  generateMenu();
+  setupAccordion();
+  setupProductClicks();
+  setTopBackground("default");
+  setupQuantityButtons();
+  setupModalFunctionality();
 });
 
+/* =========================
+   FUNCTIONS
+========================= */
 
- 
-// ============================================================================
-// SECTION 3: SET TOP BACKGROUND FUNCTION
-// ============================================================================
-// This function changes the background image based on category
-// WHY AFTER INITIALIZATION: Called by setup functions but defined before them
 function setTopBackground(type) {
-  // Get the background image element from the DOM
-  const bgImg = document.getElementById('bg-image');
-  
-  // Get the URL for the requested type, fallback to default if type doesn't exist
+  const bgImg = document.getElementById("bg-image");
   const url = backgrounds[type] || backgrounds.default;
-  
-  // Safety check: Only set src if the element exists
-  if (bgImg) {
-    bgImg.src = url;  // Change the image source
-  }
+  if (bgImg) bgImg.src = url;
 }
+
 
 // ============================================================================
 // SECTION 4: MENU DATA - PRODUCT INFORMATION

@@ -13,7 +13,7 @@ body {
 #favorite-container {
   display: flex;
   flex-direction: column;
-  margin-left: 1px;
+   
 }
 
 .favorite-item {
