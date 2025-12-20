@@ -1,33 +1,4 @@
- /* =========================
-   BACKGROUND CONFIG (MUST BE FIRST)
-========================= */
- document.addEventListener("DOMContentLoaded", () => {
-  const hamMenu = document.querySelector(".ham-menu");
-  const offScreenMenu = document.querySelector(".off-screen-menu");
-
-  if (!hamMenu || !offScreenMenu) return;
-
-  // TOGGLE HAMBURGER
-  hamMenu.addEventListener("click", (e) => {
-    e.stopPropagation();
-    hamMenu.classList.toggle("active");
-    offScreenMenu.classList.toggle("active");
-  });
-
-  // PREVENT CLICKS INSIDE MENU FROM CLOSING ACCORDION
-  offScreenMenu.addEventListener("click", (e) => {
-    e.stopPropagation(); // ⛔ CRITICAL FIX
-  });
-
-  // INIT YOUR EXISTING MENU LOGIC (UNCHANGED)
-  generateMenu();
-  setupAccordion();
-  setupProductClicks();
-  setTopBackground("default");
-  setupQuantityButtons();
-  setupModalFunctionality();
-});
-
+ 
 
  
 
@@ -45,7 +16,17 @@ const backgrounds = {
    DOM READY
 ========================= */
 
+  document.addEventListener("DOMContentLoaded", () => {
  
+ 
+  generateMenu();
+  setupAccordion();
+  setupProductClicks();
+  setTopBackground("default");
+  setupQuantityButtons();
+  setupModalFunctionality();
+});
+
  
  
  
@@ -268,7 +249,14 @@ function setupAccordion() {
   // forEach processes each header individually
   container.querySelectorAll(".accordion-header").forEach(header => {
     // Add click event listener to each header
-    header.addEventListener("click", () => {
+    header.addEventListener("click", (e) => {
+  const offScreenMenu = document.querySelector(".off-screen-menu");
+
+  // ⛔ BLOCK accordion if hamburger menu is open
+  if (offScreenMenu && offScreenMenu.classList.contains("active")) {
+    return;
+  }
+
       // ----- GET RELATED ELEMENTS -----
       // Content is the very next element after header (sibling)
       const content = header.nextElementSibling;
@@ -397,7 +385,7 @@ function setupModalFunctionality() {
     // Check if click target is the modal itself (not its children)
     if (e.target === modal) {
       // Hide the modal
-      modal.style.display = "none";
+     
     }
   });
 
