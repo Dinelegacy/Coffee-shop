@@ -23,8 +23,7 @@ const backgrounds = {
   setupAccordion();
   setupProductClicks();
   setTopBackground("default");
-  setupQuantityButtons();
-  setupModalFunctionality();
+   setupModalFunctionality();
 });
 
  
@@ -365,82 +364,41 @@ function showModal(id,name, price, img) {
 // ============================================================================
 // This handles CLOSING the modal (X button, outside click, ESC key)
 // It's separate from showModal() to keep responsibilities clear
+ let modalEventsBound = false;
+
 function setupModalFunctionality() {
-  // Get the modal element from HTML
+  if (modalEventsBound) return; // ⛔ prevent duplicates
+  modalEventsBound = true;
+
   const modal = document.getElementById("productModal");
-  
-  // Get the X (close) button inside the modal
+  if (!modal) return;
+
   const closeBtn = modal.querySelector(".close");
 
-  // ----- X BUTTON CLICK -----
-  // When user clicks the X in top-right corner
+  // X BUTTON
   closeBtn.addEventListener("click", () => {
-    // Hide the modal by setting display to "none"
     modal.style.display = "none";
   });
 
-  // ----- CLICK OUTSIDE MODAL -----
-  // When user clicks on the dark overlay (outside white modal content)
+  // CLICK OUTSIDE MODAL
   window.addEventListener("click", (e) => {
-    // Check if click target is the modal itself (not its children)
     if (e.target === modal) {
-      // Hide the modal
-     
+      modal.style.display = "none";
     }
   });
 
-  // ----- ESC KEY PRESS -----
-  // When user presses Escape key on keyboard
+  // ESC KEY
   document.addEventListener("keydown", (e) => {
-    // Check if Escape key was pressed AND modal is currently visible
-    if (e.key === "Escape") {
-      // Hide the modal
+    if (e.key === "Escape" && modal.style.display === "flex") {
       modal.style.display = "none";
     }
   });
 }
+
 
 // ============================================================================
 // 10. SETUP QUANTITY BUTTONS - WHY BEFORE MODAL: Buttons are inside modal
 // ============================================================================
 // This handles the + and - buttons INSIDE the modal
 // Quantity controls are part of modal functionality
-function setupQuantityButtons() {
-  // Get elements that show quantity and price
-  const quantity = document.getElementById("quantity");       // The number (1, 2, 3...)
-  const inlinePrice = document.getElementById("inline-price"); // Price display
-
-  // ----- + BUTTON (INCREASE) -----
-  document.getElementById("increase").addEventListener("click", () => {
-    // Get current quantity and add 1
-    let qty = parseInt(quantity.textContent) + 1;
-    
-    // Update the displayed quantity
-    quantity.textContent = qty;
-
-    // Calculate new price: quantity × base price
-    // base price was stored in data-base attribute in showModal()
-    let newPrice = qty * Number(inlinePrice.dataset.base);
-    
-    // Update price display
-    inlinePrice.textContent = newPrice + ":-";
-  });
-
-  // ----- - BUTTON (DECREASE) -----
-  document.getElementById("decrease").addEventListener("click", () => {
-    // Get current quantity
-    let qty = parseInt(quantity.textContent);
-    
-    // Only decrease if more than 1 (can't have 0 or negative)
-    if (qty > 1) qty--;
-    
-    // Update the displayed quantity
-    quantity.textContent = qty;
-
-    // Calculate new price: quantity × base price
-    let newPrice = qty * Number(inlinePrice.dataset.base);
-    
-    // Update price display
-    inlinePrice.textContent = newPrice + ":-";
-  });
-}
+ 
