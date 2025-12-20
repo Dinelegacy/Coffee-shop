@@ -16,10 +16,11 @@
    ============================================================================ */
 .modal-content {
     background: #fff; /* WHITE BACKGROUND */
-    padding: 10px; /* INTERNAL SPACING */
+    padding: 16px; /* INTERNAL SPACING */
     width: 100%; /* FULL WIDTH ON MOBILE */
     max-width: 420px; /* MAXIMUM WIDTH on desktop */
-    position: relative; /* Allows absolute positioning of child elements */
+    position: relative; 
+    padding-bottom: 24px;/* Allows absolute positioning of child elements */
 }
 
 /* ============================================================================

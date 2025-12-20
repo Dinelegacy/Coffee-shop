@@ -178,7 +178,6 @@ main {
 .accordion-header.active {
     background: #c67500 !important; /* Orange when open */
 }
-
 /* Prevent lift when already active */
 .accordion-header.active:hover {
     transform: none; /* Remove translateY when active */
