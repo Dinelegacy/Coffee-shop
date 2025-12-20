@@ -52,7 +52,7 @@ hamMenu.addEventListener('click', () => {
   function renderFavorites() {
     if (favorites.length === 0) {
       container.innerHTML = `
-        <p style="text-align:center; margin-top:2rem;">
+        <p class="empty-cart-message">
           Your favorites list is empty
         </p>
       `;
